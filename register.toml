@@ -189,6 +189,112 @@ evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/ver
 found_by = "著者"
 date = "2026-09-07"
 
+# ============================================================ 哲学の三篇
+
+[[entry]]
+id = "PH-001"
+status = "unresolvable"
+title = "三篇とも、自身の DOI を印字していない"
+where = "哲学の三篇（Nobility v2 / Manifesto / Fragmentarian）"
+doi = "10.5281/zenodo.22058254"
+claimed = "（該当する記述が無い）"
+problem = "三篇とも Zenodo に登録され DOI が付与されているのに、紙面のどこにも印字されていない。PDF が単体で出回ると、読者は正本にも改訂版にも辿り着けない"
+correction = "正誤表に三篇の DOI を並べた。紙面に無いことは、検査で毎回確かめている"
+why_unresolvable = "PDF は公開済みで直せない。表紙に一行あれば済んだことである"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
+found_by = "機械（PDF から文字を取り出して探した）"
+date = "2026-09-07"
+
+[[entry]]
+id = "PH-002"
+status = "unresolvable"
+title = "三篇とも、ORCID を印字していない"
+where = "哲学の三篇"
+claimed = "（該当する記述が無い）"
+problem = "同姓同名との区別が紙面だけではつかない"
+correction = "正誤表に ORCID を書き、検査数字が合っていることも確かめている"
+why_unresolvable = "PDF は公開済みで直せない"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
+found_by = "機械"
+date = "2026-09-07"
+
+[[entry]]
+id = "PH-003"
+status = "unresolvable"
+title = "改訂版が、初版の所在を示していない"
+where = "The Nobility and Exemplarity of the Celibate Individual（v2）"
+doi = "10.5281/zenodo.22058254"
+claimed = "Original version: 21 October 2025 | Revised version (v2): 22 August 2026"
+problem = "初版がどこにあるかが書かれていない。DOI も URL も無い。読者は「改訂された」と知らされたうえで、何が改訂されたのかを確かめる手段を持たない"
+correction = "改訂で何が変わったかの記録は、リポジトリの側にある"
+why_unresolvable = "PDF は公開済みで直せない"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
+found_by = "機械"
+date = "2026-09-07"
+
+[[entry]]
+id = "PH-004"
+status = "open"
+title = "表紙が挙げる頒布先のうち、二つが未確認"
+where = "Manifesto of Imperial Selfhood（Revised and Expanded Edition）"
+doi = "10.5281/zenodo.22057583"
+claimed = "Prepared for open-access distribution via Zenodo, Academia.edu, and ResearchGate."
+problem = "確認できている所在は Zenodo・SSRN・PhilArchive の三つで、紙面が挙げる Academia.edu と ResearchGate は記録に入っていない"
+why_open = "実際に置かれていないのか、置かれているが記録していないだけなのかを、まだ確かめていない。Trinity-Infinity の TI-002（同梱を謳ったスクリプトが存在しない）と同じ形なので、確かめずに閉じない"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
+found_by = "機械"
+date = "2026-09-07"
+
+[[entry]]
+id = "PH-005"
+status = "standing"
+title = "三篇の本文の引用は、参考文献欄と食い違っていない"
+where = "哲学の三篇"
+claimed = "本文に (著者 年) の形で現れる引用は、すべて参考文献欄に対応する項目がある"
+support = "PDF から本文と参考文献欄を切り分け、機械で突き合わせた。三篇とも食い違いは出なかった"
+refute = "本文の (著者 年) 引用のうち、参考文献欄に対応の無いものを一つ出す"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
+date = "2026-09-07"
+
+[[entry]]
+id = "SC-003"
+status = "corrected"
+title = "引用の照合が、偽陽性を一件出した"
+where = "この作業で書いた照合（本文の引用 ↔ 参考文献欄）"
+claimed = "Manifesto の本文にある (Nietzsche 1967) は、参考文献欄に対応が無い"
+problem = "実際にはある。Nietzsche, Friedrich. The Will to Power. Translated by Walter Kaufmann and R. J. Hollingdale. New York: Vintage, 1967。同じ著者の項目が三つ並び、1967 の項目が三つ目だったため、照合の窓の外に出ていた"
+correction = "窓を広げて解消した。紙面は正しく、検査のほうが誤っていた。その箇所は present = true として宣言に入れてあるので、同じ誤報を二度出せない"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/verification/audit.toml"
+found_by = "著者（報告を見て紙面に当たった）"
+date = "2026-09-07"
+
+# ============================================================ 史料ノート
+
+[[entry]]
+id = "NG-001"
+status = "unresolvable"
+title = "自身の DOI を印字していない"
+where = "海軍公報の史料ノート"
+doi = "10.5281/zenodo.22055709"
+claimed = "（該当する記述が無い）"
+problem = "原資料の参照コード（JACAR Ref. C12070491000）は正確に印字しているのに、自身の識別子だけが抜けている"
+correction = "正誤表に DOI と Knowledge Commons の所在を書いた"
+why_unresolvable = "PDF は公開済みで直せない"
+evidence = "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes/blob/main/ERRATA.md"
+found_by = "機械"
+date = "2026-09-07"
+
+[[entry]]
+id = "NG-002"
+status = "standing"
+title = "原資料の画像は同梱していないし、同梱しているとも書いていない"
+where = "海軍公報の史料ノート"
+claimed = "紙面は JACAR が公開する画像に基づくと述べているが、画像そのものは配布していない。「同梱している」とも書いていない"
+support = "転載には防衛省防衛研究所への確認が要るため置いていない。検査は、画像ファイルがリポジトリに混入していないことと、紙面に同梱を謳う文言が無いことの両方を見る"
+refute = "紙面に同梱・添付を謳う記述を一つ見つける。あるいはリポジトリに原資料の画像が置かれていることを示す"
+evidence = "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes/blob/main/ERRATA.md"
+date = "2026-09-07"
+
 # ============================================================ いま立っているもの
 
 [[entry]]
