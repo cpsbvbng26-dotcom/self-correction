@@ -148,6 +148,28 @@ check("履歴が読めている（浅いクローンではない）",
       len(revs) > 0 or not os.path.exists(os.path.join(ROOT, ".git")),
       "%d 版" % len(revs))
 
+section("6. 使わないと決めた語")
+
+# 紙面には印字されているが、いま自分が書く文章では使わない。忘れると自然に
+# 戻ってくるので、機械で止める。この登録簿に逐語転記は無いので、例外は無い。
+FORBIDDEN = ["独立研究者", "Independent Researcher"]
+SELF = os.path.join("verification", "check_register.py")
+found = []
+for dirpath, dirnames, filenames in os.walk(ROOT):
+    dirnames[:] = [d for d in dirnames if d not in (".git", "__pycache__")]
+    for name in filenames:
+        if not name.endswith((".md", ".toml", ".py", ".cff", ".yml", ".json")):
+            continue
+        rel = os.path.relpath(os.path.join(dirpath, name), ROOT)
+        if rel == SELF:
+            continue
+        body = io.open(os.path.join(dirpath, name), encoding="utf-8",
+                       errors="replace").read()
+        for term in FORBIDDEN:
+            if term in body:
+                found.append("%s に「%s」" % (rel, term))
+check("使わないと決めた語が入っていない", not found, ", ".join(found))
+
 print("\n" + "-" * 58)
 if failures:
     print("%d 件が通り、%d 件が通りませんでした。" % (passed, len(failures)))
