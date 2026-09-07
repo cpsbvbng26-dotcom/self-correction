@@ -8,7 +8,7 @@ on:
 
 jobs:
   verify:
-    name: 登録簿 20 項目
+    name: 登録簿 22 項目
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

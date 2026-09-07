@@ -170,6 +170,28 @@ for dirpath, dirnames, filenames in os.walk(ROOT):
                 found.append("%s に「%s」" % (rel, term))
 check("使わないと決めた語が入っていない", not found, ", ".join(found))
 
+# README は手で書いている。register.toml が増えたとき、ここが真っ先にずれる。
+# この登録簿の趣旨からして、名乗る数だけは機械で押さえておく。
+readme = io.open(os.path.join(ROOT, "README.md"), encoding="utf-8").read()
+
+m = re.search(r"いま \*\*(\d+) 件\*\*", readme)
+check("README が名乗る総件数が実際と合う",
+      m is not None and int(m.group(1)) == len(entries),
+      ("名乗り %s / 実際 %d" % (m.group(1), len(entries))) if m
+      else "名乗っている箇所が見つからない")
+
+LABEL = {"standing": "いま立っている", "open": "未解決",
+         "unresolvable": "直せない", "corrected": "直した", "withdrawn": "撤回した"}
+wrong = []
+for st, label in sorted(LABEL.items()):
+    want = len([e for e in entries if e["status"] == st])
+    m = re.search(r"\|\s*\*{0,2}" + label + r"\*{0,2}\s*\|\s*(\d+)\s*\|", readme)
+    if m is None or int(m.group(1)) != want:
+        wrong.append("%s: 名乗り %s / 実際 %d"
+                     % (label, m.group(1) if m else "無し", want))
+check("README の状態ごとの内訳が実際と合う", not wrong, "; ".join(wrong))
+
+
 print("\n" + "-" * 58)
 if failures:
     print("%d 件が通り、%d 件が通りませんでした。" % (passed, len(failures)))
