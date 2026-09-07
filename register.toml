@@ -1,0 +1,211 @@
+# 訂正の登録簿。
+#
+# 公開したあとで誤りが見つかったもの、撤回したもの、果たされなかった約束を、
+# **一件ずつ、消さずに**記録する。build.py が REGISTER.md を組み立て、
+# verification/ が中身を検査する。
+#
+# 状態は次の五つだけ。ほかは使わない。
+#
+#   standing      いまも立っている主張
+#   corrected     誤りが見つかり、直したもの
+#   withdrawn     取り下げたもの。元の記述は消していない
+#   unresolvable  直せないもの。凍結された成果物の側に誤りがある
+#   open          未解決。まだ判断がついていない
+#
+# **id は永久に消さない。**過去のどの版にあった id も、いまの版に無ければ
+# check_register.py が落とす。都合の悪い記録は、消せない作りにしてある。
+
+version = "0.1.0"
+owner = "根本卓哉 (Takuya Nemoto)"
+orcid = "0009-0000-1406-0547"
+
+# ============================================================ 三篇そのもの
+
+[[entry]]
+id = "TI-001"
+status = "corrected"
+title = "収束の条件を、作用素ノルムで述べていた"
+where = "Trinity-Infinity Series I–III"
+doi = "10.5281/zenodo.22058624"
+claimed = "作用素ノルム ‖DQ‖₂ < 1 なので縮小写像であり、Banach の不動点定理により一意の不動点へ幾何収束する"
+problem = "‖DQ‖₂ < 1 は十分条件にすぎない。収束の必要十分条件はスペクトル半径 ρ(DQ) < 1 のほうである"
+correction = "ρ < 1 ≤ ‖DQ‖₂ の領域では収束するが誤差がいったん増える。Q = [[1,40],[0,1]]、a = (0.5,0.5) で ρ = 0.5、‖A‖₂ = 20.01、誤差は第 2 段で初期値の 11.8 倍"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-operator"
+found_by = "著者（実装し直したとき）"
+date = "2026-09-06"
+
+[[entry]]
+id = "TI-002"
+status = "unresolvable"
+title = "同梱を謳った検証スクリプトが存在しない"
+where = "Trinity-Infinity Series I–III"
+doi = "10.5281/zenodo.22058624"
+claimed = "the verification script (series1_verification.py) is distributed together with this PDF"
+problem = "三本で合計 6 箇所そう述べているが、どの箇所のファイルも存在しない。配布物にも著者の手元にも残っていない"
+correction = "書き直したものを「これがそれです」と称して置くことはしない。別に書いた突き合わせ（claims_audit.py 31 項目）を置く"
+why_unresolvable = "PDF は Zenodo で公開済みで、もう直せない。元のスクリプトが何を計算していたかは、もう誰にも分からない"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "著者（配布物の一覧を数えたとき）"
+date = "2026-09-06"
+
+[[entry]]
+id = "TI-003"
+status = "corrected"
+title = "同梱を謳っている箇所を、三箇所と数えていた"
+where = "trinity-infinity/ERRATA.md の E3"
+claimed = "三本とも謝辞で、検証スクリプトが PDF と一緒に配布されていると述べています"
+problem = "謝辞だけではなかった。紙面を数え直すと 6 箇所ある。数え落とした 2 箇所（Series I 第2節、Series II 要旨）は謝辞より本文に近く、読者が再現を期待する場所である"
+correction = "表を 6 箇所に直し、件数そのものを検査の宣言に入れた。数え落としは以後そこで落ちる"
+evidence = "https://github.com/cpsbvbng26-dotcom/errata-check"
+found_by = "機械（errata-check を書いて紙面から数え直したとき）"
+date = "2026-09-07"
+
+[[entry]]
+id = "TI-004"
+status = "unresolvable"
+title = "改訂版を指すつもりで初版の DOI を引いている"
+where = "Trinity-Infinity Series II・III の参考文献"
+doi = "10.5281/zenodo.22058777"
+claimed = "(Revised Edition). Zenodo. DOI: 10.5281/zenodo.17173703"
+problem = "10.5281/zenodo.17173703 は 2025 年の初版の DOI である。改訂版は 10.5281/zenodo.22058624。読者は訂正前の版に辿り着く"
+correction = "正誤表に両方の DOI を明記し、正しいほうを README の先頭に出した"
+why_unresolvable = "PDF は公開済みで直せない"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "著者（三本の参考文献欄を突き合わせたとき）"
+date = "2026-09-05"
+
+[[entry]]
+id = "TI-005"
+status = "unresolvable"
+title = "参考文献に DOI が無い"
+where = "Trinity-Infinity Series III の参考文献 [2]"
+claimed = "Series II: Extended Formalization and Further Illustrative Applications (Revised Edition). Zenodo."
+problem = "DOI が続いていない。補うべきは 10.5281/zenodo.22058777"
+correction = "正誤表に補うべき DOI を書いた"
+why_unresolvable = "PDF は公開済みで直せない"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "著者"
+date = "2026-09-05"
+
+# ============================================================ 撤回したもの
+
+[[entry]]
+id = "WD-001"
+status = "withdrawn"
+title = "「98.7% の試行で確認」"
+where = "Trinity-Infinity 初期草稿"
+claimed = "98.7% of trials confirmed the convergence"
+problem = "再現できるコードも乱数種も無い。数字の出どころが辿れない"
+correction = "撤回した。改訂版では、同じ設定を実際に回すと 1000 回すべてが一段で収束する（100%）ことを示している"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "著者"
+date = "2026-08"
+
+[[entry]]
+id = "WD-002"
+status = "withdrawn"
+title = "三人ゲームの利得表"
+where = "Trinity-Infinity 初期草稿"
+claimed = "三人ゲームの利得を 4 セルの表で示した"
+problem = "三人・二戦略なら 2³ = 8 通りある。4 セルでは表現できない"
+correction = "撤回した"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "著者"
+date = "2026-08"
+
+[[entry]]
+id = "WD-003"
+status = "withdrawn"
+title = "リアプノフ微分と LaSalle の不変性原理の適用"
+where = "Trinity-Infinity 初期草稿"
+claimed = "リアプノフ関数の微分と LaSalle の不変性原理により安定性が従う"
+problem = "対象は離散反復である。連続時間の道具をそのまま当てていた"
+correction = "撤回した。離散の設定に合う議論（Stein 方程式による重み付きノルム）は別に書いた"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-operator"
+found_by = "著者"
+date = "2026-08"
+
+[[entry]]
+id = "WD-004"
+status = "withdrawn"
+title = "AI アライメント・気候政策・ガバナンスへの応用"
+where = "Trinity-Infinity 初期草稿"
+claimed = "この枠組みは AI アライメント、気候政策、ガバナンスに応用できる"
+problem = "何も示されていない。接続の主張だけがあった"
+correction = "撤回した。改訂版では、類推であることを明示した記述だけを残している"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "著者"
+date = "2026-08"
+
+# ================================================== 自分の訂正のほうの誤り
+
+[[entry]]
+id = "SC-001"
+status = "corrected"
+title = "正誤表の引用に、原文には無い文字を足していた"
+where = "trinity-infinity/ERRATA.md"
+claimed = "the verification script (`series1_verification.py`) is distributed together with this PDF"
+problem = "ファイル名を強調するためにバッククォートを入れていた。原文には無い。引用が原文と一致しなくなる"
+correction = "表の引用から外し、原文のままにした。以後は機械が一字一句を突き合わせる"
+evidence = "https://github.com/cpsbvbng26-dotcom/errata-check"
+found_by = "機械（errata-check）"
+date = "2026-09-07"
+
+[[entry]]
+id = "SC-002"
+status = "corrected"
+title = "正誤表の最終更新が、本文の日付より古かった"
+where = "trinity-infinity/ERRATA.md"
+claimed = "最終更新: 2026年9月5日"
+problem = "本文には 9月6日の著者確認が書いてある。見出しの日付だけが古いまま残っていた"
+correction = "日付を直し、最終更新が本文のどの日付よりも古くないことを検査に入れた"
+evidence = "https://github.com/cpsbvbng26-dotcom/errata-check"
+found_by = "機械（errata-check）"
+date = "2026-09-07"
+
+# ============================================================ サイトの記述
+
+[[entry]]
+id = "WS-001"
+status = "corrected"
+title = "検査の件数が、実際より少ないまま公開されていた"
+where = "公開サイトのトップ（検証欄）"
+claimed = "この場で 63"
+problem = "検査を足したのに文章の数字だけ古いまま残っていた。実際は 90 項目"
+correction = "数字を直し、本文が名乗る件数を、実際にスクリプトを走らせた結果と突き合わせる検査を入れた"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/check_site.js"
+found_by = "著者（目視）— 検査は素通りしていた"
+date = "2026-09-07"
+
+[[entry]]
+id = "WS-002"
+status = "corrected"
+title = "sitemap の更新日が、実際の更新より古かった"
+where = "公開サイトの sitemap.xml"
+claimed = "lastmod 2026-09-05"
+problem = "手で書いていたので古くなった。2 ページぶんずれていた"
+correction = "git の記録から入れ直す仕組みにし、古いままなら落ちる検査を入れた"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/update_sitemap.js"
+found_by = "著者"
+date = "2026-09-07"
+
+# ============================================================ いま立っているもの
+
+[[entry]]
+id = "ST-001"
+status = "standing"
+title = "凍結された公開物に対する、決定的な自己監査"
+claimed = "公開された成果物は直せない。直せるのは訂正のほうで、だから訂正は時間とともに元の資料からずれていく。そのずれは、推論を使わずに機械で落とせる"
+support = "三篇の PDF に対して 51 項目。道具自身は 60 項目で、通る状態を 20 通りに壊して、壊した箇所がちょうど落ちることを確かめてある"
+refute = "この検査を通ったのに、実際には正誤表が一次資料とずれている例を一つ出す。あるいは、宣言どおりに壊しても落ちない検査を一つ示す"
+evidence = "https://doi.org/10.5281/zenodo.22649054"
+date = "2026-09-07"
+
+[[entry]]
+id = "ST-002"
+status = "open"
+title = "この登録簿は、価値については何も言わない"
+claimed = "検証の量は、検証される中身の価値について何も言わない"
+problem = "この体系には、それを判定できる検査が存在しない。緑の数字がいくら増えても、「これは価値が無い」とは出ない。主張の水準では反証可能で、意義の水準では構造的に反証不可能である"
+why_open = "解き方が分かっていない。数を増やしても解けないことだけは分かっている"
+date = "2026-09-07"

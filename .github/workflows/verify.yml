@@ -1,0 +1,27 @@
+name: 検査
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: 登録簿 19 項目
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # 消した id を捕まえるため、履歴が要る。
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # 依存パッケージなし。標準ライブラリだけで動く。
+      - name: 登録簿の形と履歴
+        run: python3 verification/check_register.py
+      - name: 人が読む版が作り直せる
+        run: |
+          python3 build.py
+          git diff --exit-code -- REGISTER.md
