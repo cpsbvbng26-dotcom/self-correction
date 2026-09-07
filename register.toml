@@ -178,6 +178,19 @@ found_by = "著者（リリースの支度で数え直したとき）"
 date = "2026-09-07"
 
 
+[[entry]]
+id = "SC-005"
+status = "open"
+title = "七つのリポジトリに書いた DOI を、こちらでは一度も確かめていない"
+where = "errata-check・trinity-infinity 以外の六リポジトリと、このサイト"
+claimed = "10.5281/zenodo.22649899 は errata-check v0.2.0 の版 DOI である"
+problem = "この番号が何を指すかを、著者も作業環境も確認していない。作業環境からは zenodo.org・doi.org・DataCite・OpenAIRE のいずれにも到達できず（到達できるのは GitHub のみ）、著者も登録画面を開けない状態で番号を渡した。いったん self-correction のものだという指摘があり、そのあと撤回された経緯もある"
+why_open = "確認できるまで判断を保留する。いま書いてある番号を支えているのは状況証拠だけである ——(1) errata-check は 2026-09-07 20:19:46 に v0.2.0 の Release を公開しており、Zenodo の GitHub 連携は Release の公開時にだけ DOI を発行する (2) self-correction には Release もタグも .zenodo.json も無く、連携経由では発行されない (3) 番号が v0.1.0 の 22649054 より大きい"
+evidence = "https://github.com/cpsbvbng26-dotcom/errata-check/releases"
+found_by = "著者（帰属を問い直したとき）"
+date = "2026-09-07"
+
+
 # ============================================================ サイトの記述
 
 [[entry]]
