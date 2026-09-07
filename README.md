@@ -71,7 +71,7 @@ python3 verification/check_register.py    # 22 項目
 - Trinity-Infinity の三篇 → [trinity-infinity](https://github.com/cpsbvbng26-dotcom/trinity-infinity)（51 項目）
 - 哲学の三篇 → [autonomy-and-self-cultivation](https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation)（50 項目）
 - 海軍公報の史料ノート → [naval-gazette-notes](https://github.com/cpsbvbng26-dotcom/naval-gazette-notes)（31 項目）
-- その検査の道具 → [errata-check](https://github.com/cpsbvbng26-dotcom/errata-check)（[10.5281/zenodo.22649054](https://doi.org/10.5281/zenodo.22649054)）
+- その検査の道具 → [errata-check](https://github.com/cpsbvbng26-dotcom/errata-check)（[10.5281/zenodo.22649899](https://doi.org/10.5281/zenodo.22649899)）
 
 分けてあるのは、**一次資料から遠い場所で「一致しています」と言っても意味が無い**
 からです。
