@@ -37,6 +37,7 @@ FIELDS = [
     ("occurred", "起きた"),
     ("recorded", "書いた"),
     ("basis", "記録の性質"),
+    ("verifiable", "誰が確かめられるか"),
 ]
 
 

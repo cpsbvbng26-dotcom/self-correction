@@ -27,7 +27,15 @@
 #   同時    出来事の時点で記録した（recorded − occurred が 1 日以内）
 #   再構成  あとから書き起こした。当時の記録ではない
 #
-# **31 件のうち 21 件は再構成である。**2025年10月から2026年8月までの
+# verifiable は、**第三者が確かめられるかどうか**を述べる。
+#
+#   紙面    凍結された PDF・git の履歴・走らせられるコードから、誰でも確かめられる
+#   証言    著者の言葉以外に根拠が無い。**反証もできない**
+#
+# **重い項目ほど証言の側にある。**初稿の出所も、原典を読んでいないことも、
+# 英訳の道具も、著者が言わなければ存在しなかったのと同じである（ST-003）。
+#
+# **32 件のうち 21 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -51,6 +59,7 @@ found_by = "著者（実装し直したとき）"
 occurred = "2025-10"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "TI-002"
@@ -67,6 +76,7 @@ found_by = "著者（配布物の一覧を数えたとき）"
 occurred = "2025-10"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "TI-003"
@@ -81,6 +91,7 @@ found_by = "機械（errata-check を書いて紙面から数え直したとき�
 occurred = "2026-09-06"
 recorded = "2026-09-07"
 basis = "同時"
+verifiable = "紙面"
 
 [[entry]]
 id = "TI-004"
@@ -97,6 +108,7 @@ found_by = "著者（三本の参考文献欄を突き合わせたとき）"
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "TI-005"
@@ -112,6 +124,7 @@ found_by = "著者"
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "TI-006"
@@ -127,6 +140,7 @@ found_by = "著者（名称を問い直したとき）"
 occurred = "2026-09-08"
 recorded = "2026-09-08"
 basis = "同時"
+verifiable = "紙面"
 
 
 [[entry]]
@@ -143,6 +157,7 @@ found_by = "著者（AI の関与を洗い直したとき）"
 occurred = "2025-10"
 recorded = "2026-09-08"
 basis = "再構成"
+verifiable = "証言"
 
 
 # ============================================================ 撤回したもの
@@ -160,6 +175,7 @@ found_by = "著者"
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "WD-002"
@@ -174,6 +190,7 @@ found_by = "著者"
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "WD-003"
@@ -188,6 +205,7 @@ found_by = "著者"
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "WD-004"
@@ -202,6 +220,7 @@ found_by = "著者"
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 # ================================================== 自分の訂正のほうの誤り
 
@@ -218,6 +237,7 @@ found_by = "機械（errata-check）"
 occurred = "2026-09-06"
 recorded = "2026-09-07"
 basis = "同時"
+verifiable = "紙面"
 
 [[entry]]
 id = "SC-002"
@@ -232,6 +252,7 @@ found_by = "機械（errata-check）"
 occurred = "2026-09-06"
 recorded = "2026-09-07"
 basis = "同時"
+verifiable = "紙面"
 
 [[entry]]
 id = "SC-004"
@@ -248,6 +269,7 @@ found_by = "著者（リリースの支度で数え直したとき）"
 occurred = "2026-09-07"
 recorded = "2026-09-07"
 basis = "同時"
+verifiable = "紙面"
 
 
 [[entry]]
@@ -263,6 +285,7 @@ found_by = "著者（帰属を問い直したとき）"
 occurred = "2026-09-07"
 recorded = "2026-09-07"
 basis = "同時"
+verifiable = "紙面"
 
 
 [[entry]]
@@ -278,6 +301,22 @@ found_by = "著者（記号の内容を問い直したとき）"
 occurred = "2026-09-08"
 recorded = "2026-09-08"
 basis = "同時"
+verifiable = "紙面"
+
+
+[[entry]]
+id = "ST-003"
+status = "open"
+title = "この登録簿の完全性は、著者の意思にしか依存していない"
+claimed = "この登録簿が保証しているのは「言ったことを取り消せない」であって、「全部言った」ではない"
+problem = "機械が押さえているのは、書いた項目を消せないこと（git を遡る）、書いた日が git と一致すること、引用が凍結 PDF と一字一句合うこと、名乗る数が実際の出力と合うことである。**何を書くかは押さえていない。**書かれなかった項目は、機械には見えない。occurred（起きた日）も、重大度も、直せる／直せないの判断も、著者の言葉である"
+why_open = "解き方が無い。**自己開示の完全性は、原理的に外から検証できない。**「全部書いた」を証明する方法は存在しない。だから穴を塞ぐのではなく、穴の位置を書くほうを選んだ。各項目の verifiable がその位置を示す —— 紙面なら第三者が公開物から確かめられる。証言なら、著者の言葉以外に根拠が無い"
+evidence = "https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/verification/check_register.py"
+found_by = "著者（この記録が何に依存しているかを問い直したとき）"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
+verifiable = "紙面"
 
 
 # ============================================================ サイトの記述
@@ -295,6 +334,7 @@ found_by = "著者（目視）— 検査は素通りしていた"
 occurred = "2026-09"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "WS-002"
@@ -309,6 +349,7 @@ found_by = "著者"
 occurred = "2026-09"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 # ============================================================ 哲学の三篇
 
@@ -327,6 +368,7 @@ found_by = "機械（PDF から文字を取り出して探した）"
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "PH-002"
@@ -342,6 +384,7 @@ found_by = "機械"
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "PH-003"
@@ -358,6 +401,7 @@ found_by = "機械"
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "PH-004"
@@ -373,6 +417,7 @@ found_by = "機械（未確認として検出）／著者（所在を確認）"
 occurred = "2026-09"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "証言"
 
 [[entry]]
 id = "PH-005"
@@ -386,6 +431,7 @@ evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/b
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "SC-003"
@@ -400,6 +446,7 @@ found_by = "著者（報告を見て紙面に当たった）"
 occurred = "2026-09-07"
 recorded = "2026-09-07"
 basis = "同時"
+verifiable = "紙面"
 
 [[entry]]
 id = "PH-006"
@@ -415,6 +462,7 @@ found_by = "著者（AI の関与を洗い直したとき）"
 occurred = "2026-08"
 recorded = "2026-09-08"
 basis = "再構成"
+verifiable = "証言"
 
 
 [[entry]]
@@ -431,6 +479,7 @@ found_by = "著者（引用の由来を洗い直したとき）"
 occurred = "2026-08"
 recorded = "2026-09-08"
 basis = "再構成"
+verifiable = "証言"
 
 
 # ============================================================ 史料ノート
@@ -450,6 +499,7 @@ found_by = "機械"
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "NG-002"
@@ -463,6 +513,7 @@ evidence = "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes/blob/main/E
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+verifiable = "紙面"
 
 [[entry]]
 id = "NG-003"
@@ -478,6 +529,7 @@ found_by = "著者（AI の関与を洗い直したとき）"
 occurred = "2026-08"
 recorded = "2026-09-08"
 basis = "再構成"
+verifiable = "証言"
 
 
 # ============================================================ いま立っているもの
@@ -493,6 +545,7 @@ evidence = "https://doi.org/10.5281/zenodo.22649054"
 occurred = "2026-09-07"
 recorded = "2026-09-07"
 basis = "同時"
+verifiable = "紙面"
 
 [[entry]]
 id = "ST-002"
@@ -504,3 +557,4 @@ why_open = "解き方が分かっていない。数を増やしても解けな�
 occurred = "2026-09-07"
 recorded = "2026-09-07"
 basis = "同時"
+verifiable = "紙面"

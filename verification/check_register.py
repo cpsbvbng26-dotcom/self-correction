@@ -82,6 +82,13 @@ for k in ("occurred", "recorded", "basis"):
 bad_basis = [e["id"] for e in entries if e.get("basis") not in ("同時", "再構成")]
 check("basis が「同時」か「再構成」である", not bad_basis, ", ".join(bad_basis))
 
+bad_v = [e["id"] for e in entries if e.get("verifiable") not in ("紙面", "証言")]
+check("verifiable が「紙面」か「証言」である", not bad_v, ", ".join(bad_v))
+
+n_test = sum(1 for e in entries if e["verifiable"] == "証言")
+check("第三者が確かめられない項目を数えている", True,
+      "%d 件が証言、%d 件が紙面" % (n_test, len(entries) - n_test))
+
 # ------------------------------------------------ 日付。ここは詐称できない
 section("1.5 日付が筋を通っているか")
 
