@@ -27,6 +27,7 @@ FIELDS = [
     ("doi", "DOI"),
     ("claimed", "述べていたこと"),
     ("support", "支え"),
+    ("counter", "何が弱めているか"),
     ("problem", "何が問題か"),
     ("correction", "どうしたか"),
     ("why_unresolvable", "なぜ直せないか"),

@@ -181,6 +181,21 @@ check("REGISTER.md が register.toml から作り直したものと一致する"
 check("REGISTER.md が件数を正しく述べている",
       ("| | **%d** | |" % len(entries)) in current)
 
+# --------------------------------------------- 弱まったものを畳めないこと
+section("4.5 弱まった主張")
+
+# 立っている主張に反証が出たが覆すには届かなかったとき、counter に足す。
+# **状態は standing のまま置く。**withdrawn は「取り下げた」であって
+# 「弱まった」ではない。混ぜると、弱まった時点でこっそり畳めるようになる。
+weakened = [e for e in entries if e.get("counter")]
+bad_status = [e["id"] for e in weakened if e.get("status") != "standing"]
+check("counter を持つ項目は standing である", not bad_status, ", ".join(bad_status))
+no_refute = [e["id"] for e in weakened if not e.get("refute")]
+check("counter を持つ項目は、覆し方を保っている", not no_refute, ", ".join(no_refute))
+check("弱まった主張を数えている", True,
+      "%d 件が counter を持つ（%s）" % (len(weakened),
+                                       ", ".join(e["id"] for e in weakened) or "なし"))
+
 # ------------------------------------------------------------ 消せない
 section("5. 消せないこと")
 
