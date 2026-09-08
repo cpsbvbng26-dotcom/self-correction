@@ -41,7 +41,7 @@
 # **重い項目ほど証言の側にある。**初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じである（ST-003）。
 #
-# **44 件のうち 25 件は再構成である。**2025年10月から2026年8月までの
+# **46 件のうち 25 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -721,15 +721,48 @@ id = "EX-004"
 status = "standing"
 title = "紙面だけを読む査読は、同梱物の不在を見抜けない"
 where = "cpsbvbng26-dotcom/docs/external-evaluations.md"
-claimed = "外部の査読は E3（同梱を謳う検証スクリプトが存在しない）を見抜けず、存在しないスクリプトを再現性の強みとして数えた"
-support = "査読は `The script availability claim (series3_verification.py) supports reproducibility` と述べた。**そのスクリプトは存在しない。**配布物にも著者の手元にも残っていない（E3）。紙面には「同梱している」と印字されているので、**紙面だけを読む限り確かめようがない。**加えて E1（参考文献の DOI が初版を指している）も見落とした —— こちらは参考文献欄だけで確かめられる。さらに isometry error の 0 を丸めだと疑ったが、ここは厳密であり指摘が外れている"
-refute = "紙面だけを入力とする査読が、E3 または E1 を独立に指摘した例を一つ出す。E1 は参考文献欄の中で完結しているので、これは十分ありうる"
+claimed = "紙面だけを入力とする査読は、本文と参考文献欄の中で完結している誤りを拾えない。二本で試して、二本とも拾えなかった"
+support = "査読は `The script availability claim (series3_verification.py) supports reproducibility` と述べた。**そのスクリプトは存在しない。**配布物にも著者の手元にも残っていない（E3）。紙面には「同梱している」と印字されているので、**紙面だけを読む限り確かめようがない。**加えて E1（参考文献の DOI が初版を指している）も見落とした —— こちらは参考文献欄だけで確かめられる。さらに isometry error の 0 を丸めだと疑ったが、ここは厳密であり指摘が外れている。**二本目でも当たらなかった。**Series I を同じ場に出したところ、E5（grim trigger の閾値を Fudenberg & Maskin に帰している。出所は Friedman 1971）を見抜かず、`Beyond Fudenberg–Maskin (1986)` と述べて**その文献を正しい出所として扱ったうえで、追加の文献を勧めた**。E5 は参考文献欄と本文だけで確かめられる。なお E1 は Series I に無い —— **こちらの見立てが誤っていた**。E1 は Series II と III の話であり、Series I の Nemoto (2025) DOI: 17173703 は初版を指す正しい用法である"
+refute = "紙面だけを入力とする査読が、E3 または E5 を独立に指摘した例を一つ出す。どちらも本文と参考文献欄の中で完結しているので、これは十分ありうる"
 evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/external-evaluations.md"
 found_by = "こちらの照合"
 occurred = "2026-09-08"
 recorded = "2026-09-08"
 basis = "同時"
 verifiable = "証言"
+
+
+[[entry]]
+id = "EX-005"
+status = "standing"
+title = "外部の査読が、実在しない誤植を確かめられる形で挙げた"
+where = "cpsbvbng26-dotcom/docs/external-evaluations.md、Trinity-Infinity Series I"
+doi = "10.5281/zenodo.22058624"
+claimed = "Minor notation inconsistency: f(T) = α σ(T) + (1−a)p uses “a” instead of “α” once."
+support = "**そのような箇所は無い。**PDF から取り出して該当形をすべて数えた —— `Ip,α(y) = αy + (1−α)p`、`f(T) = α σ(T) + (1−α)p`、`T* = (1−α)(I−αP)−1p`。**三箇所すべて α である。**Series II の `(1−ai)pi` は異方性版の正しい表記で、Series I には現れない"
+problem = "**見落としとは別の壊れ方である。**見落としは沈黙だが、これは確かめられる形の偽の指摘である。**指摘が具体的であるほど、確かめずに直してしまう危険が高い** —— 「誤植を一つ直す」は、内容の判断を要しない作業に見える"
+refute = "Series I の紙面のどこかに `(1−a)p` が印字されていることを示す。組版された頁を見れば決まる（ただし TI-011 —— こちらは抽出したテキストしか見ていない）"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/external-evaluations.md"
+found_by = "こちらの照合"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
+id = "EX-006"
+status = "corrected"
+title = "外部の査読と、こちらの読み直しが、互いを知らずに同じ二点を挙げた"
+where = "trinity-infinity/ERRATA.md の N8"
+claimed = "Series I 第3節が grim trigger の subgame perfection を述べていないこと、第2節 Remark 1 が `I − αP` の可逆性を述べていないこと"
+problem = "どちらも成り立つ。全員裏切りは段階ゲームのナッシュ均衡（πD(0) = 2 が三人とも最良応答）なのでナッシュ復帰は信憑性を持ち、実際に subgame perfect である。`P` の固有値は絶対値 1 なので ρ(αP) = α < 1 であり `I − αP` は可逆である。**どちらも紙面に書かれていない**"
+correction = "N8 の ① と ② に記録した。定理・数値には影響しない。**①は、こちらの読み直しと外部の査読が互いを知らずに同じ箇所を挙げた** —— 一致は独立である。②は査読の側だけが挙げた"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "Stanford Agentic Reviewer（paperreview.ai）と、こちらの読み直し"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
+verifiable = "紙面"
 
 
 # ============================================================ いま立っているもの
