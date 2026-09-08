@@ -35,7 +35,7 @@
 # **重い項目ほど証言の側にある。**初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じである（ST-003）。
 #
-# **36 件のうち 22 件は再構成である。**2025年10月から2026年8月までの
+# **37 件のうち 22 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -592,6 +592,24 @@ problem = "DOI から来る読者は英語で読む。その読者に、引く�
 correction = "README の冒頭に英語の欄を置き、引くべき三本の DOI・旧版が superseded であること・査読を受けていないこと・初稿が ChatGPT の生成で AI は著者ではないこと・検証の走らせ方を述べた。日本語側とずれないよう、この欄が三本の DOI と旧版の扱いを述べていることを check_errata.py が当たる。「撤回」の節にも、出版上の retraction ではないと明記した"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity#trinity-infinity"
 found_by = "ChatGPT（利用者経由で、永久無料での維持を条件とした監査を依頼された）"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
+verifiable = "紙面"
+
+
+# ============================================================ 外部からの評価
+
+[[entry]]
+id = "EX-001"
+status = "open"
+title = "正本の DOI と、外部の評価が付く DOI が割れている"
+where = "cpsbvbng26-dotcom/docs/canonical-sources.md、docs/external-evaluations.md"
+claimed = "同じ内容が複数の場所にあるときは Zenodo を正とする"
+problem = "外部の公開レビューの場が受け付けたのは SSRN の DOI だけで、Zenodo の DOI は対象外だった。SSRN の DOI は Crossref、Zenodo の DOI は DataCite が発行している。その結果、**引用の正本は Zenodo にあり、第三者の評価は SSRN にしか残らない。**片方だけを見た読者は、もう片方に気づかない。さらに SSRN 版があるのは二篇だけなので、**初稿が言語モデルの生成である Trinity-Infinity の三本は、この経路では評価を受けられない**"
+why_open = "解き方が分かっていない。SSRN を正に切り替えれば評価と正本が揃うが、SSRN 版があるのは二篇だけで、残り六本の正本が別になる。Zenodo の DOI を受け付ける場を探すのは、場の側の仕組みが変わるのを待つのと同じである。当面は両方の所在を書いて残す"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/external-evaluations.md"
+found_by = "著者（外部の場に出したとき）"
 occurred = "2026-09-08"
 recorded = "2026-09-08"
 basis = "同時"
