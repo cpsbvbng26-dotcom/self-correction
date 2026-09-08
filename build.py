@@ -34,7 +34,9 @@ FIELDS = [
     ("refute", "どうすれば覆るか"),
     ("found_by", "見つけたのは"),
     ("evidence", "証拠"),
-    ("date", "日付"),
+    ("occurred", "起きた"),
+    ("recorded", "書いた"),
+    ("basis", "記録の性質"),
 ]
 
 

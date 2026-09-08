@@ -14,6 +14,22 @@
 #
 # **id は永久に消さない。**過去のどの版にあった id も、いまの版に無ければ
 # check_register.py が落とす。都合の悪い記録は、消せない作りにしてある。
+#
+# 日付は二つある。混ぜない。
+#
+#   occurred  出来事が起きた時点。誤りが印字された日、撤回した改訂の月など
+#   recorded  この登録簿に書いた日。**git の履歴から検証している。**
+#             その id が register.toml に最初に現れたコミットの日付と
+#             一致しなければ check_register.py が落ちる。ここは詐称できない
+#
+# そして basis が、その記録が同時のものか、あとからの再構成かを述べる。
+#
+#   同時    出来事の時点で記録した（recorded − occurred が 1 日以内）
+#   再構成  あとから書き起こした。当時の記録ではない
+#
+# **26 件のうち 17 件は再構成である。**2025年10月から2026年8月までの
+# 出来事は、起きた時点では記録していない。道筋を主張するなら、
+# どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
 version = "0.1.0"
 owner = "根本卓哉 (Takuya Nemoto)"
@@ -32,7 +48,9 @@ problem = "‖DQ‖₂ < 1 は十分条件にすぎない。収束の必要十�
 correction = "ρ < 1 ≤ ‖DQ‖₂ の領域では収束するが誤差がいったん増える。Q = [[1,40],[0,1]]、a = (0.5,0.5) で ρ = 0.5、‖A‖₂ = 20.01、誤差は第 2 段で初期値の 11.8 倍"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-operator"
 found_by = "著者（実装し直したとき）"
-date = "2026-09-06"
+occurred = "2025-10"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "TI-002"
@@ -46,7 +64,9 @@ correction = "書き直したものを「これがそれです」と称して置
 why_unresolvable = "PDF は Zenodo で公開済みで、もう直せない。元のスクリプトが何を計算していたかは、もう誰にも分からない"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
 found_by = "著者（配布物の一覧を数えたとき）"
-date = "2026-09-06"
+occurred = "2025-10"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "TI-003"
@@ -58,7 +78,9 @@ problem = "謝辞だけではなかった。紙面を数え直すと 6 箇所あ
 correction = "表を 6 箇所に直し、件数そのものを検査の宣言に入れた。数え落としは以後そこで落ちる"
 evidence = "https://github.com/cpsbvbng26-dotcom/errata-check"
 found_by = "機械（errata-check を書いて紙面から数え直したとき）"
-date = "2026-09-07"
+occurred = "2026-09-06"
+recorded = "2026-09-07"
+basis = "同時"
 
 [[entry]]
 id = "TI-004"
@@ -72,7 +94,9 @@ correction = "正誤表に両方の DOI を明記し、正しいほうを README
 why_unresolvable = "PDF は公開済みで直せない"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
 found_by = "著者（三本の参考文献欄を突き合わせたとき）"
-date = "2026-09-05"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "TI-005"
@@ -85,7 +109,9 @@ correction = "正誤表に補うべき DOI を書いた"
 why_unresolvable = "PDF は公開済みで直せない"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
 found_by = "著者"
-date = "2026-09-05"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "TI-006"
@@ -98,7 +124,9 @@ problem = "五行の種別は同じではない。再発見が二つ（作用素
 refute = "五行のいずれかについて、既存の文献に無いことを示せば覆る。一件で覆る。挙げた出典は原典に到達して確認していないため、書誌事項の誤りの指摘も歓迎する"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity#新しい数学は含まれていません"
 found_by = "著者（名称を問い直したとき）"
-date = "2026-09-08"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
 
 
 # ============================================================ 撤回したもの
@@ -113,7 +141,9 @@ problem = "再現できるコードも乱数種も無い。数字の出どころ
 correction = "撤回した。改訂版では、同じ設定を実際に回すと 1000 回すべてが一段で収束する（100%）ことを示している"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
 found_by = "著者"
-date = "2026-08"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "WD-002"
@@ -125,7 +155,9 @@ problem = "三人・二戦略なら 2³ = 8 通りある。4 セルでは表現�
 correction = "撤回した"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
 found_by = "著者"
-date = "2026-08"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "WD-003"
@@ -137,7 +169,9 @@ problem = "対象は離散反復である。連続時間の道具をそのまま
 correction = "撤回した。離散の設定に合う議論（Stein 方程式による重み付きノルム）は別に書いた"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-operator"
 found_by = "著者"
-date = "2026-08"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "WD-004"
@@ -149,7 +183,9 @@ problem = "何も示されていない。接続の主張だけがあった"
 correction = "撤回した。改訂版では、類推であることを明示した記述だけを残している"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
 found_by = "著者"
-date = "2026-08"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 # ================================================== 自分の訂正のほうの誤り
 
@@ -163,7 +199,9 @@ problem = "ファイル名を強調するためにバッククォートを入れ
 correction = "表の引用から外し、原文のままにした。以後は機械が一字一句を突き合わせる"
 evidence = "https://github.com/cpsbvbng26-dotcom/errata-check"
 found_by = "機械（errata-check）"
-date = "2026-09-07"
+occurred = "2026-09-06"
+recorded = "2026-09-07"
+basis = "同時"
 
 [[entry]]
 id = "SC-002"
@@ -175,7 +213,9 @@ problem = "本文には 9月6日の著者確認が書いてある。見出しの
 correction = "日付を直し、最終更新が本文のどの日付よりも古くないことを検査に入れた"
 evidence = "https://github.com/cpsbvbng26-dotcom/errata-check"
 found_by = "機械（errata-check）"
-date = "2026-09-07"
+occurred = "2026-09-06"
+recorded = "2026-09-07"
+basis = "同時"
 
 [[entry]]
 id = "SC-004"
@@ -189,7 +229,9 @@ correction = "21 通りに揃え、名乗る数と実際の数を突き合わせ
 why_unresolvable = "v0.2.0 を出しても、v0.1.0 のレコードは残り、その説明文は誤ったままである。メタデータは技術的には編集できるが、Zenodo は公開後にファイルを差し替えられないため、説明だけ直すと置いてある v0.1.0 のファイルと食い違う。前の版は直さず、ずれのほうを記録する"
 evidence = "https://github.com/cpsbvbng26-dotcom/errata-check/blob/main/tests/check_tool.py"
 found_by = "著者（リリースの支度で数え直したとき）"
-date = "2026-09-07"
+occurred = "2026-09-07"
+recorded = "2026-09-07"
+basis = "同時"
 
 
 [[entry]]
@@ -202,7 +244,9 @@ problem = "書き込んだ時点では、この番号が何を指すかを誰も
 refute = "https://doi.org/10.5281/zenodo.22649899 を開き、表題が errata-check でなければ覆る。一件で覆る"
 evidence = "https://doi.org/10.5281/zenodo.22649899"
 found_by = "著者（帰属を問い直したとき）"
-date = "2026-09-07"
+occurred = "2026-09-07"
+recorded = "2026-09-07"
+basis = "同時"
 
 
 # ============================================================ サイトの記述
@@ -217,7 +261,9 @@ problem = "検査を足したのに文章の数字だけ古いまま残ってい
 correction = "数字を直し、本文が名乗る件数を、実際にスクリプトを走らせた結果と突き合わせる検査を入れた"
 evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/check_site.js"
 found_by = "著者（目視）— 検査は素通りしていた"
-date = "2026-09-07"
+occurred = "2026-09"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "WS-002"
@@ -229,7 +275,9 @@ problem = "手で書いていたので古くなった。2 ページぶんずれ�
 correction = "git の記録から入れ直す仕組みにし、古いままなら落ちる検査を入れた"
 evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/update_sitemap.js"
 found_by = "著者"
-date = "2026-09-07"
+occurred = "2026-09"
+recorded = "2026-09-07"
+basis = "再構成"
 
 # ============================================================ 哲学の三篇
 
@@ -245,7 +293,9 @@ correction = "正誤表に三篇の DOI を並べた。紙面に無いことは�
 why_unresolvable = "PDF は公開済みで直せない。表紙に一行あれば済んだことである"
 evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
 found_by = "機械（PDF から文字を取り出して探した）"
-date = "2026-09-07"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "PH-002"
@@ -258,7 +308,9 @@ correction = "正誤表に ORCID を書き、検査数字が合っているこ�
 why_unresolvable = "PDF は公開済みで直せない"
 evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
 found_by = "機械"
-date = "2026-09-07"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "PH-003"
@@ -272,7 +324,9 @@ correction = "改訂で何が変わったかの記録は、リポジトリの側
 why_unresolvable = "PDF は公開済みで直せない"
 evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
 found_by = "機械"
-date = "2026-09-07"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "PH-004"
@@ -285,7 +339,9 @@ problem = "2026-09-08 に著者が所在を確かめた。Academia.edu はある
 why_unresolvable = "紙面が誤っていたのではない。書かれたあとに頒布先の一つが無くなり、そのあと索引が勝手に作り直した。紙面は「頒布する」と述べており、いまそこにあるのは著者が置いたものではない。加えてこの状態は向こうの都合でいつでも変わる —— 二つが統合されるかもしれないし、消えるかもしれない。凍結された紙面は、行ったり来たりする事実に追随できない。TI-002 とは向きが違う（あちらは紙面の側の誤り）が、直せない点は同じである"
 evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
 found_by = "機械（未確認として検出）／著者（所在を確認）"
-date = "2026-09-08"
+occurred = "2026-09"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "PH-005"
@@ -296,7 +352,9 @@ claimed = "本文に (著者 年) の形で現れる引用は、すべて参考�
 support = "PDF から本文と参考文献欄を切り分け、機械で突き合わせた。三篇とも食い違いは出なかった"
 refute = "本文の (著者 年) 引用のうち、参考文献欄に対応の無いものを一つ出す"
 evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
-date = "2026-09-07"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "SC-003"
@@ -308,7 +366,9 @@ problem = "実際にはある。Nietzsche, Friedrich. The Will to Power. Transla
 correction = "窓を広げて解消した。紙面は正しく、検査のほうが誤っていた。その箇所は present = true として宣言に入れてあるので、同じ誤報を二度出せない"
 evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/verification/audit.toml"
 found_by = "著者（報告を見て紙面に当たった）"
-date = "2026-09-07"
+occurred = "2026-09-07"
+recorded = "2026-09-07"
+basis = "同時"
 
 # ============================================================ 史料ノート
 
@@ -324,7 +384,9 @@ correction = "正誤表に DOI と Knowledge Commons の所在を書いた"
 why_unresolvable = "PDF は公開済みで直せない"
 evidence = "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes/blob/main/ERRATA.md"
 found_by = "機械"
-date = "2026-09-07"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 [[entry]]
 id = "NG-002"
@@ -335,7 +397,9 @@ claimed = "紙面は JACAR が公開する画像に基づくと述べている�
 support = "転載には防衛省防衛研究所への確認が要るため置いていない。検査は、画像ファイルがリポジトリに混入していないことと、紙面に同梱を謳う文言が無いことの両方を見る"
 refute = "紙面に同梱・添付を謳う記述を一つ見つける。あるいはリポジトリに原資料の画像が置かれていることを示す"
 evidence = "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes/blob/main/ERRATA.md"
-date = "2026-09-07"
+occurred = "2026-08"
+recorded = "2026-09-07"
+basis = "再構成"
 
 # ============================================================ いま立っているもの
 
@@ -347,7 +411,9 @@ claimed = "公開された成果物は直せない。直せるのは訂正のほ
 support = "三篇の PDF に対して 51 項目。道具自身は 60 項目で、通る状態を 20 通りに壊して、壊した箇所がちょうど落ちることを確かめてある"
 refute = "この検査を通ったのに、実際には正誤表が一次資料とずれている例を一つ出す。あるいは、宣言どおりに壊しても落ちない検査を一つ示す"
 evidence = "https://doi.org/10.5281/zenodo.22649054"
-date = "2026-09-07"
+occurred = "2026-09-07"
+recorded = "2026-09-07"
+basis = "同時"
 
 [[entry]]
 id = "ST-002"
@@ -356,4 +422,6 @@ title = "この登録簿は、価値については何も言わない"
 claimed = "検証の量は、検証される中身の価値について何も言わない"
 problem = "この体系には、それを判定できる検査が存在しない。緑の数字がいくら増えても、「これは価値が無い」とは出ない。主張の水準では反証可能で、意義の水準では構造的に反証不可能である"
 why_open = "解き方が分かっていない。数を増やしても解けないことだけは分かっている"
-date = "2026-09-07"
+occurred = "2026-09-07"
+recorded = "2026-09-07"
+basis = "同時"

@@ -20,6 +20,7 @@ git の履歴から、これまでに一度でも登録簿に載った id をす
 標準ライブラリのみ。
 """
 
+import datetime
 import io
 import os
 import re
@@ -74,8 +75,62 @@ bad_status = [e["id"] for e in entries if e.get("status") not in STATUS]
 check("状態が決めた五つの中にある", not bad_status, ", ".join(bad_status))
 no_title = [e["id"] for e in entries if not e.get("title")]
 check("すべてに題がある", not no_title, ", ".join(no_title))
-no_date = [e["id"] for e in entries if not e.get("date")]
-check("すべてに日付がある", not no_date, ", ".join(no_date))
+for k in ("occurred", "recorded", "basis"):
+    missing = [e["id"] for e in entries if not e.get(k)]
+    check("すべてに %s がある" % k, not missing, ", ".join(missing))
+
+bad_basis = [e["id"] for e in entries if e.get("basis") not in ("同時", "再構成")]
+check("basis が「同時」か「再構成」である", not bad_basis, ", ".join(bad_basis))
+
+# ------------------------------------------------ 日付。ここは詐称できない
+section("1.5 日付が筋を通っているか")
+
+# recorded は「この登録簿に書いた日」である。自己申告にしておくと、
+# あとから遡って書いたものを同時記録に見せかけられる。だから git から取る。
+# その id が register.toml に最初に現れたコミットの日付と一致しなければ落とす。
+revs = subprocess.check_output(
+    ["git", "log", "--reverse", "--format=%H %cs", "--", "register.toml"],
+    cwd=ROOT, text=True).strip().split("\n")
+first_seen = {}
+for line in revs:
+    h, day = line.split()
+    blob = subprocess.check_output(["git", "show", "%s:register.toml" % h],
+                                   cwd=ROOT, text=True)
+    for i in re.findall(r'^id = "([A-Z]{2}-\d{3})"', blob, re.M):
+        first_seen.setdefault(i, day)
+
+wrong = []
+for e in entries:
+    seen = first_seen.get(e["id"])
+    if seen is None:
+        continue          # まだコミットしていない項目。次の commit で見る
+    if e.get("recorded") != seen:
+        wrong.append("%s: 名乗り %s / git %s" % (e["id"], e.get("recorded"), seen))
+check("recorded が git の履歴と合っている", not wrong, "; ".join(wrong))
+
+
+def as_day(v):
+    """2026-08 のような月までの値は、その月の 1 日として扱う。"""
+    parts = str(v).split("-")
+    while len(parts) < 3:
+        parts.append("01")
+    return datetime.date(int(parts[0]), int(parts[1]), int(parts[2]))
+
+
+backwards = [e["id"] for e in entries
+             if as_day(e["recorded"]) < as_day(e["occurred"])]
+check("起きるより前に書いたことになっていない", not backwards, ", ".join(backwards))
+
+# 「同時」を名乗れるのは、書いたのが出来事の翌日までのときだけ。
+# 逆向き（再構成を名乗ること）は制限しない。控えめに書く分には止めない。
+overclaim = [e["id"] for e in entries if e["basis"] == "同時"
+             and (as_day(e["recorded"]) - as_day(e["occurred"])).days > 1]
+check("「同時」と名乗れるのは 1 日以内のものだけ", not overclaim, ", ".join(overclaim))
+
+n_recon = sum(1 for e in entries if e["basis"] == "再構成")
+check("再構成の件数を数えている", True,
+      "%d 件が再構成、%d 件が同時" % (n_recon, len(entries) - n_recon))
+
 
 # -------------------------------------------------- 状態ごとに要る欄
 section("2. 状態ごとに、要るものが書いてあるか")
