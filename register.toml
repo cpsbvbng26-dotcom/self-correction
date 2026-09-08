@@ -35,7 +35,7 @@
 # **重い項目ほど証言の側にある。**初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じである（ST-003）。
 #
-# **42 件のうち 25 件は再構成である。**2025年10月から2026年8月までの
+# **44 件のうち 25 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -682,14 +682,44 @@ verifiable = "紙面"
 
 [[entry]]
 id = "EX-002"
+status = "standing"
+title = "バナッハの欠落は、外部が独立に到達した指摘である"
+where = "trinity-infinity/ERRATA.md の E6、cpsbvbng26-dotcom/docs/external-evaluations.md"
+claimed = "E6（バナッハの不動点定理が三本のどの参考文献欄にも無い）は、著者側が先に記録し、そのあと外部の査読が正誤表を渡されずに同じ結論に達した"
+support = "外部へ渡したのは PDF だけである。ERRATA.md も ROUTE.md も登録簿も渡していない。査読は `The paper does not cite the Banach fixed-point theorem or standard texts on contractions/affine maps` と述べた。E6 を記録したコミットの日付は git から取れる。**この指摘は、著者の言葉以外に根拠がある側へ移った**"
+refute = "査読の側が ERRATA.md を参照できたことを示す。あるいは E6 のコミットが査読の受領より後だと示す。あるいは、三本の参考文献欄のどこかに Banach の項目があると示す（一件で覆る）"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "Stanford Agentic Reviewer（paperreview.ai）"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
+verifiable = "証言"
+
+[[entry]]
+id = "EX-003"
 status = "corrected"
-title = "外部の査読が、こちらの記録を独立に当てた —— そして二件を見落とした"
-where = "cpsbvbng26-dotcom/docs/external-evaluations.md、trinity-infinity/ERRATA.md"
-claimed = "紙面だけを渡した外部の査読が、正誤表を渡されずに同じ結論に達した"
-problem = "**当てた** —— 「バナッハの不動点定理が参考文献欄に無い」（E6。こちらが同日に先に記録し、そのあと外部が独立に到達）と、Series III の記号の崩れ（N5）。**新しく出した** —— 「exact for n=2,3」の書き方、異方性版が一般の n で定義されていないこと、ノルムの未特定（N6・N7 として記録し、片方は claims_audit.py に入れた）。**外した** —— E3（存在しないスクリプトを再現性の強みとして数えた）と E1（参考文献の DOI が初版を指していること。参考文献欄だけで確かめられる）。さらに isometry error の 0 を丸めだと疑ったが、**置換行列の成分は 0 と 1 だけなのでここは厳密**であり、指摘が外れている"
-correction = "指摘を一つずつ当たり、当たったものは ERRATA の N6・N7 に、外れたものは「外したもの」として同じ表に記録した。**評点は記録しない** —— 覆せないものは材料にならない（ST-002）"
+title = "外部の査読の指摘から、N6 と N7 を記録した"
+where = "trinity-infinity/ERRATA.md の N6・N7、verification/claims_audit.py"
+claimed = "Series III 表1の `exact for n=2,3`、異方性版が一般の n で定義されていないこと、定理1のノルムが特定されていないこと"
+problem = "`exact` の件は、指摘の理由のほうが外れていた —— 「浮動小数点だから 0 にならないはず」ではない。**固定した乱数種では本当に 0 になる。**別の基準点では n=2 で 5.551e-17 が出る。本当の問題は、同じ表の中で厳密な 0（isometry error。置換行列の成分は 0 と 1 だけ）と丸めの 0（不動点への偏差）が書き分けられていないことである"
+correction = "N6 と N7 に記録した。N6 は claims_audit.py に入れた —— **上の表の乱数種は動かさず、別の種でもう一度だけ引く**（32 項目）。異方性版の一般形 f(T) = D Pₙ(T) + (I − D)p が三本のどこにも無いこと、Series I が Euclidean norm と明記して Series III が `‖·‖` としか書かないことも N7 に入れた"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/verification/claims_audit.py"
+found_by = "Stanford Agentic Reviewer（paperreview.ai）"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
+id = "EX-004"
+status = "standing"
+title = "紙面だけを読む査読は、同梱物の不在を見抜けない"
+where = "cpsbvbng26-dotcom/docs/external-evaluations.md"
+claimed = "外部の査読は E3（同梱を謳う検証スクリプトが存在しない）を見抜けず、存在しないスクリプトを再現性の強みとして数えた"
+support = "査読は `The script availability claim (series3_verification.py) supports reproducibility` と述べた。**そのスクリプトは存在しない。**配布物にも著者の手元にも残っていない（E3）。紙面には「同梱している」と印字されているので、**紙面だけを読む限り確かめようがない。**加えて E1（参考文献の DOI が初版を指している）も見落とした —— こちらは参考文献欄だけで確かめられる。さらに isometry error の 0 を丸めだと疑ったが、ここは厳密であり指摘が外れている"
+refute = "紙面だけを入力とする査読が、E3 または E1 を独立に指摘した例を一つ出す。E1 は参考文献欄の中で完結しているので、これは十分ありうる"
 evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/external-evaluations.md"
-found_by = "Stanford Agentic Reviewer（paperreview.ai）と、こちらの照合"
+found_by = "こちらの照合"
 occurred = "2026-09-08"
 recorded = "2026-09-08"
 basis = "同時"
