@@ -35,7 +35,7 @@
 # **重い項目ほど証言の側にある。**初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じである（ST-003）。
 #
-# **33 件のうち 22 件は再構成である。**2025年10月から2026年8月までの
+# **35 件のうち 22 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -551,6 +551,37 @@ basis = "再構成"
 verifiable = "紙面"
 
 
+[[entry]]
+id = "SC-007"
+status = "corrected"
+title = "文体を「である調」に揃えたとき、五段活用を 20 箇所壊した"
+where = "六つのリポジトリの散文（trinity-infinity・cpsbvbng26-dotcom・errata-check・justice-and-algorithms・naval-gazette-notes・autonomy-and-self-cultivation）"
+claimed = "「載りた」「使いない」「ありなかった」「拾いた」「分かりた」「行いた」「言いない」「置きたが」「書きた」「なりた」「残りた」"
+problem = "「ですます」から「である」への書き換えを、連用形に「た」「ない」をそのまま繋ぐ形で行った箇所が残っていた。五段活用では音便が要る。日本語として成立しないが、漢字は正しいので目視では通り抜ける。壊れた場所には「言語モデル（ChatGPT / OpenAI）が行いた」「三篇とも食い違いはありなかった」のように、開示と照合結果を述べる重い一文が含まれていた"
+correction = "20 箇所を一つずつ直した。推測で活用を作らず、実際に混入した形だけを表に持つ検査（check_text の CONJUGATION）を七つのリポジトリに入れ、七つとも発火することを確かめた"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/check_text.js"
+found_by = "ChatGPT（利用者経由で trinity-infinity の監査を依頼され、その走査中に発見）"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
+id = "SC-008"
+status = "corrected"
+title = "検証の README が名乗る件数が、実際より 25 件少なかった"
+where = "trinity-infinity/README.md、trinity-infinity/verification/README.md、CI の job 名、この登録簿の ST-001、self-correction/README.md"
+claimed = "check_errata.py # 51 項目 / 44 項目すべてが通ると、それぞれ終了コード 0 を返します"
+problem = "check_errata.py の中身は 60 項目まで増えていたのに、散文は 51 のまま残っていた。件数を機械で確かめる仕組みは audit.toml にあるのに、この二つの数だけ宣言から漏れていた。**このリポジトリ群が検出するために存在している種類のずれが、検証の README 自身にあった。**さらに verification/README.md だけが「ですます調」のまま残り、四本あるスクリプトを「二本」と書いていた"
+correction = "実測に合わせて 76 に直し、README・verification/README・CI の job 名の五箇所すべてを check_errata.py 自身が突き合わせるようにした。check_route.py と実行例の件数も audit.toml の [[number]] に宣言した。verification/README.md は である調に書き直し、四本すべてを載せた"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/verification/audit.toml"
+found_by = "ChatGPT（利用者経由で trinity-infinity の監査を依頼され、その走査中に発見）"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
+verifiable = "紙面"
+
+
 # ============================================================ いま立っているもの
 
 [[entry]]
@@ -558,7 +589,7 @@ id = "ST-001"
 status = "standing"
 title = "凍結された公開物に対する、決定的な自己監査"
 claimed = "公開された成果物は直せない。直せるのは訂正のほうで、だから訂正は時間とともに元の資料からずれていく。そのずれは、推論を使わずに機械で落とせる"
-support = "三篇の PDF に対して 51 項目。道具自身は 60 項目で、通る状態を 20 通りに壊して、壊した箇所がちょうど落ちることを確かめてある"
+support = "三篇の PDF に対して 76 項目。道具自身は 68 項目で、通る状態を 26 通りに壊して、壊した箇所がちょうど落ちることを確かめてある"
 refute = "この検査を通ったのに、実際には正誤表が一次資料とずれている例を一つ出す。あるいは、宣言どおりに壊しても落ちない検査を一つ示す"
 evidence = "https://doi.org/10.5281/zenodo.22649054"
 occurred = "2026-09-07"
