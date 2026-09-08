@@ -8,17 +8,17 @@ python3 build.py                          # register.toml → REGISTER.md
 python3 verification/check_register.py    # 31 項目
 ```
 
-いま **33 件**。内訳は [REGISTER.md](REGISTER.md) にある。
+いま **35 件**。内訳は [REGISTER.md](REGISTER.md) にある。
 
 | 状態 | 件数 |
 | --- | --- |
 | いま立っている | 5 |
 | 未解決 | 2 |
 | **直せない** | 14 |
-| 直した | 8 |
+| 直した | 10 |
 | 撤回した | 4 |
 
-33 件のうち 22 件は、あとからの再構成である。同時に記録したものは 11 件しかない。
+35 件のうち 22 件は、あとからの再構成である。同時に記録したものは 13 件しかない。
 
 日付を二つ持っている。
 
@@ -236,7 +236,7 @@ python3 verification/check_register.py    # 31 項目
 引用が一次資料に一字一句あるかどうかは、**その資料を持っているリポジトリの側**で
 検査する。ここがやるのは、登録簿の**形と履歴**である。
 
-- Trinity-Infinity の三篇 → [trinity-infinity](https://github.com/cpsbvbng26-dotcom/trinity-infinity)（51 項目）
+- Trinity-Infinity の三篇 → [trinity-infinity](https://github.com/cpsbvbng26-dotcom/trinity-infinity)（76 項目）
 - 哲学の三篇 → [autonomy-and-self-cultivation](https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation)（50 項目）
 - 海軍公報の史料ノート → [naval-gazette-notes](https://github.com/cpsbvbng26-dotcom/naval-gazette-notes)（31 項目）
 - その検査の道具 → [errata-check](https://github.com/cpsbvbng26-dotcom/errata-check)（[10.5281/zenodo.22649899](https://doi.org/10.5281/zenodo.22649899)）
@@ -246,7 +246,7 @@ python3 verification/check_register.py    # 31 項目
 
 ## この登録簿が言わないこと
 
-**検証の量は、検証される中身の価値について何も言いない。**
+**検証の量は、検証される中身の価値について何も言わない。**
 
 この体系には、それを判定できる検査が存在しない。件数がいくら増えても、
 「この仕事には価値が無い」とは出ない。**主張の水準では反証可能で、意義の水準では
