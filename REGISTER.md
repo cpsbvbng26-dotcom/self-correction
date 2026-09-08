@@ -13,8 +13,8 @@
 | 状態 | 件数 | 意味 |
 | --- | --- | --- |
 | **いま立っている** | 4 | この主張は取り下げていない。反証の手順を添えてある |
-| **未解決** | 2 | まだ判断がついていない |
-| **直せない** | 8 | 凍結された成果物の側に誤りがある。もう直せない |
+| **未解決** | 1 | まだ判断がついていない |
+| **直せない** | 9 | 凍結された成果物の側に誤りがある。もう直せない |
 | **直した** | 7 | 誤りが見つかり、直したもの。元の記述は消していない |
 | **撤回した** | 4 | 取り下げたもの。元の記述は消していない |
 | | **25** | |
@@ -63,20 +63,9 @@
 
 ---
 
-## 未解決（2 件）
+## 未解決（1 件）
 
 まだ判断がついていない。
-
-### PH-004 —— 表紙が挙げる頒布先のうち、二つが未確認
-
-- **どこ** —— Manifesto of Imperial Selfhood（Revised and Expanded Edition）
-- **DOI** —— [10.5281/zenodo.22057583](https://doi.org/10.5281/zenodo.22057583)
-- **述べていたこと** —— Prepared for open-access distribution via Zenodo, Academia.edu, and ResearchGate.
-- **何が問題か** —— 確認できている所在は Zenodo・SSRN・PhilArchive の三つで、紙面が挙げる Academia.edu と ResearchGate は記録に入っていない
-- **なぜ未解決か** —— 実際に置かれていないのか、置かれているが記録していないだけなのかを、まだ確かめていない。Trinity-Infinity の TI-002（同梱を謳ったスクリプトが存在しない）と同じ形なので、確かめずに閉じない
-- **見つけたのは** —— 機械
-- **証拠** —— <https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md>
-- **日付** —— 2026-09-07
 
 ### ST-002 —— この登録簿は、価値については何も言わない
 
@@ -87,7 +76,7 @@
 
 ---
 
-## 直せない（8 件）
+## 直せない（9 件）
 
 凍結された成果物の側に誤りがある。もう直せない。
 
@@ -172,6 +161,17 @@
 - **見つけたのは** —— 機械
 - **証拠** —— <https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md>
 - **日付** —— 2026-09-07
+
+### PH-004 —— 表紙が挙げる頒布先のうち、一つが現在は無い
+
+- **どこ** —— Manifesto of Imperial Selfhood（Revised and Expanded Edition）
+- **DOI** —— [10.5281/zenodo.22057583](https://doi.org/10.5281/zenodo.22057583)
+- **述べていたこと** —— Prepared for open-access distribution via Zenodo, Academia.edu, and ResearchGate.
+- **何が問題か** —— 2026-09-08 に著者が所在を確かめた。Academia.edu はある（https://independent.academia.edu/NemotoTakuya）。ResearchGate は無い —— 著者が頁を削除し、索引からの自動生成を待っている状態である。表紙の記述は、この時点で事実と一致していない
+- **なぜ直せないか** —— 紙面が誤っていたのではない。書かれたあとに頒布先の一つが無くなった。凍結された紙面は、あとから世界が変わったことに追随できない。ResearchGate の頁が自動生成されれば記述はふたたび一致するが、一致したりしなかったりする記述を紙面の側で直す手段は無い。TI-002 とは向きが違う（あちらは紙面の側の誤り）が、直せない点は同じである
+- **見つけたのは** —— 機械（未確認として検出）／著者（所在を確認）
+- **証拠** —— <https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md>
+- **日付** —— 2026-09-08
 
 ### NG-001 —— 自身の DOI を印字していない
 

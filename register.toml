@@ -262,16 +262,16 @@ date = "2026-09-07"
 
 [[entry]]
 id = "PH-004"
-status = "open"
-title = "表紙が挙げる頒布先のうち、二つが未確認"
+status = "unresolvable"
+title = "表紙が挙げる頒布先のうち、一つが現在は無い"
 where = "Manifesto of Imperial Selfhood（Revised and Expanded Edition）"
 doi = "10.5281/zenodo.22057583"
 claimed = "Prepared for open-access distribution via Zenodo, Academia.edu, and ResearchGate."
-problem = "確認できている所在は Zenodo・SSRN・PhilArchive の三つで、紙面が挙げる Academia.edu と ResearchGate は記録に入っていない"
-why_open = "実際に置かれていないのか、置かれているが記録していないだけなのかを、まだ確かめていない。Trinity-Infinity の TI-002（同梱を謳ったスクリプトが存在しない）と同じ形なので、確かめずに閉じない"
+problem = "2026-09-08 に著者が所在を確かめた。Academia.edu はある（https://independent.academia.edu/NemotoTakuya）。ResearchGate は無い —— 著者が頁を削除し、索引からの自動生成を待っている状態である。表紙の記述は、この時点で事実と一致していない"
+why_unresolvable = "紙面が誤っていたのではない。書かれたあとに頒布先の一つが無くなった。凍結された紙面は、あとから世界が変わったことに追随できない。ResearchGate の頁が自動生成されれば記述はふたたび一致するが、一致したりしなかったりする記述を紙面の側で直す手段は無い。TI-002 とは向きが違う（あちらは紙面の側の誤り）が、直せない点は同じである"
 evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
-found_by = "機械"
-date = "2026-09-07"
+found_by = "機械（未確認として検出）／著者（所在を確認）"
+date = "2026-09-08"
 
 [[entry]]
 id = "PH-005"
