@@ -8,17 +8,17 @@ python3 build.py                          # register.toml → REGISTER.md
 python3 verification/check_register.py    # 31 項目
 ```
 
-いま **37 件**。内訳は [REGISTER.md](REGISTER.md) にある。
+いま **41 件**。内訳は [REGISTER.md](REGISTER.md) にある。
 
 | 状態 | 件数 |
 | --- | --- |
 | いま立っている | 5 |
-| 未解決 | 3 |
-| **直せない** | 14 |
+| 未解決 | 4 |
+| **直せない** | 17 |
 | 直した | 11 |
 | 撤回した | 4 |
 
-37 件のうち 22 件は、あとからの再構成である。同時に記録したものは 15 件しかない。
+41 件のうち 25 件は、あとからの再構成である。同時に記録したものは 16 件しかない。
 
 日付を二つ持っている。
 
@@ -236,7 +236,7 @@ python3 verification/check_register.py    # 31 項目
 引用が一次資料に一字一句あるかどうかは、**その資料を持っているリポジトリの側**で
 検査する。ここがやるのは、登録簿の**形と履歴**である。
 
-- Trinity-Infinity の三篇 → [trinity-infinity](https://github.com/cpsbvbng26-dotcom/trinity-infinity)（77 項目）
+- Trinity-Infinity の三篇 → [trinity-infinity](https://github.com/cpsbvbng26-dotcom/trinity-infinity)（78 項目）
 - 哲学の三篇 → [autonomy-and-self-cultivation](https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation)（50 項目）
 - 海軍公報の史料ノート → [naval-gazette-notes](https://github.com/cpsbvbng26-dotcom/naval-gazette-notes)（31 項目）
 - その検査の道具 → [errata-check](https://github.com/cpsbvbng26-dotcom/errata-check)（[10.5281/zenodo.22649899](https://doi.org/10.5281/zenodo.22649899)）

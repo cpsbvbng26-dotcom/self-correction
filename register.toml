@@ -35,7 +35,7 @@
 # **重い項目ほど証言の側にある。**初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じである（ST-003）。
 #
-# **37 件のうち 22 件は再構成である。**2025年10月から2026年8月までの
+# **41 件のうち 25 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -592,6 +592,70 @@ problem = "DOI から来る読者は英語で読む。その読者に、引く�
 correction = "README の冒頭に英語の欄を置き、引くべき三本の DOI・旧版が superseded であること・査読を受けていないこと・初稿が ChatGPT の生成で AI は著者ではないこと・検証の走らせ方を述べた。日本語側とずれないよう、この欄が三本の DOI と旧版の扱いを述べていることを check_errata.py が当たる。「撤回」の節にも、出版上の retraction ではないと明記した"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity#trinity-infinity"
 found_by = "ChatGPT（利用者経由で、永久無料での維持を条件とした監査を依頼された）"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
+verifiable = "紙面"
+
+
+[[entry]]
+id = "TI-008"
+status = "unresolvable"
+title = "grim trigger の閾値を、Fudenberg & Maskin に帰していた"
+where = "Trinity-Infinity Series I 第3節、および参考文献"
+doi = "10.5281/zenodo.22058624"
+claimed = "This is a direct, closed-form application of the folk theorem for repeated games [Fudenberg & Maskin, 1986] ... only computing its threshold exactly for this triadic instance"
+problem = "第3節がやっているのは、grim trigger を固定して一回逸脱の誘因制約が binding になる δ を閉形式で出すことである。ナッシュ復帰型スーパーゲームの標準論法で、出所は Friedman (1971) である。Fudenberg & Maskin (1986) が示したのは、割引つきで次元条件のもとに実現可能かつ個人合理的な利得集合の全体が δ → 1 で支持されるという特徴づけであり、**特定の戦略に対する閾値を定義していない**。印字されている「its threshold」の its が指すものが、その文献には存在しない"
+why_unresolvable = "凍結された PDF である。Series II 第4節での同じ文献の引用は正しい —— そちらは利得集合の特徴づけそのものを使っている。**同じ文献が、一方では正しく、一方では誤って引かれている**"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "Claude Code（利用者の依頼で、三本を通しで読み直したとき）"
+occurred = "2026-08"
+recorded = "2026-09-08"
+basis = "再構成"
+verifiable = "紙面"
+
+[[entry]]
+id = "TI-009"
+status = "unresolvable"
+title = "バナッハの不動点定理が、三本のどの参考文献欄にも無い"
+where = "Trinity-Infinity Series I・II・III の参考文献欄"
+doi = "10.5281/zenodo.22058624"
+claimed = "the Banach fixed-point theorem gives existence, uniqueness, and the stated convergence rate"
+problem = "三本すべてが、定理の証明の中でバナッハの不動点定理を名指しで使っている。**三本すべての参考文献欄に、その項目が無い。**Series I は Euler 1735 も本文にのみ年号を置いて欄に項目が無い。**この系列の方法は「証明したものと借りたものを区別する」である。その借りたほうの主軸が、三本とも欄に現れていない**"
+why_unresolvable = "凍結された PDF である。README の出典 11 件がこの穴を後から埋めているが、紙面は埋まらない。**数え上げるだけなので機械で当たっている** —— 本文が Banach を名指しし、参考文献欄に無いことを、PDF から取り出して確かめる（check_errata.py）"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/verification/check_errata.py"
+found_by = "Claude Code（利用者の依頼で、三本を通しで読み直したとき）"
+occurred = "2026-08"
+recorded = "2026-09-08"
+basis = "再構成"
+verifiable = "紙面"
+
+[[entry]]
+id = "TI-010"
+status = "unresolvable"
+title = "挙げた例が、その二文前に置いた条件を満たしていない"
+where = "Trinity-Infinity Series II 第4節"
+doi = "10.5281/zenodo.22058777"
+claimed = "every payoff profile in this hull with all three coordinates strictly above 2 is sustainable ... profiles such as (2,4,2) ... are also eventually sustainable"
+problem = "(2,4,2) は第1座標と第3座標が 2 に等しく、「strictly above 2」を満たしていない。**自分が二文前に置いた条件の外にある点を、その条件が保証する例として挙げている。**ミニマックス利得が 2 であることは同じ節が正しく導いている"
+why_unresolvable = "凍結された PDF である。主張の中身は動かない —— 八点の凸包・体積 4.00・すべてが端点であることは claims_audit.py で確認済みである。条件も例も、単独では正しい。**組み合わせが成り立っていない**"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "Claude Code（利用者の依頼で、三本を通しで読み直したとき）"
+occurred = "2026-08"
+recorded = "2026-09-08"
+basis = "再構成"
+verifiable = "紙面"
+
+[[entry]]
+id = "TI-011"
+status = "open"
+title = "組版された頁を見ずに、抽出した文字列だけで読んでいる"
+where = "Trinity-Infinity 三本の PDF"
+claimed = "紙面に印字されていることは、PDF から文字を取り出して突き合わせている"
+problem = "突き合わせているのは**抽出したテキスト**であって、組版された頁ではない。作業環境に PDF を画像へ起こす道具が無い。上付き・下付きが抽出時に落ちることは既に起きている。Series III 第3.2節を取り出すと `Pn ≠ Pn−1` と出るが、文脈からは `Pₙ ≠ Pₙ⁻¹`（自己逆でない）を意味しているはずで、そのままでは意味を成さない。**これが紙面の誤植なのか抽出の崩れなのかを、区別できていない**"
+why_open = "解き方が無いわけではない —— 頁を画像にして読めばよい。**していないだけである。**そのため、この系列の検査が「紙面と一致する」と言うとき、それは厳密には「抽出したテキストと一致する」である。差が出うる箇所を一つ見つけたので、未解決として立てる"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "Claude Code（利用者の依頼で、三本を通しで読み直したとき）"
 occurred = "2026-09-08"
 recorded = "2026-09-08"
 basis = "同時"
