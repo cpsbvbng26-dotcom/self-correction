@@ -41,7 +41,7 @@
 # **重い項目ほど証言の側にある。**初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じである（ST-003）。
 #
-# **50 件のうち 28 件は再構成である。**2025年10月から2026年8月までの
+# **51 件のうち 28 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -825,6 +825,22 @@ support = "**開示文の中の `No data, quotations, or sources were fabricated
 refute = "紙面だけを入力とする査読が、この断言の循環を独立に指摘した例を一つ出す"
 evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
 found_by = "こちらの照合"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
+verifiable = "紙面"
+
+
+[[entry]]
+id = "WS-003"
+status = "open"
+title = "横断検査の視界の外に、同じ家紋の曲輪が一つある"
+where = "cs50-final-project（GitHub の公開リポジトリ）"
+claimed = "九つのリポジトリを横断して、散文が名乗る数と実際の数を突き合わせている"
+problem = "**九つである。**同じアカウントに公開されている `cs50-final-project` は、その九つに入っていない。中身は次のとおりである —— README が `cat << 'EOF' > README.md` で始まり、草稿が二本まるごと連結されている。存在しないファイルを五つ列挙している（`app.py` `templates/` `static/` `requirements.txt`）。実在するのは `doi_visualizer.html` 一本である。**そこに旧 DOI `10.5281/zenodo.17173703` が、札なしで載っている** —— アカウント内で、この番号が「初版」「訂正の対象」と書かれていない唯一の箇所である。LICENSE も CITATION.cff も AI 開示も無い。**外から見れば同じ家紋が立っている**"
+why_open = "**同じ形の欠陥が本丸にもある。**`trinity-infinity` の E3 は「三本の論文が同梱を謳う検証スクリプトが存在しない、六箇所」を未解決として記録している。**cs50 は同じことを、直せるのに直していない。**処理の仕方が三つあり、どれを選ぶかが決まっていない —— README を実態に合わせる / リポジトリを Archive して「CS50 の提出物であり研究成果ではない」と一行置く / 望楼の視界に入れて他と同じ検査に掛ける。**CS50 の提出物には独自の規約があるため、勝手に書き換えていない**"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/ecosystem.json"
+found_by = "Claude Code（アカウント横断の監査を依頼されたとき）"
 occurred = "2026-09-08"
 recorded = "2026-09-08"
 basis = "同時"
