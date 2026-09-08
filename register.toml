@@ -27,7 +27,7 @@
 #   同時    出来事の時点で記録した（recorded − occurred が 1 日以内）
 #   再構成  あとから書き起こした。当時の記録ではない
 #
-# **28 件のうち 19 件は再構成である。**2025年10月から2026年8月までの
+# **30 件のうち 21 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -127,6 +127,22 @@ found_by = "著者（名称を問い直したとき）"
 occurred = "2026-09-08"
 recorded = "2026-09-08"
 basis = "同時"
+
+
+[[entry]]
+id = "TI-007"
+status = "unresolvable"
+title = "初稿の出所が、三本のどこにも書かれていない"
+where = "Trinity-Infinity Series I–III"
+doi = "10.5281/zenodo.22058624"
+claimed = "This revision was prepared with drafting and mathematical-formalization assistance from Claude (Anthropic)"
+problem = "著者が持っていたのは記号 Ⅲ∞ までである。その記号に数式を当てはめたのは言語モデル（ChatGPT / OpenAI）で、その出力が 2025年10月の初版になった。三本の開示文は改訂についての記述で、初稿がどう作られたかはどこにも書かれておらず、OpenAI も ChatGPT も一度も現れない。この系列の中心にある作用素 x ← DQx + (I − D)p が言語モデルの出力であるという事実は、「改訂の起草を手伝った」とは別の重さを持つ。撤回された内容の説明にもなる —— 再現できるコードのない「98.7%」、ゲーム理論から気候政策まで広がる適用範囲、読むとおりには通らない証明は、いずれも生成された文章に特徴的な形である"
+why_unresolvable = "PDF は Zenodo で公開済みで、もう直せない。不実記載ではなく欠落である。なお規則違反ではない —— 自己登録のプレプリントで、当時、開示義務は存在しなかった。この項目により、TI-006 の「再発見」は「独立して到達した」という意味では当てはまらないことになる。当てはまるのは「言語モデルが標準的な構成を出力し、それが新規の枠組みとして公開された」という形である"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRATA.md"
+found_by = "著者（AI の関与を洗い直したとき）"
+occurred = "2025-10"
+recorded = "2026-09-08"
+basis = "再構成"
 
 
 # ============================================================ 撤回したもの
@@ -432,6 +448,22 @@ evidence = "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes/blob/main/E
 occurred = "2026-08"
 recorded = "2026-09-07"
 basis = "再構成"
+
+[[entry]]
+id = "NG-003"
+status = "unresolvable"
+title = "英訳が AI によるものであることを書いていない"
+where = "海軍公報の史料ノート"
+doi = "10.5281/zenodo.22055709"
+claimed = "Claude, a large language model developed by Anthropic, was used in planning the structure of this note and in editing its prose."
+problem = "史料に書かれている内容の英訳は言語モデル（ChatGPT / OpenAI）が行った。開示文は Claude による構成の立案と散文の編集しか述べておらず、editing its prose は言語の変換を含意しない。読者は「著者が英語で書いたものを AI が整えた」と受け取る"
+why_unresolvable = "PDF は公開済みで直せない。ただし範囲は狭い —— 翻訳させたのは史料に書かれていることだけで、解釈も補足も文献の割り当ても含まない。この一式の中で最も範囲の狭い AI の使用である。史料の選択・翻刻の検証・論旨の判断が著者の仕事であることは開示文のとおり正しい。規則違反ではない。当時、開示義務は存在しなかった"
+evidence = "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes/blob/main/ERRATA.md"
+found_by = "著者（AI の関与を洗い直したとき）"
+occurred = "2026-08"
+recorded = "2026-09-08"
+basis = "再構成"
+
 
 # ============================================================ いま立っているもの
 
