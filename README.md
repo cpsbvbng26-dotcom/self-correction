@@ -8,17 +8,17 @@ python3 build.py                          # register.toml → REGISTER.md
 python3 verification/check_register.py    # 31 項目
 ```
 
-いま **36 件**。内訳は [REGISTER.md](REGISTER.md) にある。
+いま **37 件**。内訳は [REGISTER.md](REGISTER.md) にある。
 
 | 状態 | 件数 |
 | --- | --- |
 | いま立っている | 5 |
-| 未解決 | 2 |
+| 未解決 | 3 |
 | **直せない** | 14 |
 | 直した | 11 |
 | 撤回した | 4 |
 
-36 件のうち 22 件は、あとからの再構成である。同時に記録したものは 14 件しかない。
+37 件のうち 22 件は、あとからの再構成である。同時に記録したものは 15 件しかない。
 
 日付を二つ持っている。
 
