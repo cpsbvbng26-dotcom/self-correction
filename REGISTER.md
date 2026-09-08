@@ -167,8 +167,8 @@
 - **どこ** —— Manifesto of Imperial Selfhood（Revised and Expanded Edition）
 - **DOI** —— [10.5281/zenodo.22057583](https://doi.org/10.5281/zenodo.22057583)
 - **述べていたこと** —— Prepared for open-access distribution via Zenodo, Academia.edu, and ResearchGate.
-- **何が問題か** —— 2026-09-08 に著者が所在を確かめた。Academia.edu はある（https://independent.academia.edu/NemotoTakuya）。ResearchGate は無い —— 著者が頁を削除し、索引からの自動生成を待っている状態である。表紙の記述は、この時点で事実と一致していない
-- **なぜ直せないか** —— 紙面が誤っていたのではない。書かれたあとに頒布先の一つが無くなった。凍結された紙面は、あとから世界が変わったことに追随できない。ResearchGate の頁が自動生成されれば記述はふたたび一致するが、一致したりしなかったりする記述を紙面の側で直す手段は無い。TI-002 とは向きが違う（あちらは紙面の側の誤り）が、直せない点は同じである
+- **何が問題か** —— 2026-09-08 に著者が所在を確かめた。Academia.edu はある（https://independent.academia.edu/NemotoTakuya）。ResearchGate に著者が置いたものは無い。削除したあとに ResearchGate が SSRN の記録から自動生成した頁が二つあるが、同一人物が論文ごとに別人として登録されている（scientific-contributions/Takuya-Nemoto-2367530856 と -2367530944）。索引の側の名寄せの失敗である
+- **なぜ直せないか** —— 紙面が誤っていたのではない。書かれたあとに頒布先の一つが無くなり、そのあと索引が勝手に作り直した。紙面は「頒布する」と述べており、いまそこにあるのは著者が置いたものではない。加えてこの状態は向こうの都合でいつでも変わる —— 二つが統合されるかもしれないし、消えるかもしれない。凍結された紙面は、行ったり来たりする事実に追随できない。TI-002 とは向きが違う（あちらは紙面の側の誤り）が、直せない点は同じである
 - **見つけたのは** —— 機械（未確認として検出）／著者（所在を確認）
 - **証拠** —— <https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md>
 - **日付** —— 2026-09-08
