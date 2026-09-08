@@ -27,7 +27,7 @@
 #   同時    出来事の時点で記録した（recorded − occurred が 1 日以内）
 #   再構成  あとから書き起こした。当時の記録ではない
 #
-# **26 件のうち 17 件は再構成である。**2025年10月から2026年8月までの
+# **27 件のうち 18 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -369,6 +369,22 @@ found_by = "著者（報告を見て紙面に当たった）"
 occurred = "2026-09-07"
 recorded = "2026-09-07"
 basis = "同時"
+
+[[entry]]
+id = "PH-006"
+status = "unresolvable"
+title = "三篇とも、英訳が AI によるものであることを書いていない"
+where = "哲学の三篇（断章論・独身論・Manifesto）"
+doi = "10.5281/zenodo.22058254"
+claimed = "expanding the author’s original conceptual outline into full prose / expand and copyedit the prose of the original manuscript / expand the exposition of each philosophical source"
+problem = "原稿は三本とも日本語で書かれており、公開されている英文は AI による翻訳である。三篇の開示文は AI に何をさせたかを列挙しているが、そこに翻訳が無い。expand（展開する）は言語が変換されたことを含意しないため、読者は「AI が構想メモを英語の散文に展開した」までは読み取れても、「別の言語から移された」ことは読み取れない。翻訳に用いた道具も、記録が残っておらず著者の記憶でも特定できない（三篇とも Claude だけを挙げている）"
+why_unresolvable = "PDF は Zenodo で公開済みで、もう直せない。直せるのは正誤表のほうである。なお規則違反ではない —— 三篇はいずれも自己登録のプレプリントで、出版社も投稿規程も審査も契約も無く、当時、開示義務は存在しなかった。規範そのものは 2023 年前半から存在していたが、それらは投稿する論文に掛かるものである。これは違反の記録ではなく、記載の欠落の記録である"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
+found_by = "著者（AI の関与を洗い直したとき）"
+occurred = "2026-08"
+recorded = "2026-09-08"
+basis = "再構成"
+
 
 # ============================================================ 史料ノート
 
