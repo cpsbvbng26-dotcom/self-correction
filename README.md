@@ -8,11 +8,11 @@ python3 build.py                          # register.toml → REGISTER.md
 python3 verification/check_register.py    # 22 項目
 ```
 
-いま **25 件**。内訳は [REGISTER.md](REGISTER.md) にあります。
+いま **26 件**。内訳は [REGISTER.md](REGISTER.md) にあります。
 
 | 状態 | 件数 |
 | --- | --- |
-| いま立っている | 4 |
+| いま立っている | 5 |
 | 未解決 | 1 |
 | **直せない** | 9 |
 | 直した | 7 |

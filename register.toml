@@ -87,6 +87,20 @@ evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ERRA
 found_by = "著者"
 date = "2026-09-05"
 
+[[entry]]
+id = "TI-006"
+status = "standing"
+title = "この系列に新しい数学は含まれていない"
+where = "Trinity-Infinity Series I–III、および trinity-operator"
+doi = "10.5281/zenodo.22058624"
+claimed = "改訂版に残った数学的事実は、すべて既知の結果の再発見である。独自に見つけたものは一つも無い"
+problem = "作用素 x ← DQx + (I − D)p はアフィン反復（定常反復法）で、Jacobi 法・Gauss–Seidel 法と同じ枠に入る。縮小写像の収束はバナッハの不動点定理（1922）。縮小定数 max aᵢ は初等的な計算。任意の n ≥ 2 で通ることは発見ではなく、n = 3 の区別が最初から無かったことの確認である。訂正の側も同じで、ρ(A) < 1 が収束の必要十分条件であることも、ρ < 1 なら縮小になるノルムが存在すること（Ostrowski / Householder）も教科書にある"
+refute = "上の五つのいずれかについて、既存の文献に無いことを示せば覆る。一件で覆る"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity#新しい数学は含まれていません"
+found_by = "著者（名称を問い直したとき）"
+date = "2026-09-08"
+
+
 # ============================================================ 撤回したもの
 
 [[entry]]
