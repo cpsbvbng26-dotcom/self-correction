@@ -41,7 +41,7 @@
 # **重い項目ほど証言の側にある。**初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じである（ST-003）。
 #
-# **47 件のうち 26 件は再構成である。**2025年10月から2026年8月までの
+# **49 件のうち 27 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -779,6 +779,38 @@ found_by = "Stanford Agentic Reviewer（paperreview.ai）"
 occurred = "2026-08"
 recorded = "2026-09-08"
 basis = "再構成"
+verifiable = "紙面"
+
+
+[[entry]]
+id = "PH-008"
+status = "unresolvable"
+title = "開示文が、著者には確かめられないことを断言している"
+where = "Manifesto of Imperial Selfhood（改訂版）の Declaration on the Use of Artificial Intelligence"
+doi = "10.5281/zenodo.22057583"
+claimed = "No data, quotations, or sources were fabricated by the AI system in the course of this revision."
+problem = "同じ段落が、参考文献の照合そのものも AI がやったと述べている —— `identify and verify the bibliographic citations listed in the References section against publicly available sources`。**二つを並べると循環が残る。**捏造が無かったことを確かめたのは AI であり、**著者は原典に当たっていない**（ERRATA の E6）。したがってこの断言は AI 自身の報告以外に根拠を持たない。**開示文の中でいちばん重い一文である** —— 読者は「捏造は無かった」を、著者が確かめた事実として受け取る"
+why_unresolvable = "凍結された PDF である。書けたはずのことは二文で済んだ —— 「照合は AI が行った。著者は原典に当たっていないため、独立には確かめていない」。**E5 は書かれていないことの記録、E6 は原典に当たっていないことの記録、これは書かれていることの記録である。**三つのうち、いちばん直接的に読者を誤らせる。二つの引用は紙面に印字されており、書き換えられたら check_errata.py が落ちる（82 項目）"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/verification/audit.toml"
+found_by = "Claude Code（外部の査読が改訂版のものかを確かめるために開示文を読んだとき）"
+occurred = "2026-08"
+recorded = "2026-09-08"
+basis = "再構成"
+verifiable = "紙面"
+
+[[entry]]
+id = "EX-008"
+status = "standing"
+title = "外部の査読は、開示文の中の断言を突かなかった"
+where = "cpsbvbng26-dotcom/docs/external-evaluations.md"
+claimed = "査読は開示文を読んだうえで、`Given the declared AI assistance, are there specific passages where you worry voice or judgment might have been over-normalized` と問うた"
+support = "**開示文の中の `No data, quotations, or sources were fabricated by the AI system` には触れていない。**この断言は、同じ段落が「照合は AI がやった」と述べていることと並べれば、根拠が AI 自身の報告しか無いと分かる。**紙面の中だけで完結している。**声が平準化されたかという問いは、それよりはるかに柔らかい。三本の数学論文で欄の中で完結している誤りを拾えなかったのと同じ形である（EX-004）"
+refute = "紙面だけを入力とする査読が、この断言の循環を独立に指摘した例を一つ出す"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
+found_by = "こちらの照合"
+occurred = "2026-09-08"
+recorded = "2026-09-08"
+basis = "同時"
 verifiable = "紙面"
 
 
