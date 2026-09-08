@@ -5,7 +5,7 @@
 
 ```
 python3 build.py                          # register.toml → REGISTER.md
-python3 verification/check_register.py    # 31 項目
+python3 verification/check_register.py    # 34 項目
 ```
 
 いま **44 件**。内訳は [REGISTER.md](REGISTER.md) にある。
