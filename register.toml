@@ -41,7 +41,7 @@
 # **重い項目ほど証言の側にある。**初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じである（ST-003）。
 #
-# **52 件のうち 29 件は再構成である。**2025年10月から2026年8月までの
+# **53 件のうち 30 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -681,6 +681,23 @@ evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/b
 found_by = "Stanford Agentic Reviewer（paperreview.ai）と、こちらの照合"
 occurred = "2026-08"
 recorded = "2026-09-08"
+basis = "再構成"
+verifiable = "紙面"
+
+
+[[entry]]
+id = "PH-010"
+status = "unresolvable"
+title = "参考文献に、本文から引かれていない項目がある"
+where = "The Nobility and Exemplarity of the Celibate Individual（v2）の参考文献"
+doi = "10.5281/zenodo.22058254"
+claimed = "Foucault, M. The History of Sexuality, Vol. 1"
+problem = "**本文からは引かれていない。**紙面で `Foucault` が現れるのは参考文献欄の一行だけで、本文のどの主張もこの文献に依っていない。**著者は内容を把握していない** —— 書物は所有しているが読んでいない。したがって何を支えているかも、どう使ったかも書けない。「背景」でもない —— 背景として働いてすらいない。読者は参考文献欄にある項目を「著者が用いたもの」と受け取るが、用いていない"
+why_unresolvable = "凍結された PDF である。ERRATA の E8 に記録した。**検査が見落としていた** —— 「宣言した典拠がすべて紙面にある」は、参考文献欄の行に文字列があれば通る作りだった。参考文献欄より前だけを見るように直し、**本文に出ない項目を宣言に書いて、新しく増えたら落ちる形にした**。三篇を通して測って、本文に出ないのはこの一件だけである。**M の Jünger はウムラウト付きで、`junger` で探して誤検出していた** —— 綴りを合わせたら本文に 16 回出てくる"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/verification/check_references.py"
+found_by = "Claude Code（引用を一件ずつ当たっていたとき）と、利用者の申告（内容を把握していないこと）"
+occurred = "2026-08"
+recorded = "2026-09-09"
 basis = "再構成"
 verifiable = "紙面"
 
