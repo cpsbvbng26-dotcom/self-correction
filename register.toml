@@ -650,6 +650,21 @@ recorded = "2026-09-09"
 basis = "同時"
 verifiable = "紙面"
 
+[[entry]]
+id = "SC-013"
+status = "corrected"
+title = "arXiv の分類を、主題ではなく新規性の水準で選んだ"
+where = "trinity-infinity/ARXIV.md の分類の節、ARXIV-SUBMIT.md の段階 0"
+claimed = "第一希望は `math.HO`、第二希望は `math.NA` とする。math.HO を第一希望にする理由は、紙面の内容と、記録が自分で下した判定とが一致するからである。新しい結果が無いと書いてある紙面を、新しい結果を集める区分の第一希望にしない"
+problem = "**分類は主題で決まる。新規性の水準を表す欄ではない。**`math.HO` の対象は数学史・数学の哲学・数学教育・レクリエーション数学・数学の伝え方・数学における倫理であって、「新しい結果が無い解説」を入れる区分ではない。arXiv に「解説」という区分は無く、解説や概観はその主題の区分へ出す。**新規性の無さを区分で表そうとしたのが誤りである。**これはこの系列が犯した取り違え —— 別の量を同じ軸に置く —— と同じ型である"
+correction = "第一希望を `math.NA`、第二希望を `math.DS` に変えた。Series I の主題は `x ← Mx + c` の形の定常反復とその収束条件であり、引いている文献も数値線形代数の側にある。新しい結果が無いことは投稿のコメント欄で述べる。**`math.HO` を外した理由は消さずに表へ残した。**紙面を教育向けに書き直すなら合う余地があることも書いてある。check_route.py の 7 が、分類が主題で決まるという一行と、外した理由の両方を保つ（92 項目）"
+evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/ARXIV.md"
+found_by = "利用者（「HO とはなんの略ん」）"
+occurred = "2026-09-09"
+recorded = "2026-09-09"
+basis = "同時"
+verifiable = "紙面"
+
 
 [[entry]]
 id = "TI-008"
