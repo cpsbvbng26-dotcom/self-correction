@@ -605,6 +605,22 @@ verifiable = "紙面"
 
 
 [[entry]]
+id = "SC-010"
+status = "corrected"
+title = "Zenodo の DOI を、実在するか確かめていないものとして書いていた"
+where = "cpsbvbng26-dotcom/docs/canonical-sources.md と docs/doi-index.md"
+claimed = "ここに書いてあるどの DOI についても、実在するかどうかを確かめていない"
+problem = "番号は著者が Zenodo に登録して受け取ったものである。**存在は著者の証言で立っており、疑う根拠が無い。**確かめられないのは存在ではなく、書き写しが合っているかと、どのレコードを指すかである。「実在するか分からない」と書くことは、著者が直接見たものを無かったことにしている。**この登録簿は根拠を紙面と証言に分け、証言も根拠として数えている**（いま 8 件）。DOI だけをその外に置いていた"
+correction = "存在は疑っていないことと、確かめられないのは書き写しと指す先であることに書き分けた。実際に起きている食い違い —— 22335691 と 22335692、六箇所が 692 で一箇所だけ 691 —— も、存在の問題ではなく書き写しか概念 DOI かの問題である。但書の側は、この書き分けが消えたら横断の検査が落ちる"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/canonical-sources.md"
+found_by = "利用者（「なんで zenodo の DOI 取得できたのに確認できないという思考回路になるの？」）"
+occurred = "2026-09-09"
+recorded = "2026-09-09"
+basis = "同時"
+verifiable = "紙面"
+
+
+[[entry]]
 id = "TI-008"
 status = "unresolvable"
 title = "grim trigger の閾値を、Fudenberg & Maskin に帰していた"
