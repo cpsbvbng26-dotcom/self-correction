@@ -682,6 +682,36 @@ verifiable = "証言"
 
 
 [[entry]]
+id = "PH-010"
+status = "unresolvable"
+title = "物語的自己を退けていながら、物語論の文献を一つも挙げていない"
+where = "断片主義（Fragmentarian Spiritual Individualism）の参考文献欄、および第2節・第7節"
+claimed = "近代の四つの構造的欠陥のひとつは物語的自己である"
+problem = "`narrative` は紙面に 15 回現れる。**参考文献欄 16 件に、物語論の文献は一つも無い。**Galen Strawson の `Against Narrativity` は**味方**であり、Ricœur・MacIntyre・Taylor は**相手**である。どれも 0 回である。同じ形の欠けが二つある —— 第7節が自分で限界として挙げた「他者の倫理的要求との緊張」に対してレヴィナスもケアの倫理も正義論も無く、エックハルトとベーメについては一次文献だけで二次文献が無い。**退ける相手を挙げないことは、退けたことにならない**"
+why_unresolvable = "PDF は凍結されている。参考文献欄は印字されたままである。直せるのは正誤表のほうだけである（`autonomy` の `ERRATA` の `N8`）"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md"
+found_by = "Stanford Agentic Reviewer（paperreview.ai）"
+occurred = "2026-09-10"
+recorded = "2026-09-10"
+basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
+id = "EX-009"
+status = "corrected"
+title = "外部の査読が挙げた文献の周りを当たって、本文だけに出る名を見つけた"
+where = "断片主義の第7節と参考文献欄、verification/check_references.py"
+claimed = "参考文献欄と本文の食い違いは、`body_absent` の一件（独身論の Foucault）で尽きている"
+problem = "**向きが片方しか見ていなかった。**`body_absent` は参考文献欄にあって本文が引いていない項目を見る。**本文が名を挙げていて参考文献欄に無い項目を見る仕組みが無かった。**断片主義の第7節は、今日流通する「武士道」が事後的に体系化されたものだと述べ、新渡戸稲造の普及書をその例として名指ししている。**参考文献欄に新渡戸は無い**（`autonomy` の `ERRATA` の `E9`）"
+correction = "`body_only` を宣言に足し、宣言した名が本文にあって参考文献欄に無いことを確かめる（36 → 39 項目）。挙がっていない文献のほうは `audit.toml` が紙面に当たって確かめる（95 → 102 項目）。**査読はこの件を指摘していない。**武士道の歴史性について「もっと踏み込め」と述べ、Oleg Benesch を挙げただけである。**紙面はすでに踏み込んでいる**ので、その見立て自体は外れている。**手掛かりと発見は別に数える**"
+evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/verification/references.toml"
+found_by = "Claude（査読が挙げた文献の周りを当たって）"
+occurred = "2026-09-10"
+recorded = "2026-09-10"
+basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
 id = "TI-008"
 status = "unresolvable"
 title = "grim trigger の閾値を、Fudenberg & Maskin に帰していた"
