@@ -757,6 +757,21 @@ basis = "同時"
 verifiable = "紙面"
 
 [[entry]]
+id = "SC-016"
+status = "corrected"
+title = "自己紹介が、生存する第三者の事業計画に触れていた"
+where = "researcher-profile/site.json の「これからの二つ」、cpsbvbng26-dotcom/README.md の自己紹介"
+claimed = "父が創業を計画している事業を承継すること"
+problem = "**この記録の中で、生存する第三者について書いている唯一の箇所だった。**本人の目標を述べる文でありながら、内容は第三者の —— まだ存在しない —— 事業計画についての情報である。**当人の同意を確かめていない。**決めごと 9 は新規の公開を禁じているが、この一行は決めごとが置かれる前から載っていた"
+correction = "「事業を承継すること」に変えた。**本人の目標は残り、第三者についての情報だけが落ちる。**サイトの生成元（`site.json`）を直し、README の自己紹介は生成し直している"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/README.md"
+found_by = "Claude（未処理の一覧から。利用者に二度たずね、三度目に判断を委ねられた）"
+occurred = "2026-09-10"
+recorded = "2026-09-10"
+basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
 id = "TI-008"
 status = "unresolvable"
 title = "grim trigger の閾値を、Fudenberg & Maskin に帰していた"
