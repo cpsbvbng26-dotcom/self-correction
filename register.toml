@@ -781,8 +781,8 @@ problem = "決めごと自体が誤っていたのではない。**利用者が�
 correction = "「家系」を九つの CLAUDE.md から外した。共通部分は一字一句同じであることを横断検査が見ているので、九つ同時に直している。**残る三つはそのままである。**`check_site.js` の禁止語からも「家系」を外したが、**家柄・末裔・血統は外していない** —— 記録が残っているかを書くことと、血筋を誇ることは別で、後者の語は核にも先祖の頁にも置かない。頁のほうには、著者の仕事について何も言わないこと、続柄が著者の証言であること、出典の中身を確かめていないこと、同名異人の可能性を書いた"
 evidence = "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/lineage.html"
 found_by = "利用者（「やはり家系は書くよ。公的記録が残っている先祖は記すことにして」）"
-occurred = "2026-09-11"
-recorded = "2026-09-11"
+occurred = "2026-09-10"
+recorded = "2026-09-10"
 basis = "同時"
 verifiable = "紙面"
 
@@ -797,8 +797,8 @@ problem = "**大谷恒は著者の曾祖父である。**この一件を調べ�
 why_unresolvable = "PDF は凍結されている。直せるのは正誤表のほうだけである（`naval` の `ERRATA` の `N5`）。続柄は先祖の公的記録の頁に置いた"
 evidence = "https://github.com/cpsbvbng26-dotcom/naval-gazette-notes/blob/main/ERRATA.md"
 found_by = "Claude（利用者が続柄を明かしたことで分かった）"
-occurred = "2026-09-11"
-recorded = "2026-09-11"
+occurred = "2026-09-10"
+recorded = "2026-09-10"
 basis = "同時"
 verifiable = "紙面"
 
