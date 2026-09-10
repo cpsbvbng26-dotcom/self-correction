@@ -742,6 +742,21 @@ basis = "同時"
 verifiable = "紙面"
 
 [[entry]]
+id = "SC-015"
+status = "corrected"
+title = "サイト本体が、JavaScript の動かない環境では白紙だった"
+where = "researcher-profile/templates/page.html、および cpsbvbng26-dotcom の八つの頁"
+claimed = "外部へリクエストを出さない。`default-src 'none'`、`'unsafe-inline'` を使わない"
+problem = "`.reveal` に `opacity: 0` を直接当てており、見えるようにするのは JS だけだった。**JS が動かない環境では、トップの 31 要素がすべて出ない。**画面に残るのは題と仕切りだけである。**CSP のハッシュが一つずれてスクリプトが弾かれるだけでも、同じことが起きる** —— 自分で締めた CSP が、自分の本文を消す経路になっていた。暗い側も同じ形で、`data-theme` を立てるのは JS だけだったので、OS の設定が暗くても明るい紙面が出ていた"
+correction = "既定を「見える」に変え、隠すのは head の一行で `js` が立ったときだけにした。暗い側は `prefers-color-scheme` でも出るようにし、**二か所になった指定が一字一句同じであること**を検査で留めた。八つの頁すべてで JS を切って数え直している —— 31/31、29/29、23/23、10/10、8/8。`check_site.js` の 10.53（10 項目、270 → 278）"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/check_site.js"
+found_by = "Claude（利用者が体裁の作り直しを求めたので、画面を実際に描かせたところ本文が出なかった）"
+occurred = "2026-09-10"
+recorded = "2026-09-10"
+basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
 id = "TI-008"
 status = "unresolvable"
 title = "grim trigger の閾値を、Fudenberg & Maskin に帰していた"
