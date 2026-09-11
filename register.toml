@@ -41,7 +41,7 @@
 # **重い項目ほど証言の側にある。**初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じである（ST-003）。
 #
-# **77 件のうち 32 件は再構成である。**2025年10月から2026年8月までの
+# **78 件のうち 32 件は再構成である。**2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していない。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要がある。
 
@@ -962,6 +962,23 @@ problem = "**載っていることを、通ったことと書いた。**「断�
 correction = "「三篇は **PhilArchive に載っている**」に直した。SSRN を通った二篇は「通っている」のまま —— そちらは実際に事前審査がある。**門が下りた場合だけ「通った」と書く。**あわせて、門がどこまで見ているかを書いた —— SSRN が見るのは分野の射程・体裁・学術としての最低限・剽窃などの研究公正であって、**方法の当否も内容の実質も見ない**。閉じの一段も「門が下りた分についても」に揃えた。検査を六つ足し（550 → 555 項目）、壊す先を二つ増やした —— 門の限界を消す壊し方と、**証言を紙面に格上げする壊し方**である"
 evidence = "https://cpsbvbng26-dotcom.github.io/cpsbvbng26-dotcom/venues.html"
 found_by = "利用者（審査なしで出せたことを申し出た）"
+occurred = "2026-09-11"
+recorded = "2026-09-11"
+basis = "同時"
+verifiable = "証言"
+
+[[entry]]
+id = "SC-028"
+status = "standing"
+title = "学部名の英語表記を、頁を開かずに書いた"
+where = "cpsbvbng26-dotcom/index.en.html・README.en.md、researcher-profile/site.en.json・courses.json"
+claimed = "ZEN University, Faculty of Social Informatics"
+problem = "**この一行は、原文を読まずに書いてある。**`zen.ac.jp` は作業環境の egress proxy が塞いでおり、英語の頁を開けない。検索結果が四回とも `Faculty of Social Informatics` を公式の英語頁（`zen.ac.jp/en/academics`）に帰しており、うち一つは `A single faculty · Faculty of Social Informatics` と書いている。**一致してはいるが、要約であって原文ではない。**学科については、英語の頁が学部を一つしか置いておらず段が無いとされるため、`知能情報社会学科` に当たる英語は書いていない。**直訳を避けられたのは偶然ではない** —— 直訳すれば `Faculty of Intelligent Information and Society` になり、公式と違う。それまで日本語のまま出していたのは、確かめられなかったからである"
+correction = "利用者の指示で英語にした。**名前だけでなく、出所の断りも一緒に出す** —— 「大学の英語頁がそう表記していると伝えられている形であり、その頁はここからは開けない」。**断りが消えて名前だけ残る形が、いちばん強く読める形である**ため、断りの存在を機械で留めた（`check_site.js`）。日本語の頁は日本語のままにし、そちらも留めた"
+refute = "`zen.ac.jp/en/academics` を開いて、学部の英語表記がこれと違うことを示せば覆る。学科に当たる英語の段が実在することを示しても同じである"
+support = "検索結果四件がいずれも公式の英語頁に帰している。うち一件は単一学部であることも述べている"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/check_site.js"
+found_by = "Claude（利用者が英語に直すよう指示したので、根拠の水準を記録に残した）"
 occurred = "2026-09-11"
 recorded = "2026-09-11"
 basis = "同時"
