@@ -1325,6 +1325,23 @@ basis = "同時"
 verifiable = "紙面"
 
 
+[[entry]]
+id = "SC-033"
+status = "corrected"
+title = "三言語の頁の「制作物」の節が、最初から一度も出ていなかった"
+where = "researcher-profile/site.de.json・site.fr.json・site.it.json、cpsbvbng26-dotcom/index.de.html・index.fr.html・index.it.html"
+claimed = "ドイツ語・フランス語・イタリア語の頁は、日本語より短いが、載せると決めたものは載っている"
+problem = "**三枚とも、論文の所在を並べる節が存在しなかった。**設定では `blocks` に `id = \"works\"` の節を書き、`sections` にも並べてあった。ところが `works` は生成器の組み込みの節名である。組み込みが先に当たり、三言語の設定には `works` の配列が無いため、**空として描かれ、節ごと消えた。**例外も警告も出ない。生成は成功で終わる。**書いたはずの節が黙って落ちる形だった。**三枚を作った 2026年9月11日から、そのまま公開されていた"
+correction = "節の id を `writings` に改め、生成器の側で **`blocks` の id が組み込みの節名と衝突したら例外で止める**ようにした。あわせて、三言語が日本語と同じ所在を並べているかを機械で見る検査を足した（`check_site.js` の 10.62、四項目）。哲学三篇と Trinity-Infinity 三篇の所在、E1 の断り、SSRN の選別が査読ではないこと、道具四つを、三言語とも日本語と同じだけ載せた"
+refute = "2026年9月11日のコミットの `index.de.html` に、論文の所在が一つでも印字されていることを示せば、この項目は誤りである"
+support = "削除前の `index.de.html` に `zenodo` の文字列が一度も現れない。`git show` で確かめられる"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/check_site.js"
+found_by = "Claude（利用者の指摘で三言語に所在を足そうとして、生成物に入らないことに気づいた）"
+occurred = "2026-09-11"
+recorded = "2026-09-11"
+basis = "同時"
+verifiable = "紙面"
+
 # ============================================================ いま立っているもの
 
 [[entry]]
