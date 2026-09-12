@@ -1359,6 +1359,23 @@ recorded = "2026-09-12"
 basis = "同時"
 verifiable = "紙面"
 
+[[entry]]
+id = "SC-035"
+status = "corrected"
+title = "SSRN に落とされた一篇を、どこにも書いていなかった"
+where = "cpsbvbng26-dotcom/index.html ほか五言語、docs/external-evaluations.md"
+claimed = "独学と言語モデルで書いたものが、SSRN の編集スタッフの判断で、その分野の学術的言説の一部として扱われた。二篇について、公開前に人が見て、落とさなかった"
+problem = "**三篇目は、同じ門に出して弾かれている。**Fragmentarian Spiritual Individualism（`10.5281/zenodo.22064241`）は SSRN に受け付けられず、SSRN の DOI を持たない。**その事実が、公開されている記録のどこにも無かった。**通った二篇だけが並んでいた。書いてあることは誤りではない —— 二篇が通ったのは事実である。**落ちた一篇を書かないことで、門が何も落とさないように見える。**到達点を厚く見せる方向にだけ、記録が欠けていた。「出した先」の表にも、この一件は無かった"
+correction = "五言語の到達点の段に「そして、三篇目は落とされた」を置いた。`docs/external-evaluations.md` の「出した先」に行を足し、理由も日付も分かっていないことを明記した。あわせて、落とされたことから何が導けないかも書いた —— **SSRN が受け付けなかったということだけで、論証が誤っていると判定されたわけではない。**この行を消すと落ちる検査も足した"
+refute = "Fragmentarian Spiritual Individualism に SSRN の DOI が付いていることを示せば、この項目の前提は覆る"
+support = "SSRN の著者頁に並ぶのは二篇である。三篇目の SSRN DOI は存在しない（利用者の証言。作業環境から SSRN に到達できないため、こちらでは確かめていない）"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/docs/external-evaluations.md"
+found_by = "利用者（記載するよう指示があった）"
+occurred = "2026-09-12"
+recorded = "2026-09-12"
+basis = "同時"
+verifiable = "証言"
+
 # ============================================================ いま立っているもの
 
 [[entry]]
