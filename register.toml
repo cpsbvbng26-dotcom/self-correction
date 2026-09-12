@@ -1342,6 +1342,23 @@ recorded = "2026-09-11"
 basis = "同時"
 verifiable = "紙面"
 
+[[entry]]
+id = "SC-034"
+status = "corrected"
+title = "横断の仕事が浅い複製で回っており、sitemap の検査が別の理由に化けて落ちた"
+where = "cpsbvbng26-dotcom/.github/workflows/ecosystem.yml、verification/check_site.js"
+claimed = "sitemap の lastmod が git の記録より古くないことを、押すたびに機械で見ている"
+problem = "**横断の仕事は `repos/cpsbvbng26-dotcom` を深さ 1 で複製していた。**深さ 1 では、HEAD が触ったファイルだけが HEAD の日付を返し、残りは空を返す。前者は「sitemap が古い」という別の誤りに化け、後者だけが浅さの検査に数えられる。**化けたほうは理由を名乗らない。**2026年9月12日、押した時刻が sitemap の日付の翌日に回ったところで初めて落ちた。**それまでは、同じ日のうちに押していたので日付が一致し、浅いまま通っていた。**同じ commit を別の仕事（検査、`fetch-depth: 0`）が回したときは通っており、**二つの仕事が同じ検査について違う答えを出していた。**"
+correction = "`ecosystem.yml` の複製に `fetch-depth: 0` を足した。あわせて `check_site.js` が `git rev-parse --is-shallow-repository` を先に見るようにした。浅ければ、日付のずれではなく浅さそのものを名乗って落ちる。深さ 1 の複製を作って落ちること、深い複製で通ることの両方を確かめてある"
+refute = "深さ 1 の複製で `node verification/check_site.js` を走らせ、浅さを名乗らずに通ることを示せば、この項目の前提は覆る"
+support = "深さ 1 の複製では 24 ページが `sitemap 2026-09-11 / git 2026-09-12` として落ちる。深い複製では 516 件すべて通る"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/actions/runs/34667183257"
+found_by = "Claude（横断が落ちた理由を、手元で再現するまで追った）"
+occurred = "2026-09-12"
+recorded = "2026-09-12"
+basis = "同時"
+verifiable = "紙面"
+
 # ============================================================ いま立っているもの
 
 [[entry]]
