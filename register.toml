@@ -1393,6 +1393,23 @@ recorded = "2026-09-12"
 basis = "同時"
 verifiable = "紙面"
 
+[[entry]]
+id = "SC-037"
+status = "withdrawn"
+title = "相対ティアを公開し、その日のうちに取り下げた"
+where = "cpsbvbng26-dotcom/index.html ほか五言語、README.md、docs/self-assessment.md"
+claimed = "研究者としての相対的な位置を `EX` から `F` までの十段で表す。数学 `C`、哲学 `C`、歴史 `D`、総合 `D`"
+problem = "**利用者の指示で取り下げた。**理由は「意味がない」である。**この項目は、誤りの記録ではない。**段は `papers.json` から計算しており、書いた段と計算した段が違えば落ちる作りにしてあった。免責も七箇所に置いてあった —— 学術の世界にこの並びは存在しないこと、段の切り方は著者が決めたものであること、他人を測る物差しではないこと。**それでも取り下げた。**公開していた間、頁五枚と README と `docs/self-assessment.md` に出ていた"
+correction = "節ごと外した。頁の `tier` 節、README の節、`docs/self-assessment.md` の節、そして検査八件。**外したのはティアに属する八件だけで、自己分析の十二件はそのまま残してある** —— 前に頁を消したとき、無関係な検査まで巻き添えにした（`SC-032`）。`docs/self-assessment.md` の「方法」の三番目も、総合のティアを置く前の文面に戻した"
+refute = "取り下げたあとの `index.html` に `id=\"tier\"` の節が残っていることを示せば、この項目は誤りである"
+support = "取り下げ前のコミットに五言語すべての `tier` 節がある。git の履歴から読める"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/commits/main/index.html"
+found_by = "利用者（「やっぱり相対ティア意味ないから項目ごと削除して」）"
+occurred = "2026-09-13"
+recorded = "2026-09-13"
+basis = "同時"
+verifiable = "紙面"
+
 # ============================================================ いま立っているもの
 
 [[entry]]
