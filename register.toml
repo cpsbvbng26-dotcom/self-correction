@@ -1410,6 +1410,23 @@ recorded = "2026-09-13"
 basis = "同時"
 verifiable = "紙面"
 
+[[entry]]
+id = "SC-038"
+status = "corrected"
+title = "横断の件数を上げたのに、写しの一つが据え置きのまま残った"
+where = "cpsbvbng26-dotcom/docs/self-assessment.md の「訂正の装置」の欄"
+claimed = "横断の検査は 246 項目である"
+problem = "**二度上げて、二度とも写しを直さなかった。**横断は 246 から 258 へ、258 から 260 へ上がっている。その間ずっと `docs/self-assessment.md` は 246 のままだった。**気づかなかったのは、この欄の数に検査が一つも掛かっていなかったからである。**同じ欄には五つの数が並んでおり、突き合わせていたのは登録簿の件数だけだった —— 検査 1013・キーボード 266・壊す先 28 も、書き写したきり誰も見ていない。**この体系がいちばん頻繁に壊れる型である**（決めごと 5）"
+correction = "数を 268 に直した。あわせて、欄の五つすべてを突き合わせるようにした。検査の合計と壊す先は `ecosystem.json` の名乗り先に足し、横断は `check_ecosystem.js` の 13 節の名乗り先に足した。**キーボードだけは、走らせた数と突き合わせていない** —— ブラウザが要る検査で、横断の場に Chromium が無い。宣言どうしの突き合わせにとどまることを、宣言そのものに書いた"
+refute = "この五つの数のいずれか一つだけを動かして `check_ecosystem.js` が通ることを示せば、この訂正は不十分である"
+support = "五つとも一つずつ動かして走らせた。いずれも狙った検査が落ちた"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/commits/main/docs/self-assessment.md"
+found_by = "Claude Code（別の節を書き足すために同じ欄を読み直したとき）"
+occurred = "2026-09-13"
+recorded = "2026-09-13"
+basis = "同時"
+verifiable = "紙面"
+
 # ============================================================ いま立っているもの
 
 [[entry]]
