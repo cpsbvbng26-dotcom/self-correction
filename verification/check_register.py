@@ -302,7 +302,8 @@ check("README が名乗る二者以上の件数が実際と合う",
       m is not None and int(m.group(1)) == multi,
       ("名乗り %s / 実際 %d" % (m.group(1), multi)) if m else "無し")
 
-m = re.search(r"\*\*機械が最初に見つけたのは (\d+) 件である。\*\*"
+# **太字に依らせない**（書き方 5）。数だけ拾う。
+m = re.search(r"機械が最初に見つけたのは (\d+) 件である。"
               r"残る (\d+) 件は、人が見つけている。", readme)
 check("README の「機械 N 件 / 人 M 件」が実際と合う",
       m is not None and int(m.group(1)) == first["機械"]
@@ -317,7 +318,7 @@ check("検査が素通りしていた項目が登録簿にある",
 check("README がその一件に触れている", "検査は素通りしていた" in readme)
 check("検査が見つける道具ではないと README に書いてある",
       "### 検査は、見つける道具ではない" in readme
-      and "**戻ってこないようにする道具である。**" in readme)
+      and "戻ってこないようにする道具である。" in readme)
 
 
 print("\n" + "-" * 58)
