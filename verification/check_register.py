@@ -269,6 +269,57 @@ for st, label in sorted(LABEL.items()):
 check("README の状態ごとの内訳が実際と合う", not wrong, "; ".join(wrong))
 
 
+# ------------------------------------------------ 誰が見つけたか
+#
+# **検査が誤りを見つけているわけではない。**README にその内訳を書いた以上、
+# 数のほうを機械で当てる。集計の道具そのものを import して使う。
+# 散文を源にすれば、項目が増えた日にずれる。
+
+sys.path.insert(0, ROOT)
+import tally_found_by  # noqa: E402
+
+first, anywhere, multi, unknown = tally_found_by.main()
+check("見つけ手を分類できない記述が無い", unknown == 0, str(unknown))
+
+for name, _ in tally_found_by.KINDS:
+    m = re.search(r"\|\s*\*{0,2}" + name + r"\*{0,2}\s*\|\s*\*{0,2}(\d+)\*{0,2}\s*\|"
+                  r"\s*(\d+)\s*\|", readme)
+    check("README の「%s」の数が実際と合う" % name,
+          m is not None and int(m.group(1)) == first[name]
+          and int(m.group(2)) == anywhere[name],
+          ("名乗り %s/%s / 実際 %d/%d" % (m.group(1), m.group(2),
+                                          first[name], anywhere[name]))
+          if m else "名乗っている行が見つからない")
+
+n_found = len([e for e in entries if e.get("found_by")])
+m = re.search(r"`found_by` がある項目は (\d+) 件である", readme)
+check("README が名乗る found_by の件数が実際と合う",
+      m is not None and int(m.group(1)) == n_found,
+      ("名乗り %s / 実際 %d" % (m.group(1), n_found)) if m else "無し")
+
+m = re.search(r"二者以上が関わったものが (\d+) 件ある", readme)
+check("README が名乗る二者以上の件数が実際と合う",
+      m is not None and int(m.group(1)) == multi,
+      ("名乗り %s / 実際 %d" % (m.group(1), multi)) if m else "無し")
+
+m = re.search(r"\*\*機械が最初に見つけたのは (\d+) 件である。\*\*"
+              r"残る (\d+) 件は、人が見つけている。", readme)
+check("README の「機械 N 件 / 人 M 件」が実際と合う",
+      m is not None and int(m.group(1)) == first["機械"]
+      and int(m.group(2)) == sum(first.values()) - first["機械"],
+      ("名乗り %s/%s / 実際 %d/%d" % (m.group(1), m.group(2), first["機械"],
+                                      sum(first.values()) - first["機械"]))
+      if m else "無し")
+
+# **検査が素通りした一件を消さない。**ここが消えれば、検査を過信する側へ倒れる。
+check("検査が素通りしていた項目が登録簿にある",
+      any("検査は素通りしていた" in (e.get("found_by") or "") for e in entries))
+check("README がその一件に触れている", "検査は素通りしていた" in readme)
+check("検査が見つける道具ではないと README に書いてある",
+      "### 検査は、見つける道具ではない" in readme
+      and "**戻ってこないようにする道具である。**" in readme)
+
+
 print("\n" + "-" * 58)
 if failures:
     print("%d 件が通り、%d 件が通りませんでした。" % (passed, len(failures)))
