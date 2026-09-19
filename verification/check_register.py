@@ -292,19 +292,19 @@ for name, _ in tally_found_by.KINDS:
           if m else "名乗っている行が見つからない")
 
 n_found = len([e for e in entries if e.get("found_by")])
-m = re.search(r"`found_by` がある項目は (\d+) 件である", readme)
+m = re.search(r"`found_by` がある項目は (\d+) 件です", readme)
 check("README が名乗る found_by の件数が実際と合う",
       m is not None and int(m.group(1)) == n_found,
       ("名乗り %s / 実際 %d" % (m.group(1), n_found)) if m else "無し")
 
-m = re.search(r"二者以上が関わったものが (\d+) 件ある", readme)
+m = re.search(r"二者以上が関わったものが (\d+) 件あります", readme)
 check("README が名乗る二者以上の件数が実際と合う",
       m is not None and int(m.group(1)) == multi,
       ("名乗り %s / 実際 %d" % (m.group(1), multi)) if m else "無し")
 
 # **太字に依らせない**（書き方 5）。数だけ拾う。
-m = re.search(r"機械が最初に見つけたのは (\d+) 件である。"
-              r"残る (\d+) 件は、人が見つけている。", readme)
+m = re.search(r"機械が最初に見つけたのは (\d+) 件です。"
+              r"残る (\d+) 件は、人が見つけています。", readme)
 check("README の「機械 N 件 / 人 M 件」が実際と合う",
       m is not None and int(m.group(1)) == first["機械"]
       and int(m.group(2)) == sum(first.values()) - first["機械"],
@@ -318,7 +318,7 @@ check("検査が素通りしていた項目が登録簿にある",
 check("README がその一件に触れている", "検査は素通りしていた" in readme)
 check("検査が見つける道具ではないと README に書いてある",
       "### 検査は、見つける道具ではない" in readme
-      and "戻ってこないようにする道具である。" in readme)
+      and "戻ってこないようにする道具です。" in readme)
 
 
 print("\n" + "-" * 58)
