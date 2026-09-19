@@ -314,8 +314,8 @@ check("README の「機械 N 件 / 人 M 件」が実際と合う",
 
 # **検査が素通りした一件を消さない。**ここが消えれば、検査を過信する側へ倒れる。
 check("検査が素通りしていた項目が登録簿にある",
-      any("検査は素通りしていた" in (e.get("found_by") or "") for e in entries))
-check("README がその一件に触れている", "検査は素通りしていた" in readme)
+      any("検査は素通りしていました" in (e.get("found_by") or "") for e in entries))
+check("README がその一件に触れている", "検査は素通りしていました" in readme)
 check("検査が見つける道具ではないと README に書いてある",
       "### 検査は、見つける道具ではない" in readme
       and "戻ってこないようにする道具です。" in readme)
