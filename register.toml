@@ -556,6 +556,22 @@ recorded = "2026-09-08"
 basis = "再構成"
 verifiable = "紙面"
 
+[[entry]]
+id = "TL-002"
+status = "unresolvable"
+title = "errata-check v0.3.0 のタグに、変更履歴が挙げた二つのファイルが入っていません"
+where = "errata-check v0.3.0（タグ b2f3c7c と、Zenodo のレコード）"
+doi = "10.5281/zenodo.22685687"
+claimed = "変更履歴の 0.3.0 の欄は、足したものとして pyproject.toml と CONTRIBUTING.md を挙げていました。SUBMIT.md は、__version__ と CITATION.cff とタグの三つで版を揃えてあると書いていました"
+problem = "タグ v0.3.0 には pyproject.toml も CONTRIBUTING.md もありません。二つはタグの 28 分後のコミット 424f55d で足されています。タグの中の CITATION.cff は、版を 0.2.0 と名乗っています。v0.3.0 の番号が、変更履歴の説明と違う中身を指していました"
+why_unresolvable = "Zenodo は公開後にファイルを差し替えられません。タグも動かしません。変更履歴では二つを未リリースの欄へ移し、0.3.0 の欄にこの食い違いを書きました。次の版を出せば、三つの版の表記と二つのファイルが揃います。v0.3.0 の中身は、このまま残ります"
+evidence = "https://github.com/cpsbvbng26-dotcom/errata-check/tree/v0.3.0"
+found_by = "Claude（HAL にソフトウェアとして登録したあと、タグの中身を変更履歴と突き合わせたとき）"
+occurred = "2026-09-10"
+recorded = "2026-09-29"
+basis = "再構成"
+verifiable = "紙面"
+
 
 [[entry]]
 id = "SC-007"
