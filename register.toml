@@ -41,7 +41,7 @@
 # 重い項目ほど証言の側にあります。初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じです（ST-003）。
 #
-# 93 件のうち 34 件は再構成です。2025年10月から2026年8月までの
+# 96 件のうち 36 件は再構成です。2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していません。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要があります。
 
@@ -1492,6 +1492,57 @@ found_by = "利用者（non-pro を含める設定で所属から出ると述べ
 occurred = "2026-09-13"
 recorded = "2026-09-13"
 basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
+id = "SC-042"
+status = "corrected"
+title = "史料ノートがどの区分に置かれたかを、分野の表に書いていませんでした"
+where = "cpsbvbng26-dotcom/docs/external-evaluations.md の「出した分野」、README.md ほか五言語の到達点の段"
+claimed = "SSRN では、通った哲学二篇が大陸哲学、Trinity-Infinity Series II が数値解析に置かれています"
+problem = "海軍公報の史料ノートも SSRN に受け付けられています。受け付けられたことは 2026-09-16 に「出した先」の表へ書きました。しかし、どの網のどの区分に置かれたかを「出した分野」の表に足していませんでした。区分の段落も二つのままでした。分野の表だけを読むと、SSRN を通ったのは数学と哲学だけに見えます"
+correction = "表に一行を足しました。歴史研究網（History Research Network）の東アジア史（`East Asian History`）です。区分の段落を一つ足し、五言語の到達点の段にも同じ一文を置きました。検査は、表の行に網と区分の名が揃っているかを見ます"
+refute = "2026-09-16 から 2026-09-29 までのいずれかのコミットの「出した分野」の表に、史料ノートの行があることを示せば、この項目は誤りです"
+support = "区分の名は著者の証言です。作業環境から SSRN に届かないため、こちらでは確かめていません。表に行が無かったことは git の履歴から読めます"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/pull/97"
+found_by = "利用者（「他者からの評価のところに大谷恒の東洋史のスクリーニング通ったの抜けてる」。区分の名はあとで「東アジア史」と直された）"
+occurred = "2026-09-16"
+recorded = "2026-09-30"
+basis = "再構成"
+verifiable = "証言"
+
+[[entry]]
+id = "SC-043"
+status = "corrected"
+title = "前の日に出した四件を、出した先の表に書いていませんでした"
+where = "cpsbvbng26-dotcom/docs/external-evaluations.md の「出した先」"
+claimed = "評価を求めて出したものの記録です。返ってきたかどうかとは別に書きます"
+problem = "2026-09-29 に出したものを、`docs/submission-disclosure.md` にだけ書きました。PhilSci-Archive（推薦が要り出せなかった）、SSRN（Machine-Mediated Rediscovery）、CogPrints（投稿して取り下げた）、HAL のソフトウェア（errata-check v0.3.0）の四件です。出した先の表は、返事の有無に関わらず出したものを並べると名乗っています。その名乗りに一日だけ届いていませんでした"
+correction = "四行を足しました。番号と ID は、受け取るまで書いていません。表の下に、経緯のある節への参照を一行置きました"
+refute = "2026-09-29 のコミットの「出した先」の表に、この四件のいずれかの行があることを示せば、この項目は誤りです"
+support = "四件を出したことは著者の証言です。表に無かったことは git の履歴から読めます"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/pull/98"
+found_by = "Claude Code（利用者の「他抜けてるところないか調べて」で、記録どうしを突き合わせたとき）"
+occurred = "2026-09-29"
+recorded = "2026-09-30"
+basis = "同時"
+verifiable = "証言"
+
+[[entry]]
+id = "SC-044"
+status = "corrected"
+title = "PhilArchive の三篇を、出した先の表に一度も書いていませんでした"
+where = "cpsbvbng26-dotcom/docs/external-evaluations.md の「出した先」"
+claimed = "評価を求めて出したものの記録です。返ってきたかどうかとは別に書きます"
+problem = "表を作った 2026-09-08 から、PhilArchive の行が一つもありませんでした。三篇の記号（`NEMTNA`・`NEMMOI`・`NEMFSI`）は所在の表と README にあり、門を通った二篇と通っていない一篇の区別も到達点の段と現状評価にあります。この表だけが SSRN と誌の行しか持っていませんでした。記録どうしを突き合わせる検査が無く、どこからも落ちませんでした。前日に同じ表の抜けを調べたときも、見たのは新しい行だけでした"
+correction = "三行を足しました。二篇は門を通った（著者の証言）、一篇は載りましたが、門は下りていません（SC-027）。あわせて `check_site.js` に検査を一つ足しました。所在の表（`doi-index.md`）にある SSRN の DOI と PhilArchive の記号が、出した先の表にすべてあるかを見ます"
+refute = "所在の表にある SSRN の DOI か PhilArchive の記号を一つ、出した先の表から消して `check_site.js` が通ることを示せば、この訂正は不十分です"
+support = "`NEMTNA` の行を消して走らせました。その記号を挙げて落ちました。表を作ったコミットから前日までの表に PhilArchive の行が無いことは、git の履歴から読めます"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/pull/99"
+found_by = "利用者（「その項目にPhilアーカイブの審査通ったこと書かれてなくね」）"
+occurred = "2026-09-08"
+recorded = "2026-09-30"
+basis = "再構成"
 verifiable = "紙面"
 
 # ============================================================ いま立っているもの
