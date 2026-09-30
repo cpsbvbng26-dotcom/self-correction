@@ -41,7 +41,7 @@
 # 重い項目ほど証言の側にあります。初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じです（ST-003）。
 #
-# 96 件のうち 36 件は再構成です。2025年10月から2026年8月までの
+# 97 件のうち 37 件は再構成です。2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していません。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要があります。
 
@@ -1541,6 +1541,23 @@ support = "`NEMTNA` の行を消して走らせました。その記号を挙げ
 evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/pull/99"
 found_by = "利用者（「その項目にPhilアーカイブの審査通ったこと書かれてなくね」）"
 occurred = "2026-09-08"
+recorded = "2026-09-30"
+basis = "再構成"
+verifiable = "紙面"
+
+[[entry]]
+id = "SC-045"
+status = "corrected"
+title = "SSRN の数を表だけ直し、同じ文書の散文を据え置きました"
+where = "cpsbvbng26-dotcom/docs/self-assessment.md の「職業研究者の階梯には乗っていません」の段"
+claimed = "DOI の付いた成果物が 7 篇あり、受け付けの門を 3 回通り、1 回落ちています"
+problem = "2026-09-18 に、同じ文書の表の SSRN の欄を 4 通過・3 却下に直しました。数え直す検査も表の欄にだけ付けました。段落の散文は 3 回・1 回のままでした。SC-038 と同じ形です。写しの一つに検査が掛かっていないと、そこだけ古い数が残ります。門がどの場のものかも書いていませんでした"
+correction = "散文を「SSRN の受け付けの門を 5 回通り、3 回落ちています」に直しました（新しい論文が載った分を含む）。`check_ecosystem.js` に、散文の二つの数を表と同じ数え方で突き合わせる検査を足しました"
+refute = "散文の二つの数のどちらかを動かして `check_ecosystem.js` が通ることを示せば、この訂正は不十分です"
+support = "通った回数を 4 に戻して走らせました。名乗り 4 / 3、実際 5 / 3 と出て落ちました。2026-09-18 から前日までの散文が 3 回・1 回であることは、git の履歴から読めます"
+evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/commits/main/docs/self-assessment.md"
+found_by = "Claude Code（SSRN の新しい番号を記録するために同じ段を読んだとき）"
+occurred = "2026-09-18"
 recorded = "2026-09-30"
 basis = "再構成"
 verifiable = "紙面"
