@@ -1,0 +1,24 @@
+{
+  "title": "self-correction: a complete record of one researcher's corrections to their own published claims",
+  "description": "<p>A machine-readable register of the corrections one author has made, or could not make, to claims the author published. Each entry has one of five states (standing, corrected, withdrawn, unresolvable, open). The checks require a procedure for refutation on every standing entry, a reason on every unresolvable and open entry, and they walk the git history so that an identifier once registered can never be removed.</p><p>It is a sample of one author, not a statistic. The register is written in Japanese.</p>",
+  "upload_type": "dataset",
+  "license": "mit",
+  "access_right": "open",
+  "language": "jpn",
+  "creators": [
+    {
+      "name": "Nemoto, Takuya",
+      "orcid": "0009-0000-1406-0547"
+    }
+  ],
+  "keywords": [
+    "self-correction",
+    "research integrity",
+    "errata",
+    "retraction",
+    "post-publication",
+    "meta-research",
+    "machine-readable record"
+  ],
+  "notes": "Built with Claude Code (Anthropic) at the author's request. The author reviewed the work and is responsible for it. Claude is not an author."
+}
