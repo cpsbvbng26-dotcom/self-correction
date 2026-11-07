@@ -11,7 +11,7 @@ jobs:
     name: 登録簿 47 項目
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # 消した id を捕まえるため、履歴が要る。
           fetch-depth: 0
