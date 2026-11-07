@@ -140,7 +140,7 @@
 
 ```
 python3 build.py                        # register.toml → REGISTER.md
-python3 verification/check_register.py  # 22 項目
+python3 verification/check_register.py  # 47 項目
 ```
 
 `REGISTER.md` は生成物である。手で編集しない。`register.toml` を直す。
