@@ -321,6 +321,13 @@ check("検査が見つける道具ではないと README に書いてある",
       and "戻ってこないようにする道具です。" in readme)
 
 
+# Zenodo が版を出したときに与えた DOI（DataCite：24033597 が v1.0.0 で、24033596 の版である）。
+cff = io.open(os.path.join(ROOT, "CITATION.cff"), encoding="utf-8").read()
+dois = ("10.5281/zenodo.24033597", "10.5281/zenodo.24033596")
+check("CITATION.cff と README が、版 1.0.0 の DOI とすべての版の DOI を挙げ、版の番号が 1.0.0 である",
+      all(('value: "%s"' % d) in cff and ("(https://doi.org/%s)" % d) in readme for d in dois)
+      and 'doi: "10.5281/zenodo.24033596"' in cff and 'version: "1.0.0"' in cff)
+
 print("\n" + "-" * 58)
 if failures:
     print("%d 件が通り、%d 件が通りませんでした。" % (passed, len(failures)))

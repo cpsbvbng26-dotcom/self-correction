@@ -5,7 +5,7 @@
 
 ```
 python3 build.py                          # register.toml → REGISTER.md
-python3 verification/check_register.py    # 46 項目
+python3 verification/check_register.py    # 47 項目
 python3 tally_found_by.py                 # 誰が見つけたかを数える
 ```
 
@@ -255,6 +255,13 @@ python3 tally_found_by.py                 # 誰が見つけたかを数える
 
 これは `ST-002` として、登録簿の中に未解決のまま置いてあります。解き方が分かって
 いないからで、数を増やしても解けないことだけは分かっています。
+
+## 引用
+
+この登録簿は、版を出すたびに Zenodo に保存しています。
+版 1.0.0 の DOI は [10.5281/zenodo.24033597](https://doi.org/10.5281/zenodo.24033597) です。
+すべての版に共通する DOI は [10.5281/zenodo.24033596](https://doi.org/10.5281/zenodo.24033596) で、いちばん新しい版を指します。
+引くときは、使った版の DOI を挙げます。
 
 ## ライセンス
 
