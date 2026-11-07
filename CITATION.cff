@@ -22,8 +22,16 @@ authors:
     orcid: "https://orcid.org/0009-0000-1406-0547"
 repository-code: "https://github.com/cpsbvbng26-dotcom/self-correction"
 license: MIT
-version: 0.1.0
-date-released: "2026-09-07"
+version: "1.0.0"
+date-released: "2026-11-07"
+doi: "10.5281/zenodo.24033596"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24033596"
+    description: すべての版。いちばん新しい版を指す
+  - type: doi
+    value: "10.5281/zenodo.24033597"
+    description: 版 1.0.0
 keywords:
   - self-correction
   - research integrity
