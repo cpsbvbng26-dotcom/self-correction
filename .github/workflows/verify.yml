@@ -11,11 +11,11 @@ jobs:
     name: 登録簿 47 項目
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # 消した id を捕まえるため、履歴が要る。
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       # 依存パッケージなし。標準ライブラリだけで動く。
