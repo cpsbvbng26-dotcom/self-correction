@@ -319,3 +319,5 @@ python3 tally_found_by.py
 分け方は五つで、最初に名指しされた者で数えています。
 「こちらの照合」は Claude に数えた —— この記録で「こちら」は作業の側を指します。
 別の欄を立てれば、同じものが二つに割れます。
+
+責任の範囲は、[免責事項](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md)に定めています。
