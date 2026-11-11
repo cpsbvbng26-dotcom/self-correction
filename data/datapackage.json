@@ -1,0 +1,195 @@
+{
+  "profile": "tabular-data-package",
+  "name": "self-correction",
+  "id": "https://doi.org/10.5281/zenodo.24033596",
+  "title": "self-correction: 一人の研究者による、自分の公開した主張の訂正の全記録",
+  "description": "一人の著者が公開した主張の訂正の登録簿を、一件一行にしたものです。register.toml から build.py が生成します。列の意味は data/README.md にあります。",
+  "homepage": "https://github.com/cpsbvbng26-dotcom/self-correction",
+  "citation": "根本卓哉「self-correction: 一人の研究者による、自分の公開した主張の訂正の全記録」Zenodo、2026年、https://doi.org/10.5281/zenodo.24033596",
+  "licenses": [
+    {
+      "name": "MIT",
+      "title": "MIT License",
+      "path": "https://opensource.org/licenses/MIT"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Nemoto, Takuya",
+      "path": "https://orcid.org/0009-0000-1406-0547",
+      "role": "author"
+    }
+  ],
+  "sources": [
+    {
+      "title": "register.toml",
+      "path": "https://github.com/cpsbvbng26-dotcom/self-correction/blob/main/register.toml"
+    }
+  ],
+  "resources": [
+    {
+      "name": "register",
+      "path": "register.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ",",
+        "lineTerminator": "\n",
+        "header": true
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "description": "識別子。AA-000 の形。頭の二文字が種類。永久に消さない",
+            "constraints": {
+              "required": true,
+              "unique": true,
+              "pattern": "^[A-Z]{2}-[0-9]{3}$"
+            }
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "description": "状態",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "standing",
+                "open",
+                "unresolvable",
+                "corrected",
+                "withdrawn"
+              ]
+            }
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "description": "題",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "where",
+            "type": "string",
+            "description": "どこにあった主張か"
+          },
+          {
+            "name": "doi",
+            "type": "string",
+            "description": "対象の DOI",
+            "constraints": {
+              "pattern": "^10\\.[0-9]{4,9}/\\S+$"
+            }
+          },
+          {
+            "name": "claimed",
+            "type": "string",
+            "description": "述べていたこと",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "support",
+            "type": "string",
+            "description": "支え"
+          },
+          {
+            "name": "counter",
+            "type": "string",
+            "description": "何が弱めているか"
+          },
+          {
+            "name": "problem",
+            "type": "string",
+            "description": "何が問題か"
+          },
+          {
+            "name": "correction",
+            "type": "string",
+            "description": "どうしたか"
+          },
+          {
+            "name": "why_unresolvable",
+            "type": "string",
+            "description": "なぜ直せないか"
+          },
+          {
+            "name": "why_open",
+            "type": "string",
+            "description": "なぜ未解決か"
+          },
+          {
+            "name": "refute",
+            "type": "string",
+            "description": "どうすれば覆るか"
+          },
+          {
+            "name": "found_by",
+            "type": "string",
+            "description": "見つけたのは"
+          },
+          {
+            "name": "evidence",
+            "type": "string",
+            "description": "証拠の URL",
+            "constraints": {
+              "pattern": "^https://\\S+$"
+            }
+          },
+          {
+            "name": "occurred",
+            "type": "string",
+            "description": "出来事が起きた時点。月までか日まで",
+            "constraints": {
+              "required": true,
+              "pattern": "^[0-9]{4}-[0-9]{2}(-[0-9]{2})?$"
+            }
+          },
+          {
+            "name": "recorded",
+            "type": "date",
+            "description": "この登録簿に書いた日。git の履歴と一致する",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "basis",
+            "type": "string",
+            "description": "同時か再構成か",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "同時",
+                "再構成"
+              ]
+            }
+          },
+          {
+            "name": "verifiable",
+            "type": "string",
+            "description": "第三者が確かめられるか",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "紙面",
+                "証言"
+              ]
+            }
+          }
+        ],
+        "primaryKey": "id",
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}
