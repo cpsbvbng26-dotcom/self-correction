@@ -1,6 +1,6 @@
 {
   "title": "self-correction: 一人の研究者による、自分の公開した主張の訂正の全記録",
-  "description": "<p>一人の著者が公開した主張について、直したもの、直せなかったもの、訂正の範囲を見誤っていたもの、訂正そのものの誤りまでを、機械可読な形で記録する登録簿です。状態は standing・corrected・withdrawn・unresolvable・open の五つに限り、識別子は永久に削除できません。検査は git の履歴を遡り、過去に一度でも登録された識別子が残っているかを確かめます。一人分の標本であり、統計ではありません。</p><p>A machine-readable register of the corrections of one researcher's own published claims, including those that could not be made. Identifiers can never be deleted; the checks walk back through the git history to confirm it.</p>",
+  "description": "<p>一人の著者が公開した主張について、直したもの、直せなかったもの、訂正の範囲を見誤っていたもの、訂正そのものの誤りまでを、機械可読な形で記録する登録簿です。状態は standing・corrected・withdrawn・unresolvable・open の五つに限り、識別子は永久に削除できません。検査は git の履歴を遡り、過去に一度でも登録された識別子が残っているかを確かめます。一人分の標本であり、統計ではありません。</p><p>A machine-readable register of the claims one author has published that were corrected, could not be corrected, were corrected too narrowly, or whose correction was itself wrong. Each entry is in one of five states: standing, corrected, withdrawn, unresolvable or open. Identifiers can never be deleted: the checks walk back through the git history and confirm that every identifier ever registered is still there. It is a sample of one, not a statistic.</p>",
   "upload_type": "dataset",
   "license": "mit",
   "access_right": "open",
@@ -15,7 +15,7 @@
     "research integrity",
     "errata",
     "retraction",
-    "post-publication",
+    "post-publication review",
     "meta-research",
     "machine-readable record"
   ],
