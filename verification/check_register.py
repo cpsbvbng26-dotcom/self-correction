@@ -281,15 +281,28 @@ import tally_found_by  # noqa: E402
 first, anywhere, multi, unknown = tally_found_by.main()
 check("見つけ手を分類できない記述が無い", unknown == 0, str(unknown))
 
+# 「数の読み方」の地の文も、利用者の二つの数と「最も多い」を名乗っている。
+# **表だけが直って、地の文が 35/17 のまま残っていた。**同じ物差しで当てる。
+# 項目の数は増やさない。利用者の行の検査に含める（項目の数は他のリポジトリにも写してある）。
+_prose = re.search(r"利用者が「どこかに出る」で (\d+) 件と最も多い。\s*"
+                   r"最初に名指しされるのは (\d+) 件", readme)
+
 for name, _ in tally_found_by.KINDS:
     m = re.search(r"\|\s*\*{0,2}" + name + r"\*{0,2}\s*\|\s*\*{0,2}(\d+)\*{0,2}\s*\|"
                   r"\s*(\d+)\s*\|", readme)
-    check("README の「%s」の数が実際と合う" % name,
-          m is not None and int(m.group(1)) == first[name]
-          and int(m.group(2)) == anywhere[name],
-          ("名乗り %s/%s / 実際 %d/%d" % (m.group(1), m.group(2),
-                                          first[name], anywhere[name]))
-          if m else "名乗っている行が見つからない")
+    ok = (m is not None and int(m.group(1)) == first[name]
+          and int(m.group(2)) == anywhere[name])
+    detail = (("名乗り %s/%s / 実際 %d/%d" % (m.group(1), m.group(2),
+                                             first[name], anywhere[name]))
+              if m else "名乗っている行が見つからない")
+    if name == "利用者":
+        ok = (ok and _prose is not None
+              and int(_prose.group(1)) == anywhere[name]
+              and int(_prose.group(2)) == first[name]
+              and anywhere[name] == max(anywhere.values()))
+        detail += ("；地の文 %s/%s" % (_prose.group(2), _prose.group(1))
+                   if _prose else "；地の文の名乗りが見つからない")
+    check("README の「%s」の数が実際と合う" % name, ok, detail)
 
 n_found = len([e for e in entries if e.get("found_by")])
 m = re.search(r"`found_by` がある項目は (\d+) 件です", readme)
