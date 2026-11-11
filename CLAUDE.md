@@ -139,11 +139,17 @@
 ## このリポジトリ
 
 ```
-python3 build.py                        # register.toml → REGISTER.md
+python3 build.py                        # register.toml → REGISTER.md・data/register.csv・views/
 python3 verification/check_register.py  # 47 項目
+python3 verification/check_dataset.py   # データセットとしての形（数は README の「検査の結果」）
 ```
 
-`REGISTER.md` は生成物である。手で編集しない。`register.toml` を直す。
+`REGISTER.md`・`data/register.csv`・`views/` は生成物である。手で編集しない。`register.toml` を直す。
+`data/README.md`（データ辞書）・`data/datapackage.json`・`data/example.py` は手で書いたもので、
+`check_dataset.py` が CSV の列・値と突き合わせる。列を足したら三つとも直す。
+
+`check_register.py` の項目の数はサイトにも写してある。データの形の検査は、そちらに足さず
+`check_dataset.py` に足す。
 
 **`id` は永久に消さない。**過去のどの版にあった `id` も、いまの版に無ければ
 検査が落ちる（`git log` を遡って見ている）。CI は `fetch-depth: 0` が要る。

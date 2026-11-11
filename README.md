@@ -1,12 +1,16 @@
 # self-correction
 
+種類：データセット　状態：運営中
+
 自分が公開した主張のうち、誤っていたもの・撤回したもの・直せないものを、
 一件ずつ、消さずに記録します。
 
 ```
-python3 build.py                          # register.toml → REGISTER.md
+python3 build.py                          # register.toml → REGISTER.md・CSV・絞り込んだ頁
 python3 verification/check_register.py    # 47 項目
+python3 verification/check_dataset.py     # データとしての形
 python3 tally_found_by.py                 # 誰が見つけたかを数える
+python3 data/example.py                   # CSV を読んで数える例
 ```
 
 いま **97 件**。内訳は [REGISTER.md](REGISTER.md) にあります。
@@ -50,6 +54,37 @@ python3 tally_found_by.py                 # 誰が見つけたかを数える
 
 2025年10月から2026年8月までの出来事は、起きた時点では記録していません。道筋を
 主張するなら、どこまでが同時記録でどこからが記憶なのかを先に書く必要があります。
+
+## データとして使う
+
+登録簿は、表計算ソフトでも開けます。どれも `register.toml` から `build.py` が作る生成物です。手で編集しません。
+
+| | |
+| --- | --- |
+| [`data/register.csv`](data/register.csv) | 全件を一件一行に並べた CSV |
+| [`data/README.md`](data/README.md) | データ辞書。列の意味と、値の意味 |
+| [`data/datapackage.json`](data/datapackage.json) | 列の型と制約。Frictionless の Data Package の形 |
+| [`data/example.py`](data/example.py) | CSV を読んで数える例。標準ライブラリだけで動く |
+| [`views/`](views/README.md) | 状態ごと・種類ごとに分けた頁 |
+
+絞り込んだ頁は、スクリプトを使わずに読めます。状態ごとの頁は
+[いま立っている](views/status-standing.md)・[未解決](views/status-open.md)・[直せない](views/status-unresolvable.md)・[直した](views/status-corrected.md)・[撤回した](views/status-withdrawn.md)
+の五つです。種類ごとの頁は [目次](views/README.md) から辿れます。
+
+CSV と絞り込んだ頁は、版 1.0.0 の保存版には入っていません。Zenodo の次の版から入ります。次の版を出すのは著者です。
+
+### 検査の結果
+
+| 検査 | 項目 | 結果 |
+| --- | --- | --- |
+| `verification/check_register.py` | 47 | すべて通る |
+| `verification/check_dataset.py` | 38 | すべて通る |
+
+この表の数は、`verification/check_dataset.py` が二つの検査を走らせて得た数と突き合わせています。手で書いた数が実際とずれると、検査が落ちます。
+
+### 使ったことを知らせる
+
+このデータを使った場合は、[使ったことを知らせる issue の様式](https://github.com/cpsbvbng26-dotcom/self-correction/issues/new?template=used-this-data.yml) があります。使われた記録として残します。連絡先は求めません。
 
 ## 人と言語モデルが、それぞれ何をしたか
 
@@ -260,6 +295,14 @@ python3 tally_found_by.py                 # 誰が見つけたかを数える
 版 1.0.0 の DOI は [10.5281/zenodo.24033597](https://doi.org/10.5281/zenodo.24033597) です。
 すべての版に共通する DOI は [10.5281/zenodo.24033596](https://doi.org/10.5281/zenodo.24033596) で、いちばん新しい版を指します。
 引くときは、使った版の DOI を挙げます。
+
+```
+根本卓哉「self-correction: 一人の研究者による、自分の公開した主張の訂正の全記録」Zenodo、2026年、https://doi.org/10.5281/zenodo.24033596
+```
+
+この一文が引用の文字列です。版を特定するときは、DOI をその版のものに替えます。
+同じ文字列を、この README・[`data/README.md`](data/README.md)・[`data/datapackage.json`](data/datapackage.json) の三箇所に置いています。
+`verification/check_dataset.py` が三箇所の一致を確かめます。一つだけ直すと落ちます。
 
 ## ライセンス
 

@@ -4,11 +4,11 @@ Issue も pull request も歓迎する。登録は要らない。
 
 ## ここに何があるか
 
-訂正の登録簿である。`register.toml` が正で、[REGISTER.md](REGISTER.md) はそこから
-生成される。九つのリポジトリ全部から、訂正の記録として参照されている。
+訂正の登録簿である。`register.toml` が正で、[REGISTER.md](REGISTER.md)・
+`data/register.csv`・`views/` はそこから生成される。九つのリポジトリ全部から、訂正の記録として参照されている。
 
 ```
-python3 build.py    # register.toml から REGISTER.md を出す
+python3 build.py    # register.toml から REGISTER.md・CSV・絞り込んだ頁を出す
 ```
 
 ## 何を知らせてほしいか
@@ -18,6 +18,7 @@ python3 build.py    # register.toml から REGISTER.md を出す
 1. 記録されていない誤り。どのリポジトリの、何か
 2. 記録の誤り。登録簿の項目が、実際と食い違っている場合
 3. 参照の切れ（他のリポジトリから指されている番号が、ここに無い場合）
+4. このデータを使ったこと。専用の様式（「このデータを使った」）がある
 
 ## 項目を消さない
 
@@ -29,12 +30,13 @@ python3 build.py    # register.toml から REGISTER.md を出す
 
 ## REGISTER.md を手で編集しない
 
-生成物である。直すのは `register.toml` のほうで、そのあと `build.py` を回す。
+生成物である。`data/register.csv` と `views/` も同じ。直すのは `register.toml` のほうで、そのあと `build.py` を回す。
 
 ## 変更を出す
 
 ```
 python3 verification/check_register.py    # 登録簿の形と履歴
+python3 verification/check_dataset.py     # データセットとしての形
 ```
 
 通ってから出す。依存パッケージは要らない。
@@ -49,7 +51,7 @@ python3 verification/check_register.py    # 登録簿の形と履歴
 
 - **項目を消すこと**
 - **根拠の等級を、根拠なしに上げること**
-- **生成物（`REGISTER.md`）への直接の変更**
+- **生成物（`REGISTER.md`・`data/register.csv`・`views/`）への直接の変更**
 - **検査の期待値を、通すために変えること**
 
 ## 支えの範囲と、これからの見込み
