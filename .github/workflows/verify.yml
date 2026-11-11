@@ -21,7 +21,10 @@ jobs:
       # 依存パッケージなし。標準ライブラリだけで動く。
       - name: 登録簿の形と履歴
         run: python3 verification/check_register.py
-      - name: 人が読む版が作り直せる
+      - name: データセットとしての形（CSV・データ辞書・datapackage.json・絞り込んだ頁）
+        run: python3 verification/check_dataset.py
+      - name: 人が読む版・CSV・絞り込んだ頁が作り直せる
         run: |
           python3 build.py
-          git diff --exit-code -- REGISTER.md
+          git diff --exit-code -- REGISTER.md data/register.csv views/
+          test -z "$(git status --porcelain -- views/ data/)"
