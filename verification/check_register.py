@@ -326,9 +326,21 @@ check("README の「機械 N 件 / 人 M 件」が実際と合う",
       if m else "無し")
 
 # **検査が素通りした一件を消さない。**ここが消えれば、検査を過信する側へ倒れる。
-check("検査が素通りしていた項目が登録簿にある",
-      any("検査は素通りしていました" in (e.get("found_by") or "") for e in entries))
-check("README がその一件に触れている", "検査は素通りしていました" in readme)
+# 素通りした検査は passed_check で名指す。found_by に「素通り」と書いた項目には、この欄が要る。
+# 名指しはファイル（.py / .js）か「…の検査」で始め、括弧の中に通った理由を書く。
+# 項目の数は増やさない（この検査の数は他のリポジトリにも写してある）。ここに畳む。
+named = [e for e in entries if e.get("passed_check")]
+unnamed = [e["id"] for e in entries if "素通り" in (e.get("found_by") or "") and not e.get("passed_check")]
+shapeless = [e["id"] for e in named
+             if not re.search(r"(\.py|\.js|の検査)", e["passed_check"]) or not re.search(r"（[^）]+）$", e["passed_check"])]
+check("検査が素通りしていた項目が登録簿にあり、その検査を passed_check で名指している",
+      any("検査は素通りしていました" in (e.get("found_by") or "") for e in entries)
+      and not unnamed and not shapeless and len(named) > 0,
+      "名指しが無い %s / 形が違う %s" % (", ".join(unnamed) or "無し", ", ".join(shapeless) or "無し"))
+m = re.search(r"`passed_check` の欄で名指しているのは (\d+) 件です", readme)
+check("README がその一件に触れ、passed_check の件数を正しく名乗る",
+      "検査は素通りしていました" in readme and m is not None and int(m.group(1)) == len(named),
+      ("名乗り %s / 実際 %d" % (m.group(1), len(named))) if m else "名乗りが無い")
 check("検査が見つける道具ではないと README に書いてある",
       "### 検査は、見つける道具ではない" in readme
       and "戻ってこないようにする道具です。" in readme)
