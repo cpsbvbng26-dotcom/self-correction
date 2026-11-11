@@ -38,6 +38,12 @@
 #   紙面    凍結された PDF・git の履歴・走らせられるコードから、誰でも確かめられる
 #   証言    著者の言葉以外に根拠がありません。**反証もできない**
 #
+# passed_check は、**誤りがあるのに通っていた検査**を名指します。検査そのものの誤りも、
+# 消さずに残すためです。その検査が当時あり、走り、通ったときだけ書きます。名指すのは
+# 検査のファイル（とその中の番号）で、括弧の中に、なぜ通ったかを書きます。
+# 検査が無かった、回していなかった、は書きません。それは検査の誤りではなく、検査の欠落です。
+# 検査が誤って通したと本文に書いた項目には、この欄が要ります。check_register.py が当たります。
+#
 # 重い項目ほど証言の側にあります。初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じです（ST-003）。
 #
@@ -337,6 +343,7 @@ problem = "検査を足したのに文章の数字だけ古いまま残ってい
 correction = "数字を直し、本文が名乗る件数を、実際にスクリプトを走らせた結果と突き合わせる検査を入れました"
 evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/check_site.js"
 found_by = "著者（目視）— 検査は素通りしていました"
+passed_check = "cpsbvbng26-dotcom の公開サイトの検査（本文が名乗る件数を、走らせた結果と突き合わせていなかった）"
 occurred = "2026-09"
 recorded = "2026-09-07"
 basis = "再構成"
@@ -871,6 +878,7 @@ problem = "数え直した八つは、配っている頁の三分の一です。
 correction = "10.53 と `check_contrast.js` の一覧を `pages.json` から引くように変えた（配色 119 → 431 項目）。論文の 14 頁を作り直し、24 頁すべてで素の `opacity: 0` が無いことを確かめています。SC-015 の記述は直しません。当時そう書いたことが記録です"
 evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/verification/check_site.js"
 found_by = "Claude（キーボードで辿れるかを測るためにブラウザを起こしたとき、論文の頁だけ透けたままの行に焦点が乗った）"
+passed_check = "cpsbvbng26-dotcom/verification/check_site.js の 10.53 と check_contrast.js（ベタ書きした一覧の頁だけを見ていた）"
 occurred = "2026-09-10"
 recorded = "2026-09-11"
 basis = "再構成"
@@ -1154,6 +1162,7 @@ problem = "本文からは引かれていません。紙面で `Foucault` が現
 why_unresolvable = "凍結された PDF です。ERRATA の E8 に記録しました。**検査が見落としていた** —— 「宣言した典拠がすべて紙面にある」は、参考文献欄の行に文字列があれば通る作りでした。参考文献欄より前だけを見るように直し、**本文に出ない項目を宣言に書いて、新しく増えたら落ちる形にしました**。三篇を通して測って、本文に出ないのはこの一件だけです。**M の Jünger はウムラウト付きで、`junger` で探して誤検出していた** —— 綴りを合わせたら本文に 16 回出てくる"
 evidence = "https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/verification/check_references.py"
 found_by = "Claude Code（引用を一件ずつ当たっていたとき）と、利用者の申告（内容を把握していないこと）"
+passed_check = "autonomy-and-self-cultivation/verification/check_references.py（参考文献欄の行に文字列があれば通る作りだった）"
 occurred = "2026-08"
 recorded = "2026-09-09"
 basis = "再構成"
@@ -1370,6 +1379,7 @@ refute = "深さ 1 の複製で `node verification/check_site.js` を走らせ�
 support = "深さ 1 の複製では 24 ページが `sitemap 2026-09-11 / git 2026-09-12` として落ちます。深い複製では 516 件すべて通ります"
 evidence = "https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/actions/runs/34667183257"
 found_by = "Claude（横断が落ちた理由を、手元で再現するまで追った）"
+passed_check = "cpsbvbng26-dotcom/verification/check_site.js の sitemap の検査（浅い複製でも、同じ日のうちに押せば日付が一致して通った）"
 occurred = "2026-09-12"
 recorded = "2026-09-12"
 basis = "同時"
@@ -1455,6 +1465,7 @@ refute = "この五行のいずれかの種別を書き換えて `check_route.py
 support = "三通り壊して確かめた —— 再発見を新規に書き換える、内訳を元の誤りに戻す、利用を再発見に変えます。いずれも落ちました"
 evidence = "https://github.com/cpsbvbng26-dotcom/trinity-infinity/commits/main/README.md"
 found_by = "Claude Code（利用者の問いで五行の表を読み直したとき）"
+passed_check = "trinity-infinity/verification/check_route.py の五行の種別の検査（その語が README に現れるかしか見ていなかった）"
 occurred = "2026-09-08"
 recorded = "2026-09-13"
 basis = "再構成"
