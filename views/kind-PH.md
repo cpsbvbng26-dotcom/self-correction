@@ -185,7 +185,7 @@
 - **DOI** —— [10.5281/zenodo.22057583](https://doi.org/10.5281/zenodo.22057583)
 - **述べていたこと** —— No data, quotations, or sources were fabricated by the AI system in the course of this revision.
 - **何が問題か** —— 同じ段落が、参考文献の照合そのものも言語モデルがやったと述べています —— `identify and verify the bibliographic citations listed in the References section against publicly available sources`。二つを並べると循環が残ります。捏造が無かったことを確かめたのは言語モデルであり、**著者は原典に当たっていません**（ERRATA の E6）。したがってこの断言は言語モデル自身の報告以外に根拠を持ちません。**開示文の中でいちばん重い一文です** —— 読者は「捏造は無かった」を、著者が確かめた事実として受け取ります
-- **なぜ直せないか** —— 凍結された PDF です。書けたはずのことは二文で済みました —— 「照合は言語モデルが行いました。著者は原典に当たっていないため、独立には確かめていない」。E5 は書かれていないことの記録、E6 は原典に当たっていないことの記録、これは書かれていることの記録です。三つのうち、いちばん直接的に読者を誤らせます。二つの引用は紙面に印字されており、書き換えられたら check_errata.py が落ちる（103 項目）
+- **なぜ直せないか** —— 凍結された PDF です。書けたはずのことは二文で済みました —— 「照合は言語モデルが行いました。著者は原典に当たっていないため、独立には確かめていない」。E5 は書かれていないことの記録、E6 は原典に当たっていないことの記録、これは書かれていることの記録です。三つのうち、いちばん直接的に読者を誤らせます。二つの引用は紙面に印字されており、書き換えられたら check_errata.py が落ちます（103 項目）
 - **見つけたのは** —— Claude Code（外部の査読が改訂版のものかを確かめるために開示文を読んだとき）
 - **証拠** —— <https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/verification/audit.toml>
 - **起きた** —— 2026-08
