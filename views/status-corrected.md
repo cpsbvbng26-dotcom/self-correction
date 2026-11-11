@@ -431,7 +431,7 @@
 - **どこ** —— trinity-infinity/ERRATA.md の N6・N7、verification/claims_audit.py
 - **述べていたこと** —— Series III 表1の `exact for n=2,3`、異方性版が一般の n で定義されていないこと、定理1のノルムが特定されていないこと
 - **何が問題か** —— `exact` の件は、指摘の理由のほうが外れていました —— 「浮動小数点だから 0 にならないはず」ではありません。固定した乱数種では本当に 0 になります。別の基準点では n=2 で 5.551e-17 が出ます。本当の問題は、同じ表の中で厳密な 0（isometry error。置換行列の成分は 0 と 1 だけ）と丸めの 0（不動点への偏差）が書き分けられていないことです
-- **どうしたか** —— N6 と N7 に記録しました。N6 は claims_audit.py に入れました —— **上の表の乱数種は動かさず、別の種でもう一度だけ引く**（32 項目）。異方性版の一般形 f(T) = D Pₙ(T) + (I − D)p が三本のどこにも無いこと、Series I が Euclidean norm と明記して Series III が `‖·‖` としか書かないことも N7 に入れました
+- **どうしたか** —— N6 と N7 に記録しました。N6 は claims_audit.py に入れました —— **上の表の乱数種は動かさず、別の種でもう一度だけ引きます**（32 項目）。異方性版の一般形 f(T) = D Pₙ(T) + (I − D)p が三本のどこにも無いこと、Series I が Euclidean norm と明記して Series III が `‖·‖` としか書かないことも N7 に入れました
 - **見つけたのは** —— Stanford Agentic Reviewer（paperreview.ai）
 - **証拠** —— <https://github.com/cpsbvbng26-dotcom/trinity-infinity/blob/main/verification/claims_audit.py>
 - **起きた** —— 2026-09-08
