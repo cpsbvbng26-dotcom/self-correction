@@ -80,7 +80,7 @@ python3 tally_found_by.py                 # 誰が見つけたかを数える
 
 | | 方針 | 実装 | 中身を確かめる | 判断 |
 | --- | --- | --- | --- | --- |
-| `errata-check` ほか検証の道具 | 著者 | **言語モデル**（Claude Code） | **機械が自分で**（通る状態を 28 通りに壊して落ちることまで） | 著者 |
+| `errata-check` ほか検証の道具 | 著者 | **言語モデル**（Claude Code） | **機械が自分で**（通る状態を 30 通りに壊して落ちることまで） | 著者 |
 | **この登録簿** | 著者 | **言語モデル** | 機械（git を遡って、消えた項目が無いか） | **著者**（何を書くか） |
 | `trinity-operator` | 著者 | **言語モデル** | 機械（作用素・証書・展望・引用情報） | 著者 |
 | サイト | 著者 | **言語モデル** | 機械（誤変換・配色・構造・数値） | 著者 |
@@ -184,8 +184,6 @@ python3 tally_found_by.py                 # 誰が見つけたかを数える
 
 ---
 
----
-
 対象は公開した全部です。Trinity-Infinity の三篇、哲学の三篇、海軍公報の史料
 ノート、サイトの記述、そしてこの作業で書いた検査そのもの。一つの論文にだけ方法を
 当てているなら、それ自体が弱点になります。
@@ -237,10 +235,10 @@ python3 tally_found_by.py                 # 誰が見つけたかを数える
 引用が一次資料に一字一句あるかどうかは、**その資料を持っているリポジトリの側**で
 検査します。ここがやるのは、登録簿の**形と履歴**です。
 
-- Trinity-Infinity の三篇 → [trinity-infinity](https://github.com/cpsbvbng26-dotcom/trinity-infinity)（78 項目）
-- 哲学の三篇 → [autonomy-and-self-cultivation](https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation)（50 項目）
-- 海軍公報の史料ノート → [naval-gazette-notes](https://github.com/cpsbvbng26-dotcom/naval-gazette-notes)（31 項目）
-- その検査の道具 → [errata-check](https://github.com/cpsbvbng26-dotcom/errata-check)（[10.5281/zenodo.22649899](https://doi.org/10.5281/zenodo.22649899)）
+- Trinity-Infinity の三篇 → [trinity-infinity](https://github.com/cpsbvbng26-dotcom/trinity-infinity)（109 項目）
+- 哲学の三篇 → [autonomy-and-self-cultivation](https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation)（103 項目）
+- 海軍公報の史料ノート → [naval-gazette-notes](https://github.com/cpsbvbng26-dotcom/naval-gazette-notes)（59 項目）
+- その検査の道具 → [errata-check](https://github.com/cpsbvbng26-dotcom/errata-check)（v0.3.0、[10.5281/zenodo.22685687](https://doi.org/10.5281/zenodo.22685687)）
 
 分けてあるのは、**一次資料から遠い場所で「一致している」と言っても意味が無い**
 からです。
@@ -312,8 +310,8 @@ python3 tally_found_by.py
 一つ。人が見ることをやめたら、新しい誤りは出てこなくなります。
 検査を足しても、そこは埋まりません。
 
-二つ。利用者が「どこかに出る」で 35 件と最も多い。
-最初に名指しされるのは 17 件だが、確認や申し出の形で関わったものを入れると倍になります。
+二つ。利用者が「どこかに出る」で 38 件と最も多い。
+最初に名指しされるのは 19 件だが、確認や申し出の形で関わったものを入れると倍になります。
 この記録は、外から見られることに支えられています。
 
 分け方は五つで、最初に名指しされた者で数えています。
