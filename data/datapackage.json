@@ -136,6 +136,11 @@
             "description": "見つけたのは"
           },
           {
+            "name": "passed_check",
+            "type": "string",
+            "description": "誤って通した検査"
+          },
+          {
             "name": "evidence",
             "type": "string",
             "description": "証拠の URL",

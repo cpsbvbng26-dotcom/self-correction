@@ -1,0 +1,40 @@
+# check_hygiene.py が読む。このリポジトリだけの違いをここに置く。
+
+# 外部のパッケージ。無い。
+packages = []
+
+# 書き込みの権限。「ワークフローのファイル名:権限」。無い。
+writes = []
+
+# 要旨。.zenodo.json の description に、日本語と英語を続けて置いている。
+[abstract]
+ja = [".zenodo.json", "description"]
+en = [".zenodo.json", "description"]
+
+# 散文の数。ほかの検査が拾っていなかったもの。
+[[copies]]
+what = "登録簿の検査の項目数"
+# README の数は cpsbvbng26-dotcom の check_ecosystem.js が実際と突き合わせている。CLAUDE.md はその写し。
+from = ["README.md", 'check_register\.py\s+# (\d+) 項目']
+to = [["CLAUDE.md", 'check_register\.py\s+# (\d+) 項目']]
+
+# 下の四つは兄弟のリポジトリの数の写し。兄弟が並んでいるときだけ見る。
+[[copies]]
+what = "errata-check の壊す先の数"
+from = ["../errata-check/README.md", '壊す先は (\d+) 通り']
+to = [["README.md", '通る状態を (\d+) 通りに壊して']]
+
+[[copies]]
+what = "trinity-infinity の正誤表の監査の項目数"
+from = ["../trinity-infinity/.github/workflows/verify.yml", '正誤表の監査 (\d+) 項目']
+to = [["README.md", 'trinity-infinity\)（(\d+) 項目）']]
+
+[[copies]]
+what = "autonomy-and-self-cultivation の正誤表の監査の項目数"
+from = ["../autonomy-and-self-cultivation/.github/workflows/verify.yml", '正誤表の監査 (\d+) 項目']
+to = [["README.md", 'autonomy-and-self-cultivation\)（(\d+) 項目）']]
+
+[[copies]]
+what = "naval-gazette-notes の正誤表の監査の項目数"
+from = ["../naval-gazette-notes/.github/workflows/verify.yml", '正誤表の監査 (\d+) 項目']
+to = [["README.md", 'naval-gazette-notes\)（(\d+) 項目）']]

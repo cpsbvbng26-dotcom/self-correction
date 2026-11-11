@@ -43,6 +43,7 @@ FIELDS = [
     ("why_open", "なぜ未解決か"),
     ("refute", "どうすれば覆るか"),
     ("found_by", "見つけたのは"),
+    ("passed_check", "誤って通した検査"),
     ("evidence", "証拠"),
     ("occurred", "起きた"),
     ("recorded", "書いた"),

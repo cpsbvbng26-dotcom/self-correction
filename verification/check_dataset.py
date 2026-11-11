@@ -236,7 +236,8 @@ except Exception as exc:                                    # noqa: BLE001
     ran, got = False, [str(exc)]
 check("data/example.py が走る", ran, (out.stderr.strip()[-200:] if not ran else ""))
 want_lines = {"全件 %d" % len(entries),
-              "証言しか根拠が無い %d" % sum(e["verifiable"] == "証言" for e in entries)}
+              "証言しか根拠が無い %d" % sum(e["verifiable"] == "証言" for e in entries),
+              "検査が誤って通した %d" % sum(bool(e.get("passed_check")) for e in entries)}
 for st in build.LABEL:
     n = sum(e["status"] == st for e in entries)
     if n:
