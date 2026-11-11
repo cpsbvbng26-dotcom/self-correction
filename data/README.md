@@ -23,6 +23,7 @@ CSV は表計算ソフト向けで、UTF-8（BOM なし）、区切りはカン�
 | `why_open` | なぜ未解決か。`open` には必須 |
 | `refute` | どうすれば覆るか。`standing` には必須 |
 | `found_by` | 誰が見つけたか |
+| `passed_check` | 誤りがあるのに通っていた検査。その検査が当時あり、走り、通ったときだけ置く。検査のファイルを名指し、括弧の中に通った理由を書く |
 | `evidence` | 証拠の URL。`https://` で始まる |
 | `occurred` | 出来事が起きた時点。`2025-10` のように月までのものと、日までのものがある |
 | `recorded` | この登録簿に書いた日。`YYYY-MM-DD`。git の履歴と一致する |
@@ -52,7 +53,7 @@ CSV は表計算ソフト向けで、UTF-8（BOM なし）、区切りはカン�
 
 ## 使い方の例
 
-標準ライブラリだけで動きます。全件と、状態ごとの件数と、証言しか根拠の無い件数を数えます。
+標準ライブラリだけで動きます。全件と、状態ごとの件数と、証言しか根拠の無い件数と、検査が誤って通した件数を数えます。
 
 ```python
 #!/usr/bin/env python3
@@ -73,6 +74,7 @@ print("全件", len(rows))
 for status, n in collections.Counter(r["status"] for r in rows).most_common():
     print(status, n)
 print("証言しか根拠が無い", sum(r["verifiable"] == "証言" for r in rows))
+print("検査が誤って通した", sum(r["passed_check"] != "" for r in rows))
 ```
 
 この例は [`example.py`](example.py) と一字一句同じです。`verification/check_dataset.py` が、二つが同じであることと、走らせた結果が `register.toml` の件数と合うことを確かめます。
