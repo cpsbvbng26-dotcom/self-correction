@@ -1,0 +1,52 @@
+name: このデータを使った
+description: 登録簿のデータを使ったことを知らせる。使われた記録として残す
+title: "使った: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        登録簿のデータ（`register.toml`・`data/register.csv`・`REGISTER.md`）を使ったことを知らせる様式です。
+        知らせは、使われた記録として残します。誤りの知らせは、この様式ではなく通常の issue で受けます。
+        この issue は公開されます。連絡先や、公開したくない情報は書かないでおく形にしています。
+  - type: input
+    id: version
+    attributes:
+      label: 使った版
+      description: Zenodo の版の DOI か、GitHub のコミット。分からなければ空欄で構いません
+      placeholder: 10.5281/zenodo.24033597
+    validations:
+      required: false
+  - type: dropdown
+    id: files
+    attributes:
+      label: 使ったファイル
+      multiple: true
+      options:
+        - register.toml
+        - data/register.csv
+        - REGISTER.md
+        - views/ の頁
+        - そのほか
+    validations:
+      required: true
+  - type: textarea
+    id: use
+    attributes:
+      label: 何に使ったか
+      description: 論文・授業・道具の試験・読み物など。一行で足ります
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: 公開されている所在
+      description: 使った成果が公開されていれば、その DOI か URL。無ければ空欄
+    validations:
+      required: false
+  - type: textarea
+    id: note
+    attributes:
+      label: 気づいたこと
+      description: データの形や欄について気づいたことがあれば
+    validations:
+      required: false
