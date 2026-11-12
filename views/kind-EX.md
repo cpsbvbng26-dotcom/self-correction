@@ -3,7 +3,7 @@
 このファイルは `register.toml` からの生成物です。手で編集しません。
 （`python3 build.py` で作り直す）
 
-`id` が `EX` で始まる項目です。`register.toml` で置かれている節は、道具そのもの 2、外部からの評価 8 です。
+`id` が `EX` で始まる項目を集めた頁です。`register.toml` で置かれている節は、道具そのもの 2、外部からの評価 8 です。
 
 [目次](README.md)・[全件](../REGISTER.md)
 

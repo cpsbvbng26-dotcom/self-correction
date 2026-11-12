@@ -1,5 +1,6 @@
 # データ辞書
 
+`register.csv` の列の意味を述べるデータ辞書です。
 `register.csv` は、登録簿の全件を一件一行に並べたものです。
 正は `register.toml` で、`register.csv` は `python3 build.py` が作る生成物です。手で編集しません。
 CSV は表計算ソフト向けで、UTF-8（BOM なし）、区切りはカンマ、改行は LF です。

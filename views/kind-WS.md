@@ -3,7 +3,7 @@
 このファイルは `register.toml` からの生成物です。手で編集しません。
 （`python3 build.py` で作り直す）
 
-`id` が `WS` で始まる項目です。`register.toml` で置かれている節は、サイトの記述 2、外部からの評価 1 です。
+`id` が `WS` で始まる項目を集めた頁です。`register.toml` で置かれている節は、サイトの記述 2、外部からの評価 1 です。
 
 [目次](README.md)・[全件](../REGISTER.md)
 
