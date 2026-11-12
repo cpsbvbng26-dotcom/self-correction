@@ -7,23 +7,23 @@ self-correction は、自分が公開した主張のうち、誤っていたも�
 
 ```
 python3 build.py                          # register.toml → REGISTER.md・CSV・絞り込んだ頁
-python3 verification/check_register.py    # 47 項目
+python3 verification/check_register.py    # 48 項目
 python3 verification/check_dataset.py     # データとしての形
 python3 tally_found_by.py                 # 誰が見つけたかを数える
 python3 data/example.py                   # CSV を読んで数える例
 ```
 
-いま **97 件**。内訳は [REGISTER.md](REGISTER.md) にあります。
+いま **104 件**。内訳は [REGISTER.md](REGISTER.md) にあります。
 
 | 状態 | 件数 |
 | --- | --- |
 | いま立っている | 13 |
-| 未解決 | 6 |
-| **直せない** | 24 |
-| 直した | 48 |
+| 未解決 | 7 |
+| **直せない** | 28 |
+| 直した | 50 |
 | 撤回した | 6 |
 
-97 件のうち 37 件は、あとからの再構成です。同時に記録したものは 60 件しかありません。
+104 件のうち 44 件は、あとからの再構成です。同時に記録したものは 60 件しかありません。
 
 日付を二つ持っています。
 
@@ -39,7 +39,7 @@ python3 data/example.py                   # CSV を読んで数える例
 
 | | |
 | --- | --- |
-| **紙面** | 凍結された PDF・git の履歴・走らせられるコードから、**誰でも確かめられる**（78 件） |
+| **紙面** | 凍結された PDF・git の履歴・走らせられるコードから、**誰でも確かめられる**（85 件） |
 | **証言** | 著者の言葉以外に根拠が無い。反証もできない（19 件） |
 
 重い項目ほど証言の側にあります。初稿の出所も、原典を読んでいないことも、英訳の
@@ -77,7 +77,7 @@ CSV と絞り込んだ頁は、版 1.0.0 の保存版には入っていません
 
 | 検査 | 項目 | 結果 |
 | --- | --- | --- |
-| `verification/check_register.py` | 47 | すべて通る |
+| `verification/check_register.py` | 48 | すべて通る |
 | `verification/check_dataset.py` | 38 | すべて通る |
 
 この表の数は、`verification/check_dataset.py` が二つの検査を走らせて得た数と突き合わせています。手で書いた数が実際とずれると、検査が落ちます。
@@ -276,9 +276,9 @@ CSV と絞り込んだ頁は、版 1.0.0 の保存版には入っていません
 引用が一次資料に一字一句あるかどうかは、**その資料を持っているリポジトリの側**で
 検査します。ここがやるのは、登録簿の**形と履歴**です。
 
-- Trinity-Infinity の三篇 → [trinity-infinity](https://github.com/cpsbvbng26-dotcom/trinity-infinity)（109 項目）
-- 哲学の三篇 → [autonomy-and-self-cultivation](https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation)（103 項目）
-- 海軍公報の史料ノート → [naval-gazette-notes](https://github.com/cpsbvbng26-dotcom/naval-gazette-notes)（59 項目）
+- Trinity-Infinity の三篇 → [trinity-infinity](https://github.com/cpsbvbng26-dotcom/trinity-infinity)（111 項目）
+- 哲学の三篇 → [autonomy-and-self-cultivation](https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation)（111 項目）
+- 海軍公報の史料ノート → [naval-gazette-notes](https://github.com/cpsbvbng26-dotcom/naval-gazette-notes)（68 項目）
 - その検査の道具 → [errata-check](https://github.com/cpsbvbng26-dotcom/errata-check)（v0.3.0、[10.5281/zenodo.22685687](https://doi.org/10.5281/zenodo.22685687)）
 
 分けてあるのは、**一次資料から遠い場所で「一致している」と言っても意味が無い**
@@ -328,15 +328,16 @@ python3 tally_found_by.py
 | 見つけ手 | 最初に名指し | どこかに出る |
 | --- | --- | --- |
 | **機械** | **8** | 8 |
-| Claude | 29 | 32 |
+| Claude | 30 | 39 |
 | 著者 | 22 | 24 |
-| 利用者 | 19 | 38 |
+| 利用者 | 19 | 45 |
 | 外部 | 12 | 14 |
+| 研究補助 | 6 | 7 |
 
-`found_by` がある項目は 90 件です。残る 7 件には書いていません。
-二者以上が関わったものが 26 件あります。
+`found_by` がある項目は 97 件です。残る 7 件には書いていません。
+二者以上が関わったものが 33 件あります。
 
-機械が最初に見つけたのは 8 件です。残る 82 件は、人が見つけています。
+機械が最初に見つけたのは 8 件です。言語モデルの研究補助が最初に挙げたものが 6 件あります。残る 83 件は、人が見つけています。
 
 ### 検査は、見つける道具ではない
 
@@ -363,12 +364,18 @@ python3 tally_found_by.py
 一つ。人が見ることをやめたら、新しい誤りは出てこなくなります。
 検査を足しても、そこは埋まりません。
 
-二つ。利用者が「どこかに出る」で 38 件と最も多い。
-最初に名指しされるのは 19 件だが、確認や申し出の形で関わったものを入れると倍になります。
+二つ。利用者が「どこかに出る」で 45 件と最も多い。
+最初に名指しされるのは 19 件だが、確認や申し出の形で関わったものを入れると、倍を超えます。
 この記録は、外から見られることに支えられています。
 
-分け方は五つで、最初に名指しされた者で数えています。
+分け方は六つで、最初に名指しされた者で数えています。
 「こちらの照合」は Claude に数えました —— この記録で「こちら」は作業の側を指します。
 別の欄を立てれば、同じものが二つに割れます。
+
+研究補助は、Academia Co-scientist（言語モデルの研究補助）の出力です。
+2026-11-12 に利用者から受け取りました。
+外部とは分けて数え、外部の評価にも数えていません。査読でも、人による評価でもないからです。
+2026-11-12 に Claude が決めました。
+挙げられた点は、Claude が紙面と照合し、当たっているものだけを登録簿に入れました。
 
 責任は、法令の定めるとおりです。説明は[免責事項](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md)にあります。
