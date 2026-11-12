@@ -11,9 +11,9 @@
 | 状態 | 件数 | 頁 |
 | --- | --- | --- |
 | いま立っている | 13 | [standing](status-standing.md) |
-| 未解決 | 6 | [open](status-open.md) |
-| 直せない | 24 | [unresolvable](status-unresolvable.md) |
-| 直した | 48 | [corrected](status-corrected.md) |
+| 未解決 | 7 | [open](status-open.md) |
+| 直せない | 28 | [unresolvable](status-unresolvable.md) |
+| 直した | 50 | [corrected](status-corrected.md) |
 | 撤回した | 6 | [withdrawn](status-withdrawn.md) |
 
 ## 種類ごと
@@ -23,13 +23,14 @@
 
 | 種類 | 置かれている節 | 件数 | 頁 |
 | --- | --- | --- | --- |
-| `TI` | 三篇そのもの 7、道具そのもの 4 | 11 | [TI](kind-TI.md) |
+| `TI` | 三篇そのもの 7、道具そのもの 5 | 12 | [TI](kind-TI.md) |
 | `WD` | 撤回したもの 4 | 4 | [WD](kind-WD.md) |
 | `SC` | 自分の訂正のほうの誤り 5、哲学の三篇 1、道具そのもの 26、外部からの評価 13 | 45 | [SC](kind-SC.md) |
 | `ST` | 自分の訂正のほうの誤り 1、道具そのもの 1、いま立っているもの 3 | 5 | [ST](kind-ST.md) |
-| `WS` | サイトの記述 2、外部からの評価 1 | 3 | [WS](kind-WS.md) |
-| `PH` | 哲学の三篇 7、道具そのもの 5、外部からの評価 1 | 13 | [PH](kind-PH.md) |
-| `NG` | 史料ノート 3 | 3 | [NG](kind-NG.md) |
+| `WS` | サイトの記述 3、外部からの評価 1 | 4 | [WS](kind-WS.md) |
+| `PH` | 哲学の三篇 8、道具そのもの 5、外部からの評価 1 | 14 | [PH](kind-PH.md) |
+| `NG` | 史料ノート 4 | 4 | [NG](kind-NG.md) |
+| `MR` | 機械を介した再発見の論文 3 | 3 | [MR](kind-MR.md) |
 | `TL` | 道具そのもの 2 | 2 | [TL](kind-TL.md) |
 | `EX` | 道具そのもの 2、外部からの評価 8 | 10 | [EX](kind-EX.md) |
 | `BK` | 一般向けの書籍 1 | 1 | [BK](kind-BK.md) |
