@@ -371,4 +371,4 @@ python3 tally_found_by.py
 「こちらの照合」は Claude に数えました —— この記録で「こちら」は作業の側を指します。
 別の欄を立てれば、同じものが二つに割れます。
 
-責任の範囲は、[免責事項](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md)に定めています。
+責任は、法令の定めるとおりです。説明は[免責事項](https://github.com/cpsbvbng26-dotcom/cpsbvbng26-dotcom/blob/main/DISCLAIMER.md)にあります。
