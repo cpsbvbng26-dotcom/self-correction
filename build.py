@@ -85,7 +85,7 @@ def render(reg):
            "（`python3 build.py` で作り直す）",
            "",
            "公開したあとで誤りが見つかったもの、撤回したもの、果たされなかった約束を、",
-           "一件ずつ、消さずに記録します。",
+           "一件ずつ、消さずに記録する登録簿です。",
            "",
            "`id` は永久に消しません。過去のどの版にあった `id` も、いまの版に無ければ",
            "`verification/check_register.py` が落とします。都合の悪い記録は、消せない",
@@ -187,7 +187,7 @@ def render_views(reg, kind_sections):
         name, meaning = LABEL[st]
         out = ["# 登録簿：%s（%d 件）" % (name, len(group)), "", GENERATED,
                "（`python3 build.py` で作り直す）", "",
-               meaning + "。", "",
+               "状態が「%s」の項目を集めた頁です。%s。" % (name, meaning), "",
                "[目次](README.md)・[全件](../REGISTER.md)", ""]
         for e in group:
             out += render_entry(e)
@@ -196,7 +196,7 @@ def render_views(reg, kind_sections):
     for k, group in by_kind:
         out = ["# 登録簿：`%s` の項目（%d 件）" % (k, len(group)), "", GENERATED,
                "（`python3 build.py` で作り直す）", "",
-               "`id` が `%s` で始まる項目です。`register.toml` で置かれている節は、%s です。"
+               "`id` が `%s` で始まる項目を集めた頁です。`register.toml` で置かれている節は、%s です。"
                % (k, sections_text(kind_sections[k])), "",
                "[目次](README.md)・[全件](../REGISTER.md)", ""]
         for st in ORDER:
