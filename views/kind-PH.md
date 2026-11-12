@@ -1,9 +1,9 @@
-# 登録簿：`PH` の項目（13 件）
+# 登録簿：`PH` の項目（14 件）
 
 このファイルは `register.toml` からの生成物です。手で編集しません。
 （`python3 build.py` で作り直す）
 
-`id` が `PH` で始まる項目を集めた頁です。`register.toml` で置かれている節は、哲学の三篇 7、道具そのもの 5、外部からの評価 1 です。
+`id` が `PH` で始まる項目を集めた頁です。`register.toml` で置かれている節は、哲学の三篇 8、道具そのもの 5、外部からの評価 1 です。
 
 [目次](README.md)・[全件](../REGISTER.md)
 
@@ -21,7 +21,7 @@
 - **記録の性質** —— 再構成
 - **誰が確かめられるか** —— 紙面
 
-## 直せない（12 件）
+## 直せない（13 件）
 
 ### PH-001 —— 三篇とも、自身の DOI を印字していません
 
@@ -109,6 +109,20 @@
 - **記録の性質** —— 再構成
 - **誰が確かめられるか** —— 証言
 
+### PH-014 —— 自己立法としての自律と、他者に依らない自足を、一つの語で扱っています
+
+- **どこ** —— The Nobility and Exemplarity of the Celibate Individual（v2）の要旨・第4節
+- **DOI** —— [10.5281/zenodo.22058254](https://doi.org/10.5281/zenodo.22058254)
+- **述べていたこと** —— the capacity to legislate for oneself the principles governing one's own life ／ is best exercised, I want to suggest, in a mode of living that does not make one's stable well-being hostage to the responsiveness of another person
+- **何が問題か** —— 定義が述べているのは、生き方の原則を自分で立てるかどうかです。続く文が述べているのは、安定した幸福が他者に依るかどうかで、紙面も同じ段落で autarkeia（自足）に近いと書いています。二つは別の区別です。他者に依る生き方を、自分で立てた原則として選ぶことは、定義の上では自律です。定義からその提案は出ず、紙面は論証を足していません。段落の終わりでは、自律の語を自足の意味で使っています（exercising a specific kind of autonomy）。要旨の autonomous, self-sustained flourishing も二つを一つの句にしています。結論（範例的な選択肢の一つである）は、第4節の自足の論証だけでも立ちえます
+- **なぜ直せないか** —— 凍結された PDF です。autonomy-and-self-cultivation の ERRATA の N9 に記録し、四つの句が紙面にあることを check_errata.py で固定しました
+- **見つけたのは** —— Academia Co-scientist（言語モデルの研究補助）の出力。2026-11-12 に利用者から受け取り、Claude が紙面と照合しました
+- **証拠** —— <https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md>
+- **起きた** —— 2026-08
+- **書いた** —— 2026-11-12
+- **記録の性質** —— 再構成
+- **誰が確かめられるか** —— 紙面
+
 ### PH-011 —— 物語的自己を退けていながら、物語論の文献を一つも挙げていません
 
 - **どこ** —— 断片主義（Fragmentarian Spiritual Individualism）の参考文献欄、および第2節・第7節
@@ -156,7 +170,7 @@
 - **DOI** —— [10.5281/zenodo.22058254](https://doi.org/10.5281/zenodo.22058254)
 - **述べていたこと** —— 第3節が反出生主義から生殖の義務を否定し、第4節がエピクロスとショーペンハウアーから性行為そのものを退けます
 - **何が問題か** —— 避妊がこの二つを切り離します。生殖を伴わない性行為は第3節の論証の射程外であり、第4節は反出生主義からの支えを一切受けずに単独で立たなければなりません。**紙面はそこに触れていません** —— `contracept` という語が一度も現れません。論証が崩れるわけではないが、二段の関係が書かれているより弱い。読者は第3節が第4節を支えていると受け取りえます。**あわせて、選んだ独身と、選べなかった性的不活発・アセクシュアリティ・アロマンティックを区別していません**（`asexual` も `involuntary` も紙面に無い）。区別が無ければ、選べなかったことを称揚する読みも成り立ちます
-- **なぜ直せないか** —— 凍結された PDF です。ERRATA の N5・N6 に記録しました。紙面に現れない語そのものを機械で固定しており（103 項目）、**出てきたらその時点で書き直す番になります**
+- **なぜ直せないか** —— 凍結された PDF です。ERRATA の N5・N6 に記録しました。紙面に現れない語そのものを機械で固定しており（111 項目）、**出てきたらその時点で書き直す番になります**
 - **見つけたのは** —— Stanford Agentic Reviewer（paperreview.ai）と、こちらの照合
 - **証拠** —— <https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/verification/audit.toml>
 - **起きた** —— 2026-08
@@ -185,7 +199,7 @@
 - **DOI** —— [10.5281/zenodo.22057583](https://doi.org/10.5281/zenodo.22057583)
 - **述べていたこと** —— No data, quotations, or sources were fabricated by the AI system in the course of this revision.
 - **何が問題か** —— 同じ段落が、参考文献の照合そのものも言語モデルがやったと述べています —— `identify and verify the bibliographic citations listed in the References section against publicly available sources`。二つを並べると循環が残ります。捏造が無かったことを確かめたのは言語モデルであり、**著者は原典に当たっていません**（ERRATA の E6）。したがってこの断言は言語モデル自身の報告以外に根拠を持ちません。**開示文の中でいちばん重い一文です** —— 読者は「捏造は無かった」を、著者が確かめた事実として受け取ります
-- **なぜ直せないか** —— 凍結された PDF です。書けたはずのことは二文で済みました —— 「照合は言語モデルが行いました。著者は原典に当たっていないため、独立には確かめていない」。E5 は書かれていないことの記録、E6 は原典に当たっていないことの記録、これは書かれていることの記録です。三つのうち、いちばん直接的に読者を誤らせます。二つの引用は紙面に印字されており、書き換えられたら check_errata.py が落ちます（103 項目）
+- **なぜ直せないか** —— 凍結された PDF です。書けたはずのことは二文で済みました —— 「照合は言語モデルが行いました。著者は原典に当たっていないため、独立には確かめていない」。E5 は書かれていないことの記録、E6 は原典に当たっていないことの記録、これは書かれていることの記録です。三つのうち、いちばん直接的に読者を誤らせます。二つの引用は紙面に印字されており、書き換えられたら check_errata.py が落ちます（111 項目）
 - **見つけたのは** —— Claude Code（外部の査読が改訂版のものかを確かめるために開示文を読んだとき）
 - **証拠** —— <https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/verification/audit.toml>
 - **起きた** —— 2026-08

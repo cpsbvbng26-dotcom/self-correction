@@ -1,4 +1,4 @@
-# 登録簿：直せない（24 件）
+# 登録簿：直せない（28 件）
 
 このファイルは `register.toml` からの生成物です。手で編集しません。
 （`python3 build.py` で作り直す）
@@ -166,6 +166,20 @@
 - **記録の性質** —— 再構成
 - **誰が確かめられるか** —— 証言
 
+### PH-014 —— 自己立法としての自律と、他者に依らない自足を、一つの語で扱っています
+
+- **どこ** —— The Nobility and Exemplarity of the Celibate Individual（v2）の要旨・第4節
+- **DOI** —— [10.5281/zenodo.22058254](https://doi.org/10.5281/zenodo.22058254)
+- **述べていたこと** —— the capacity to legislate for oneself the principles governing one's own life ／ is best exercised, I want to suggest, in a mode of living that does not make one's stable well-being hostage to the responsiveness of another person
+- **何が問題か** —— 定義が述べているのは、生き方の原則を自分で立てるかどうかです。続く文が述べているのは、安定した幸福が他者に依るかどうかで、紙面も同じ段落で autarkeia（自足）に近いと書いています。二つは別の区別です。他者に依る生き方を、自分で立てた原則として選ぶことは、定義の上では自律です。定義からその提案は出ず、紙面は論証を足していません。段落の終わりでは、自律の語を自足の意味で使っています（exercising a specific kind of autonomy）。要旨の autonomous, self-sustained flourishing も二つを一つの句にしています。結論（範例的な選択肢の一つである）は、第4節の自足の論証だけでも立ちえます
+- **なぜ直せないか** —— 凍結された PDF です。autonomy-and-self-cultivation の ERRATA の N9 に記録し、四つの句が紙面にあることを check_errata.py で固定しました
+- **見つけたのは** —— Academia Co-scientist（言語モデルの研究補助）の出力。2026-11-12 に利用者から受け取り、Claude が紙面と照合しました
+- **証拠** —— <https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/ERRATA.md>
+- **起きた** —— 2026-08
+- **書いた** —— 2026-11-12
+- **記録の性質** —— 再構成
+- **誰が確かめられるか** —— 紙面
+
 ### NG-001 —— 自身の DOI を印字していません
 
 - **どこ** —— 海軍公報の史料ノート
@@ -194,6 +208,48 @@
 - **書いた** —— 2026-09-08
 - **記録の性質** —— 再構成
 - **誰が確かめられるか** —— 証言
+
+### MR-001 —— 到達が独立でなかったと断定していますが、本文は確かめられないと述べています
+
+- **どこ** —— Machine-mediated Rediscovery（SSRN、Sophaxis 2026.0002）の要旨・第4節・第7節
+- **DOI** —— [10.2139/ssrn.7537983](https://doi.org/10.2139/ssrn.7537983)
+- **述べていたこと** —— the case is neither a Mertonian multiple nor a rediscovery in the usual sense, because the arrival was neither independent nor human（要旨）／ this arrival was not independent in the relevant sense: the construction came from a model trained on text that may well include that literature（第4節）
+- **何が問題か** —— 第7節は、it cannot be established which parts of the first preprint were generated, which were edited, and whether the model's output drew on the Friedkin–Johnsen literature と書いています。記録が支えるのは、独立だったと確かめられない、までです。独立ではなかった、はそれより強い主張です。第4節の根拠も may well include で、可能性の形です。要旨と第4節は、その可能性を断定の形に書いています。もう一つの根拠（人が結果に到達したのではなく、受け取った）は、この食い違いと関係なく立ちます
+- **なぜ直せないか** —— SSRN で公開した PDF で、直せません。Sophaxis の写し（data/pdf/2026.0002v1.pdf）も、取り寄せたまま変えません。この論文には正誤表がないので、ここに記録します
+- **見つけたのは** —— Academia Co-scientist（言語モデルの研究補助）の出力。2026-11-12 に利用者から受け取り、Claude が紙面と照合しました
+- **証拠** —— <https://github.com/cpsbvbng26-dotcom/sophaxis/blob/main/data/pdf/2026.0002v1.pdf>
+- **起きた** —— 2026-09-30
+- **書いた** —— 2026-11-12
+- **記録の性質** —— 再構成
+- **誰が確かめられるか** —— 紙面
+
+### MR-002 —— 一つの事例から、優先権の確認がすべて正当化の文脈へ移ると一般化しています
+
+- **どこ** —— Machine-mediated Rediscovery の要旨・第3節・第8節
+- **DOI** —— [10.2139/ssrn.7537983](https://doi.org/10.2139/ssrn.7537983)
+- **述べていたこと** —— The whole burden of establishing that the result is not already known moves into the context of justification.（第3節）／ the check for priority, which used to be shared between the two contexts, now falls entirely on justification（第8節）
+- **何が問題か** —— 事例は一つで、比べる群がありません。第7節自身が For these reasons the paper does not generalise と書いています。第3節と第8節は、その一般化をしています。人が独りで発見した場合にも、先行研究の確認が抜けることはありえます。機械が生成したことがこの抜けの原因だとは、示されていません。事例そのものも、すべて、を弱めます。第3節は the model supplied a pointer to the literature that the user did not follow と書いています。発見の文脈の側に、文献への手がかりが届いていました。言えるのは、この事例では確認が正当化の側で行われなかった、までです
+- **なぜ直せないか** —— SSRN で公開した PDF で、直せません。Sophaxis の写し（data/pdf/2026.0002v1.pdf）も、取り寄せたまま変えません。この論文には正誤表がないので、ここに記録します
+- **見つけたのは** —— Academia Co-scientist（言語モデルの研究補助）の出力。2026-11-12 に利用者から受け取り、Claude が紙面と照合しました
+- **証拠** —— <https://github.com/cpsbvbng26-dotcom/sophaxis/blob/main/data/pdf/2026.0002v1.pdf>
+- **起きた** —— 2026-09-30
+- **書いた** —— 2026-11-12
+- **記録の性質** —— 再構成
+- **誰が確かめられるか** —— 紙面
+
+### MR-003 —— 実装でしか見えなかったとした取り違えが、紙面だけを読んだ査読にも見えていました
+
+- **どこ** —— Machine-mediated Rediscovery の要旨・第2.2節・第6節
+- **DOI** —— [10.2139/ssrn.7537983](https://doi.org/10.2139/ssrn.7537983)
+- **述べていたこと** —— Stage 7 exposed an error that could not have been seen on paper.（第2.2節）／ The confusion between norm and spectral radius could not have been found on paper at all（第6節）／ implementation, not reflection, exposed the error that mattered（要旨）
+- **何が問題か** —— 比べたもののない反実仮想です。著者自身の記録に反例があります。EX-007 では、Stanford Agentic Reviewer が PDF だけを渡されて (DP)³ = (a₁a₂a₃)I を導き、Series II の縮小率が漸近率としてはゆるいことを示しました（trinity-infinity の ERRATA の N9）。ノルムとスペクトル半径の取り違えのうち、速さの側は紙面から見えていました。その記録は 2026-09-08 で、この論文の公開（2026-09-30）より前です。trinity-infinity の README も、この取り違えを、同じ講義が試験で問うところと書いています。立っているのは狭いほうの主張です。論文の仮定（巡回置換の Q と [0,1) の係数）のもとでは、収束するかどうかの判定は変わりません
+- **なぜ直せないか** —— SSRN で公開した PDF で、直せません。Sophaxis の写し（data/pdf/2026.0002v1.pdf）も、取り寄せたまま変えません。この論文には正誤表がないので、ここに記録します
+- **見つけたのは** —— Academia Co-scientist（言語モデルの研究補助）の出力。2026-11-12 に利用者から受け取り、Claude が紙面と照合しました
+- **証拠** —— <https://github.com/cpsbvbng26-dotcom/sophaxis/blob/main/data/pdf/2026.0002v1.pdf>
+- **起きた** —— 2026-09-30
+- **書いた** —— 2026-11-12
+- **記録の性質** —— 再構成
+- **誰が確かめられるか** —— 紙面
 
 ### TL-001 —— Zenodo に登録した道具のレコードに、言語モデルの利用が書かれていません
 
@@ -312,7 +368,7 @@
 - **DOI** —— [10.5281/zenodo.22058254](https://doi.org/10.5281/zenodo.22058254)
 - **述べていたこと** —— 第3節が反出生主義から生殖の義務を否定し、第4節がエピクロスとショーペンハウアーから性行為そのものを退けます
 - **何が問題か** —— 避妊がこの二つを切り離します。生殖を伴わない性行為は第3節の論証の射程外であり、第4節は反出生主義からの支えを一切受けずに単独で立たなければなりません。**紙面はそこに触れていません** —— `contracept` という語が一度も現れません。論証が崩れるわけではないが、二段の関係が書かれているより弱い。読者は第3節が第4節を支えていると受け取りえます。**あわせて、選んだ独身と、選べなかった性的不活発・アセクシュアリティ・アロマンティックを区別していません**（`asexual` も `involuntary` も紙面に無い）。区別が無ければ、選べなかったことを称揚する読みも成り立ちます
-- **なぜ直せないか** —— 凍結された PDF です。ERRATA の N5・N6 に記録しました。紙面に現れない語そのものを機械で固定しており（103 項目）、**出てきたらその時点で書き直す番になります**
+- **なぜ直せないか** —— 凍結された PDF です。ERRATA の N5・N6 に記録しました。紙面に現れない語そのものを機械で固定しており（111 項目）、**出てきたらその時点で書き直す番になります**
 - **見つけたのは** —— Stanford Agentic Reviewer（paperreview.ai）と、こちらの照合
 - **証拠** —— <https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/verification/audit.toml>
 - **起きた** —— 2026-08
@@ -341,7 +397,7 @@
 - **DOI** —— [10.5281/zenodo.22057583](https://doi.org/10.5281/zenodo.22057583)
 - **述べていたこと** —— No data, quotations, or sources were fabricated by the AI system in the course of this revision.
 - **何が問題か** —— 同じ段落が、参考文献の照合そのものも言語モデルがやったと述べています —— `identify and verify the bibliographic citations listed in the References section against publicly available sources`。二つを並べると循環が残ります。捏造が無かったことを確かめたのは言語モデルであり、**著者は原典に当たっていません**（ERRATA の E6）。したがってこの断言は言語モデル自身の報告以外に根拠を持ちません。**開示文の中でいちばん重い一文です** —— 読者は「捏造は無かった」を、著者が確かめた事実として受け取ります
-- **なぜ直せないか** —— 凍結された PDF です。書けたはずのことは二文で済みました —— 「照合は言語モデルが行いました。著者は原典に当たっていないため、独立には確かめていない」。E5 は書かれていないことの記録、E6 は原典に当たっていないことの記録、これは書かれていることの記録です。三つのうち、いちばん直接的に読者を誤らせます。二つの引用は紙面に印字されており、書き換えられたら check_errata.py が落ちます（103 項目）
+- **なぜ直せないか** —— 凍結された PDF です。書けたはずのことは二文で済みました —— 「照合は言語モデルが行いました。著者は原典に当たっていないため、独立には確かめていない」。E5 は書かれていないことの記録、E6 は原典に当たっていないことの記録、これは書かれていることの記録です。三つのうち、いちばん直接的に読者を誤らせます。二つの引用は紙面に印字されており、書き換えられたら check_errata.py が落ちます（111 項目）
 - **見つけたのは** —— Claude Code（外部の査読が改訂版のものかを確かめるために開示文を読んだとき）
 - **証拠** —— <https://github.com/cpsbvbng26-dotcom/autonomy-and-self-cultivation/blob/main/verification/audit.toml>
 - **起きた** —— 2026-08

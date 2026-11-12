@@ -316,13 +316,16 @@ check("README が名乗る二者以上の件数が実際と合う",
       ("名乗り %s / 実際 %d" % (m.group(1), multi)) if m else "無し")
 
 # **太字に依らせない**（書き方 5）。数だけ拾う。
+# 2026-11-12 に「研究補助」（言語モデルの研究補助の出力）を分けた。人には数えない。
+_human = sum(first.values()) - first["機械"] - first["研究補助"]
 m = re.search(r"機械が最初に見つけたのは (\d+) 件です。"
+              r"言語モデルの研究補助が最初に挙げたものが (\d+) 件あります。"
               r"残る (\d+) 件は、人が見つけています。", readme)
-check("README の「機械 N 件 / 人 M 件」が実際と合う",
+check("README の「機械 N 件 / 研究補助 K 件 / 人 M 件」が実際と合う",
       m is not None and int(m.group(1)) == first["機械"]
-      and int(m.group(2)) == sum(first.values()) - first["機械"],
-      ("名乗り %s/%s / 実際 %d/%d" % (m.group(1), m.group(2), first["機械"],
-                                      sum(first.values()) - first["機械"]))
+      and int(m.group(2)) == first["研究補助"] and int(m.group(3)) == _human,
+      ("名乗り %s/%s/%s / 実際 %d/%d/%d" % (m.group(1), m.group(2), m.group(3), first["機械"],
+                                            first["研究補助"], _human))
       if m else "無し")
 
 # **検査が素通りした一件を消さない。**ここが消えれば、検査を過信する側へ倒れる。
