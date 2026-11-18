@@ -13,7 +13,7 @@
 | いま立っている | 13 | [standing](status-standing.md) |
 | 未解決 | 7 | [open](status-open.md) |
 | 直せない | 28 | [unresolvable](status-unresolvable.md) |
-| 直した | 50 | [corrected](status-corrected.md) |
+| 直した | 51 | [corrected](status-corrected.md) |
 | 撤回した | 6 | [withdrawn](status-withdrawn.md) |
 
 ## 種類ごと
@@ -25,7 +25,7 @@
 | --- | --- | --- | --- |
 | `TI` | 三篇そのもの 7、道具そのもの 5 | 12 | [TI](kind-TI.md) |
 | `WD` | 撤回したもの 4 | 4 | [WD](kind-WD.md) |
-| `SC` | 自分の訂正のほうの誤り 5、哲学の三篇 1、道具そのもの 26、外部からの評価 13 | 45 | [SC](kind-SC.md) |
+| `SC` | 自分の訂正のほうの誤り 5、哲学の三篇 1、道具そのもの 26、外部からの評価 14 | 46 | [SC](kind-SC.md) |
 | `ST` | 自分の訂正のほうの誤り 1、道具そのもの 1、いま立っているもの 3 | 5 | [ST](kind-ST.md) |
 | `WS` | サイトの記述 3、外部からの評価 1 | 4 | [WS](kind-WS.md) |
 | `PH` | 哲学の三篇 8、道具そのもの 5、外部からの評価 1 | 14 | [PH](kind-PH.md) |
