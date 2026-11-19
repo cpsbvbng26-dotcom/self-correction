@@ -47,7 +47,7 @@
 # 重い項目ほど証言の側にあります。初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じです（ST-003）。
 #
-# 105 件のうち 45 件は再構成です。2025年10月から2026年8月までの
+# 106 件のうち 45 件は再構成です。2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していません。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要があります。
 
@@ -640,6 +640,25 @@ found_by = "Academia Co-scientist（言語モデルの研究補助）の出力�
 occurred = "2026-09-30"
 recorded = "2026-11-12"
 basis = "再構成"
+verifiable = "紙面"
+
+# ============================================================ 黄金比の窓の予想を解いた稿
+
+[[entry]]
+id = "GW-001"
+status = "unresolvable"
+title = "次元の公式の出所を、Allaart・Kong が挙げたものとは別の Raith の論文にしていました"
+where = "Resolution of the Golden-Window Conjecture and Related Results on β-Transformations with a Hole and on the Trinity-Infinity Series II Game（Figshare）の Corollary 7.2 の証明と、文献の [17]"
+doi = "10.6084/m9.figshare.35050300"
+claimed = "The dimension formula dim_H K_β(t) = h(K̃_β(t))/log β for all β > 1 is [AKgen, Lemma 6.2], stated there as deducible from Raith [17] (not read). [17] P. Raith, Hausdorff dimension for piecewise monotonic maps, Studia Math. (1989)"
+problem = "Allaart・Kong（arXiv 2411.03516v3）は、Lemma 6.2 の直前で can be deduced from Raith [26] と書いています。その [26] は、P. Raith, Continuity of the Hausdorff dimension for invariant subsets of interval maps, Acta Math. Univ. Comenian. (N.S.) 63 (1994) です。稿は、これとは別の 1989 年の論文を挙げていました。稿はどちらの論文も読んでいません。読んでいないものを、読んだ側の文献の番号と取り違えて写しました"
+correction = "結論は変わりません。次元の公式は Allaart・Kong の Lemma 6.2 から引いており、Raith の論文はどちらも読んでいません。正しい出所は Raith 1994 です。golden-window-resolution の continuity/REFEREE.md と、continuity/ の稿の文献の節に書きました"
+why_unresolvable = "Figshare で公開した PDF は凍結しており、直しません"
+evidence = "https://github.com/cpsbvbng26-dotcom/golden-window-resolution/blob/main/continuity/REFEREE.md"
+found_by = "Claude（2026-11-19 に、二つ目の稿を査読したとき）"
+occurred = "2026-11-18"
+recorded = "2026-11-19"
+basis = "同時"
 verifiable = "紙面"
 
 # ============================================================ 道具そのもの
