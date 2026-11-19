@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | いま立っている | 13 | [standing](status-standing.md) |
 | 未解決 | 7 | [open](status-open.md) |
-| 直せない | 28 | [unresolvable](status-unresolvable.md) |
+| 直せない | 29 | [unresolvable](status-unresolvable.md) |
 | 直した | 51 | [corrected](status-corrected.md) |
 | 撤回した | 6 | [withdrawn](status-withdrawn.md) |
 
@@ -31,6 +31,7 @@
 | `PH` | 哲学の三篇 8、道具そのもの 5、外部からの評価 1 | 14 | [PH](kind-PH.md) |
 | `NG` | 史料ノート 4 | 4 | [NG](kind-NG.md) |
 | `MR` | 機械を介した再発見の論文 3 | 3 | [MR](kind-MR.md) |
+| `GW` | 黄金比の窓の予想を解いた稿 1 | 1 | [GW](kind-GW.md) |
 | `TL` | 道具そのもの 2 | 2 | [TL](kind-TL.md) |
 | `EX` | 道具そのもの 2、外部からの評価 8 | 10 | [EX](kind-EX.md) |
 | `BK` | 一般向けの書籍 1 | 1 | [BK](kind-BK.md) |
