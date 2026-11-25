@@ -316,7 +316,7 @@
 - **どこ** —— Celibacy, Attachment, and the Non-Reproducing Individual（SSRN）の参考文献
 - **DOI** —— [10.2139/ssrn.7726682](https://doi.org/10.2139/ssrn.7726682)
 - **述べていたこと** —— Hawkes, K., O’Connell, J. F., Jones, N. G. B., Alvarez, H., & Charnov, E. L. (1998).
-- **何が問題か** —— 三人目の著者は Nicholas G. Blurton Jones で、姓は Blurton Jones です。本人の単著 Demography and Evolutionary Ecology of Hadza Hunter-Gatherers（DOI 10.1017/cbo9781107707030）は、OpenAlex の記録で著者を Nicholas Blurton Jones としています。その書評（DOI 10.1007/s12110-016-9280-9）の題も by Nicholas Blurton Jones です。稿の参考文献は Crossref の記録から組んでいます。Crossref の記録（DOI 10.1073/pnas.95.3.1336）は、名を N. G. Blurton、姓を Jones と分けています。PubMed（PMID 9448332）も姓を Jones としています。稿は、その分け方のまま Blurton を頭文字に縮めました。正しくは Blurton Jones, N. G. です
+- **何が問題か** —— 三人目の著者は Nicholas G. Blurton Jones で、姓は Blurton Jones です。本人の著書 Demography and Evolutionary Ecology of Hadza Hunter-Gatherers（DOI 10.1017/cbo9781107707030）は、OpenAlex の記録で著者を Nicholas Blurton Jones としています。その書評（DOI 10.1007/s12110-016-9280-9）の題も by Nicholas Blurton Jones です。稿の参考文献は Crossref の記録から組んでいます。Crossref の記録（DOI 10.1073/pnas.95.3.1336）は、名を N. G. Blurton、姓を Jones と分けています。PubMed（PMID 9448332）も姓を Jones としています。稿は、その分け方のまま Blurton を頭文字に縮めました。正しくは Blurton Jones, N. G. です
 - **なぜ直せないか** —— SSRN で公開した PDF で、直せません。この論文には正誤表がないので、ここに記録します。照合したのは、SSRN に出した PDF（SHA-256 fdf8c1dee9b67b000810cf1c5d9c4f75ec4f6d0b0e9c74dede16c31d868d6eb1、submission-templates の記録）です。SSRN が配っている版は、作業の環境から開けず、突き合わせていません。occurred は Crossref の記録が作られた日です。SSRN が頁を公開した日は確かめていません
 - **見つけたのは** —— Claude（2026-11-25 に、稿が引いた研究を PubMed の記録と突き合わせたとき）
 - **証拠** —— <https://doi.org/10.2139/ssrn.7726682>
