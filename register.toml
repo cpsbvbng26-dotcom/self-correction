@@ -47,7 +47,7 @@
 # 重い項目ほど証言の側にあります。初稿の出所も、原典を読んでいないことも、
 # 英訳の道具も、著者が言わなければ存在しなかったのと同じです（ST-003）。
 #
-# 106 件のうち 45 件は再構成です。2025年10月から2026年8月までの
+# 113 件のうち 48 件は再構成です。2025年10月から2026年8月までの
 # 出来事は、起きた時点では記録していません。道筋を主張するなら、
 # どこまでが同時記録でどこからが記憶なのかを先に書いておく必要があります。
 
@@ -658,6 +658,126 @@ evidence = "https://github.com/cpsbvbng26-dotcom/golden-window-resolution/blob/m
 found_by = "Claude（2026-11-19 に、二つ目の稿を査読したとき）"
 occurred = "2026-11-18"
 recorded = "2026-11-19"
+basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
+id = "GW-002"
+status = "unresolvable"
+title = "Theorem D のあとの一文が、一般の r の窓を、Proposition 5.3 と表 1 とは違う形で書いていました"
+where = "Resolution of the Golden-Window Conjecture and Related Results on β-Transformations with a Hole and on the Trinity-Infinity Series II Game（Figshare）の 4.4 節、Theorem D のあとの段落の最後の一文"
+doi = "10.6084/m9.figshare.35050300"
+claimed = "With general r, the window is (δ_3(r), (1 + r)/3), non-empty iff r ≠ 2."
+problem = "δ_3(r) = (√(1+4r) − 1)/2 は、r > 2 で 1 を超えます。r = 3 では 1.3028 です。割引因子は (0, 1) の中にあるので、r > 2 では窓に入る割引因子がありません。r = 2 では δ_3 = 1 です。稿の Proposition 5.3 も、k = 2 の辺で窓が開くのを k > r、すなわち r < 2 のときに限っています。上端も食い違っています。Proposition 5.3 は上端を U_2(r) = max(1/2, (1+r)/3) とし、表 1 は r = 1/4 の窓を (0.2071, 0.5000) と載せています。この一文の式では (0.2071, 0.4167) になります。Figshare に置いた数表 windows_three_players.csv の格子探索も、r = 1/4 と r = 1/2 の上端を 0.4991 としています。この一文が成り立つのは 1/2 ≤ r < 2 のときだけです"
+correction = "窓は (δ_3(r), max(1/2, (1+r)/3)) で、空でないのは 0 < r < 2 のときです。稿の Proposition 5.3 と表 1 は、この形で書いています。Theorem D の三つの恒等式と、二つの閾値が δ_3(r) で一致することは変わりません。golden-window-resolution には正誤表が無いので、ここに書きます"
+why_unresolvable = "Figshare で公開した PDF は凍結しており、直しません"
+evidence = "https://github.com/cpsbvbng26-dotcom/golden-window-resolution/blob/main/paper/golden-window-resolution.pdf"
+found_by = "Claude（2026-11-25 に、公開した稿の主張を自前の計算と稿の表・数表で突き合わせ直したとき）"
+occurred = "2026-11-18"
+recorded = "2026-11-25"
+basis = "再構成"
+verifiable = "紙面"
+
+[[entry]]
+id = "GW-003"
+status = "unresolvable"
+title = "Remark 8.5 が、六つ目の族の分解が崩れる理由を λ < 0 としていましたが、崩れるのは λ > 1 のときです"
+where = "Resolution of the Golden-Window Conjecture …（Figshare）の 8.2 節、Remark 8.5"
+doi = "10.6084/m9.figshare.35050300"
+claimed = "For δ > 1/√2 the decomposition used for the sixth family fails (λ < 0)"
+problem = "分解の係数は、Theorem 8.4 の証明で λ = (2δ − 1)/(2δe) と定めてあります。e は 1 − δ です。1/2 < δ < 1 では分子も分母も正なので、λ は正です。λ ≤ 1 は 2δ² ≤ 1 と同じで、δ ≤ 1/√2 のときに限ります。δ > 1/√2 で崩れるのは λ ≤ 1 のほうで、1 − λ が負になります。δ = 0.7072 では λ = 1.0006、δ = 0.71 では λ = 1.0199 です。証明は λ ∈ [0, 1] iff δ ≤ 1/√2 と正しく書いており、注意の括弧だけが向きを取り違えていました"
+correction = "結論は変わりません。δ > 1/√2 で、六つ目の族の分解は崩れます。理由は λ > 1、すなわち 1 − λ < 0 です。golden-window-resolution には正誤表が無いので、ここに書きます"
+why_unresolvable = "Figshare で公開した PDF は凍結しており、直しません"
+evidence = "https://github.com/cpsbvbng26-dotcom/golden-window-resolution/blob/main/paper/golden-window-resolution.pdf"
+found_by = "Claude（2026-11-25 に、公開した稿の主張を自前の計算と稿の表・数表で突き合わせ直したとき）"
+occurred = "2026-11-18"
+recorded = "2026-11-25"
+basis = "再構成"
+verifiable = "紙面"
+
+[[entry]]
+id = "GW-004"
+status = "unresolvable"
+title = "Allaart・Kong の Theorem 1.4 を仮定を落として引き、文献の [22] に題を書いていませんでした"
+where = "Resolution of the Golden-Window Conjecture …（Figshare）の 4.3 節の最後の段落と、文献の [5]・[22]"
+doi = "10.6084/m9.figshare.35050300"
+claimed = "for the hole at 0 and fixed β the plateaus are identified in [5, Theorem 1.4]. ／ [22] D. Abreu, D. Pearce, E. Stacchetti, Econometrica (1990). DOI 10.2307/2938299."
+problem = "Allaart・Kong（arXiv 2304.06892v3）の Theorem 1.4 は、Assume α(β) is eventually periodic で始まります。平坦部を特定しているのは、α(β) が最終的に周期的になる β についてだけです。稿は、この仮定を書かずに、固定した β 一般のこととして引いていました。稿の文献の節は、この論文を Section 1 と Lemmas 2.1–2.2 まで読んだとしており、Theorem 1.4 は Section 1 にあります。あわせて、文献の [22] には題がありません。DOI 10.2307/2938299 の記録の題は Toward a Theory of Discounted Repeated Games with Imperfect Monitoring で、Econometrica の 58 巻 5 号です"
+correction = "Theorem C の証明は、同じ論文の Lemma 2.1 を使っており、Theorem 1.4 には依っていません。Theorem 1.4 は、固定した β での類例として挙げたものです。正しくは「α(β) が最終的に周期的な β について、平坦部は [5, Theorem 1.4] で特定されている」です。[22] は D. Abreu, D. Pearce, E. Stacchetti, Toward a Theory of Discounted Repeated Games with Imperfect Monitoring, Econometrica 58(5) (1990) です。golden-window-resolution には正誤表が無いので、ここに書きます"
+why_unresolvable = "Figshare で公開した PDF は凍結しており、直しません"
+evidence = "https://github.com/cpsbvbng26-dotcom/golden-window-resolution/blob/main/paper/golden-window-resolution.pdf"
+found_by = "Claude（2026-11-25 に、公開した稿の引用を、引いた論文の本文と DOI の記録で突き合わせ直したとき）"
+occurred = "2026-11-18"
+recorded = "2026-11-25"
+basis = "再構成"
+verifiable = "紙面"
+
+# ============================================================ 独身論の続きの稿
+
+[[entry]]
+id = "CA-001"
+status = "unresolvable"
+title = "Hawkes ほか 1998 の三人目の著者の姓を Jones とし、Blurton を名の頭文字にしていました"
+where = "Celibacy, Attachment, and the Non-Reproducing Individual（SSRN）の参考文献"
+doi = "10.2139/ssrn.7726682"
+claimed = "Hawkes, K., O’Connell, J. F., Jones, N. G. B., Alvarez, H., & Charnov, E. L. (1998)."
+problem = "三人目の著者は Nicholas G. Blurton Jones で、姓は Blurton Jones です。本人の単著 Demography and Evolutionary Ecology of Hadza Hunter-Gatherers（DOI 10.1017/cbo9781107707030）は、OpenAlex の記録で著者を Nicholas Blurton Jones としています。その書評（DOI 10.1007/s12110-016-9280-9）の題も by Nicholas Blurton Jones です。稿の参考文献は Crossref の記録から組んでいます。Crossref の記録（DOI 10.1073/pnas.95.3.1336）は、名を N. G. Blurton、姓を Jones と分けています。PubMed（PMID 9448332）も姓を Jones としています。稿は、その分け方のまま Blurton を頭文字に縮めました。正しくは Blurton Jones, N. G. です"
+why_unresolvable = "SSRN で公開した PDF で、直せません。この論文には正誤表がないので、ここに記録します。照合したのは、SSRN に出した PDF（SHA-256 fdf8c1dee9b67b000810cf1c5d9c4f75ec4f6d0b0e9c74dede16c31d868d6eb1、submission-templates の記録）です。SSRN が配っている版は、作業の環境から開けず、突き合わせていません。occurred は Crossref の記録が作られた日です。SSRN が頁を公開した日は確かめていません"
+evidence = "https://doi.org/10.2139/ssrn.7726682"
+found_by = "Claude（2026-11-25 に、稿が引いた研究を PubMed の記録と突き合わせたとき）"
+occurred = "2026-11-24"
+recorded = "2026-11-25"
+basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
+id = "CA-002"
+status = "unresolvable"
+title = "英語の要旨が、孤独感と社会的孤立が抑うつと死亡に結びつくことを、メタ分析が一貫して示すとしていました"
+where = "Celibacy, Attachment, and the Non-Reproducing Individual（SSRN）の英語の要旨。日本語の要旨も同じことを書いています"
+doi = "10.2139/ssrn.7726682"
+claimed = "Meta-analytic evidence consistently associates loneliness and social isolation with depression and mortality."
+problem = "稿が引くメタ分析のうち、社会的孤立と抑うつを結ぶのは Wu ほか 2022（PMID 36111305）だけです。対象は独居で、研究は七つです。その要旨の結論は、この結びつきを支えるのはいまのところ横断研究と少数の縦断研究だけだとしています。死亡のほうでも、Holt-Lunstad ほか 2010（PMID 20668659）では、独居かどうかの二値の指標が最も弱い予測因子でした。OR は 1.19、95% CI は 0.99–1.44 で、1 をまたいでいます。孤独感と抑うつ（Erzen・Çikrikci 2018）と、孤立・孤独感と死亡（Holt-Lunstad ほか 2015、PMID 25910392）は、引いた要旨のとおりです。本文の 3.1 節は、二つの限界をどちらも書いています。要旨だけが「一貫して」とまとめていました"
+correction = "言えるのは次の二つまでです。孤独感と抑うつ、孤独感・社会的孤立と死亡の結びつきは、メタ分析が示しています。社会的孤立と抑うつの結びつきは、独居についての七つの研究のメタ分析一つに依っています"
+why_unresolvable = "SSRN で公開した PDF で、直せません。この論文には正誤表がないので、ここに記録します。照合したのは、SSRN に出した PDF（SHA-256 fdf8c1dee9b67b000810cf1c5d9c4f75ec4f6d0b0e9c74dede16c31d868d6eb1、submission-templates の記録）です。SSRN が配っている版は、作業の環境から開けず、突き合わせていません。occurred は Crossref の記録が作られた日です。SSRN が頁を公開した日は確かめていません"
+evidence = "https://doi.org/10.2139/ssrn.7726682"
+found_by = "Claude（2026-11-25 に、稿が引いた研究を PubMed の記録と突き合わせたとき）"
+occurred = "2026-11-24"
+recorded = "2026-11-25"
+basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
+id = "CA-003"
+status = "unresolvable"
+title = "英語の要旨が、鳥と社会性昆虫の生殖しない手伝いを、血縁選択で説明されると言い切っていました"
+where = "Celibacy, Attachment, and the Non-Reproducing Individual（SSRN）の英語の要旨"
+doi = "10.2139/ssrn.7726682"
+claimed = "In biology, non-reproducing helpers in birds and social insects are explained by kin selection"
+problem = "本文の 4.1 節は Cockburn 1998 を引き、鳥の手伝いの逆説が解けたという主張は早すぎるかもしれず、雄の手伝いでは血縁が強調されすぎてきたかもしれない、と書いています。Cockburn 1998 の要旨（DOI 10.1146/annurev.ecolsys.29.1.141）にも、may be premature と kinship may have been overemphasized for male helpers があります。4.1 節の判定も、生殖しない手伝いは typically 血縁の繁殖に寄与する、としています。日本語の要旨は「血縁選択（包括適応度）によって説明される例が鳥類や社会性昆虫に多くあります」で、例の多さとして書いています。英語の要旨だけが限定を落とし、手伝い一般が血縁選択で説明されるとしていました"
+correction = "言えるのは、生殖しない手伝いの多くは血縁選択で説明されるが、鳥の雄の手伝いのように血縁だけでは説明が尽きない例もある、までです"
+why_unresolvable = "SSRN で公開した PDF で、直せません。この論文には正誤表がないので、ここに記録します。照合したのは、SSRN に出した PDF（SHA-256 fdf8c1dee9b67b000810cf1c5d9c4f75ec4f6d0b0e9c74dede16c31d868d6eb1、submission-templates の記録）です。SSRN が配っている版は、作業の環境から開けず、突き合わせていません。occurred は Crossref の記録が作られた日です。SSRN が頁を公開した日は確かめていません"
+evidence = "https://doi.org/10.2139/ssrn.7726682"
+found_by = "Claude（2026-11-25 に、稿が引いた研究を PubMed の記録と突き合わせたとき）"
+occurred = "2026-11-24"
+recorded = "2026-11-25"
+basis = "同時"
+verifiable = "紙面"
+
+[[entry]]
+id = "CA-004"
+status = "unresolvable"
+title = "本文の三か所で、引いた研究の要旨より強く書いていました"
+where = "Celibacy, Attachment, and the Non-Reproducing Individual（SSRN）の 3.2 節・3.3 節・4.1 節"
+doi = "10.2139/ssrn.7726682"
+claimed = "and that it led to relaxation and reduced stress when individuals actively chose to be alone（3.3 節）／ Hamilton’s rule, the central theorem of inclusive fitness (kin selection) theory（4.1 節）／ Muise, Schimmack and Impett (2015), across three studies (N = 30,645), found that the association between sexual frequency and well-being was significant only for people in relationships（3.2 節）"
+problem = "Nguyen ほか 2017（PMID 29072531）の要旨は、Study 4 について solitude could lead to relaxation and reduced stress と書いています。稿は could を落とし、led としていました。Bourke 2014（PMID 24686934）の要旨は a central theorem です。稿は the central theorem としていました。Muise ほか 2015（DOI 10.1177/1948550615616462）の要旨では、関係にある人だけで有意だったのは Study 1 の結果です。Study 2 と Study 3 は、はじめから関係にある人だけを対象にしています。稿は、三つの研究を通した結果として書いていました"
+correction = "三か所とも、それぞれの節の判定は変わりません。独居を選んだときに緊張がほどけうること、Hamilton の規則が包括適応度の理論の中心の定理の一つであること、関係の外で性の頻度と幸福の結びつきが示されていないこと、が言えることです"
+why_unresolvable = "SSRN で公開した PDF で、直せません。この論文には正誤表がないので、ここに記録します。照合したのは、SSRN に出した PDF（SHA-256 fdf8c1dee9b67b000810cf1c5d9c4f75ec4f6d0b0e9c74dede16c31d868d6eb1、submission-templates の記録）です。SSRN が配っている版は、作業の環境から開けず、突き合わせていません。occurred は Crossref の記録が作られた日です。SSRN が頁を公開した日は確かめていません"
+evidence = "https://doi.org/10.2139/ssrn.7726682"
+found_by = "Claude（2026-11-25 に、稿が引いた研究を PubMed の記録と突き合わせたとき）"
+occurred = "2026-11-24"
+recorded = "2026-11-25"
 basis = "同時"
 verifiable = "紙面"
 
