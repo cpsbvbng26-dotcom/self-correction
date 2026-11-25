@@ -281,10 +281,15 @@ import tally_found_by  # noqa: E402
 first, anywhere, multi, unknown = tally_found_by.main()
 check("見つけ手を分類できない記述が無い", unknown == 0, str(unknown))
 
-# 「数の読み方」の地の文も、利用者の二つの数と「最も多い」を名乗っている。
+# 「数の読み方」の地の文も、利用者の二つの数と、利用者より多い見つけ手を名乗っている。
 # **表だけが直って、地の文が 35/17 のまま残っていた。**同じ物差しで当てる。
 # 項目の数は増やさない。利用者の行の検査に含める（項目の数は他のリポジトリにも写してある）。
-_prose = re.search(r"利用者が「どこかに出る」で (\d+) 件と最も多い。\s*"
+# 2026-11-25：GW-002〜004・CA-001〜004 を足して、Claude の「どこかに出る」（48）が利用者（45）を
+# 越えた。地の文の「最も多い」は偽になったので、「これより多いのは Claude だけです」に書き換えた。
+# 当てる強さは変えない。利用者より多い見つけ手が、名乗った一つだけであることを当てる
+# （それまでの「利用者が最大」は、名乗りが空のときと同じ形になる）。
+_prose = re.search(r"利用者が「どこかに出る」で (\d+) 件あります。\s*"
+                   r"これより多いのは (\S+?) だけです。\s*"
                    r"最初に名指しされるのは (\d+) 件", readme)
 
 for name, _ in tally_found_by.KINDS:
@@ -296,11 +301,13 @@ for name, _ in tally_found_by.KINDS:
                                              first[name], anywhere[name]))
               if m else "名乗っている行が見つからない")
     if name == "利用者":
+        above = sorted(k for k, _ in tally_found_by.KINDS if anywhere[k] > anywhere[name])
         ok = (ok and _prose is not None
               and int(_prose.group(1)) == anywhere[name]
-              and int(_prose.group(2)) == first[name]
-              and anywhere[name] == max(anywhere.values()))
-        detail += ("；地の文 %s/%s" % (_prose.group(2), _prose.group(1))
+              and int(_prose.group(3)) == first[name]
+              and above == [_prose.group(2)])
+        detail += ("；地の文 %s/%s、より多いのは %s（実際 %s）"
+                   % (_prose.group(3), _prose.group(1), _prose.group(2), "・".join(above) or "無し")
                    if _prose else "；地の文の名乗りが見つからない")
     check("README の「%s」の数が実際と合う" % name, ok, detail)
 
